@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/output.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="border-b-8 border-solid border-primary-800">
+        <section class="bg-secondary-900 h-16 lg:h-[72px] flex items-center">
+            <div class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:w-[1280px]">
+                <div class=" lg:flex lg:items-center lg:justify-between">
+                    <div class="relative items-center hidden lg:flex">
+                        <input type="text"
+                            class="bg-zinc-100 placeholder-zinc-600 pr-3 py-3 rounded-lg outline-none text-zinc-600 h-14 w-64"
+                            name="" id="" placeholder="جستجو کنید">
+                        <button
+                            class="absolute left-1 bg-primary-800 rounded-lg w-12 h-12 flex items-center justify-center transition-all duration-300 hover:bg-secondary-600">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M11.2485 3.50024C7.22315 3.50024 3.95996 6.76343 3.95996 10.7888C3.95996 14.8141 7.22315 18.0773 11.2485 18.0773C15.2738 18.0773 18.537 14.8141 18.537 10.7888C18.537 6.76343 15.2738 3.50024 11.2485 3.50024ZM2.45996 10.7888C2.45996 5.93501 6.39472 2.00024 11.2485 2.00024C16.1023 2.00024 20.037 5.93501 20.037 10.7888C20.037 15.6426 16.1023 19.5773 11.2485 19.5773C6.39472 19.5773 2.45996 15.6426 2.45996 10.7888Z"
+                                    fill="white"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M16.7361 15.6477L22.3516 21.2486L21.2923 22.3106L15.6768 16.7097L16.7361 15.6477Z"
+                                    fill="white"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="flex items-center justify-between gap-2">
+
+                        <div
+                            class="Login_Information flex items-center gap-2 text-white text-sm text-center transition-all hover:bg-primary-200 cursor-pointer duration-300 lg:pl-6 lg:pr-1 lg:py-1 rounded-l-xl rounded-r-[50px] lg:bg-primary-800">
+                            <!-- <basis core="call" file="authentication/modal" lid="1"></basis> -->
+                            <div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary-100 ">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M12.4009 14.5156C7.42189 14.5156 5.19189 17.2696 5.19189 19.9996C5.19189 20.1986 5.27089 20.3896 5.41189 20.5306C5.55189 20.6706 5.74289 20.7496 5.94189 20.7496L18.8599 20.7316C19.2739 20.7306 19.6089 20.3946 19.6089 19.9816C19.6089 17.2606 17.3799 14.5156 12.4009 14.5156Z"
+                                        fill="#82E3E4" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M12.4009 13.001C15.0889 13.001 17.2759 10.813 17.2759 8.125C17.2759 5.437 15.0889 3.25 12.4009 3.25C9.71288 3.25 7.52588 5.437 7.52588 8.125C7.52588 10.813 9.71288 13.001 12.4009 13.001Z"
+                                        fill="#82E3E4" />
+                                </svg>
+                            </div>
+
+                            <span>ورود/ثبت نام</span>
+                        </div>
+                        <div>
+
+                            <a href="tel:"
+                                class="hidden group lg:flex w-full items-center justify-end gap-2 bg-primary-800 text-white text-sm pr-6 pl-1 py-1 rounded-r-xl rounded-l-[50px] text-center transition-all hover:bg-secondary-900 cursor-pointer duration-300">
+                                <span class="flex-1 group-hover:text-primary-100">031-36166</span>
+                                <div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary-100 ">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M16.8854 14.3568L13.9404 15.984C13.4204 15.8112 11.9254 15.2324 10.5584 13.92C9.27541 12.6884 8.73941 11.328 8.58241 10.8528L10.2814 8.01987L6.58441 3.14307L6.19441 3.36387C4.61241 4.25475 3.45041 5.36835 2.54141 6.86979L2.48341 7.02243C1.96941 9.65571 3.53841 13.538 6.38741 16.6829C9.47841 20.0948 13.4894 22.0167 17.4734 22.0167C17.6534 22.0167 17.8334 22.0138 18.0134 22.0052L18.1324 22.0004L18.2354 21.9447C19.8374 21.0826 21.0014 19.9652 21.8984 18.4272L22.1134 18.0576L16.8854 14.3568Z"
+                                            fill="#008A8C"></path>
+                                    </svg>
+                                </div>
+
+                            </a>
+                        </div>
+                        <div
+                            class="lg:hidden flex items-center gap-2 text-white text-sm text-center transition-all hover:bg-primary-200 cursor-pointer duration-300">
+                            <!-- <basis core="call" file="authentication/modal" lid="1"></basis> -->
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M16.8854 14.3568L13.9404 15.984C13.4204 15.8112 11.9254 15.2324 10.5584 13.92C9.27541 12.6884 8.73941 11.328 8.58241 10.8528L10.2814 8.01987L6.58441 3.14307L6.19441 3.36387C4.61241 4.25475 3.45041 5.36835 2.54141 6.86979L2.48341 7.02243C1.96941 9.65571 3.53841 13.538 6.38741 16.6829C9.47841 20.0948 13.4894 22.0167 17.4734 22.0167C17.6534 22.0167 17.8334 22.0138 18.0134 22.0052L18.1324 22.0004L18.2354 21.9447C19.8374 21.0826 21.0014 19.9652 21.8984 18.4272L22.1134 18.0576L16.8854 14.3568Z"
+                                    fill="#82E3E4" />
+                            </svg>
+
+
+                            <span>تماس با کارشناسان</span>
+                            
+                        </div>
+                        <div
+                            class="relative group hidden lg:flex items-center gap-2 text-white text-sm text-center transition-all cursor-pointer duration-300">
+                            <!-- <basis core="call" file="authentication/modal" lid="1"></basis> -->
+                            <a href="Hotels"
+                                class="flex text-white items-center gap-2 transition-all duration-300 group text-secondary-800 hover:text-primary-600">
+                                دیگر مجموعه های ما
+                                <svg width="48" height="48" class="transition-all duration-300 group-hover:rotate-180"
+                                    viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M31 20.5L24 27.5L17 20.5" class="group-hover:stroke-primary-600"
+                                        stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    </path>
+                                </svg>
+                            </a>
+                            <ul
+                                class="absolute z-40 flex flex-col items-start invisible w-full gap-2 p-4 font-medium transition-all duration-300 bg-white shadow-md opacity-0 rounded-xl top-full group-hover:visible group-hover:opacity-100">
+                                <li class="py-1 rounded-sm"><a href=""
+                                        class="transition-all duration-300 text-secondary-800 hover:bg-secondary-200">تور
+                                        شینگن</a></li>
+                                <li class="py-1"><a href="">ویزای شینگن</a></li>
+                                <li class="py-1"><a href="">ویزای شینگن</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section class="relative z-30 bg-white rounded-b-3xl">
+            <div class="flex items-center  justify-between mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl">
+                <div class="flex items-center gap-2 h-16">
+                    <svg width="48" height="48" class="flex-shrink-0 cursor-pointer bars3 lg:hidden" viewBox="0 0 48 48"
+                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M32 32H16C15.448 32 15 31.553 15 31C15 30.447 15.448 30 16 30H32C32.552 30 33 30.447 33 31C33 31.553 32.552 32 32 32Z"
+                            fill="#008A8C" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M32 18H16C15.448 18 15 17.553 15 17C15 16.447 15.448 16 16 16H32C32.552 16 33 16.447 33 17C33 17.553 32.552 18 32 18Z"
+                            fill="#008A8C" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M32 25H16C15.448 25 15 24.553 15 24C15 23.447 15.448 23 16 23H32C32.552 23 33 23.447 33 24C33 24.553 32.552 25 32 25Z"
+                            fill="#008A8C" />
+                    </svg>
+                    <div class="flex items-center h-full gap-3">
+                        <a href="/"><img src="../assets/images/logo-header-desktop.png" alt="logo-header" width="116"
+                                height="42" loading="lazy"
+                                class="hidden transition-transform duration-300 lg:block hover:scale-90" /></a>
+                        <nav class="hidden h-full lg:flex">
+                            <ul class="flex items-center text-sm">
+                                <li class="flex">
+                                    <a href="/Articles"
+                                        class="transition-all duration-300 pl-3 text-secondary-800 hover:text-primary-600 xl:flex-shrink-0">صفحه
+                                        اصلی</a>
+                                </li>
+                                <li class="relative flex items-center h-full group">
+                                    <a href="Hotels"
+                                        class="flex border-r border-solid border-primary-800 px-3 h-12 items-center gap-2 transition-all duration-300 group text-secondary-800 hover:text-primary-600 xl:flex-shrink-0">
+                                        تورهای گردشگران
+                                        <svg width="48" height="48"
+                                            class="transition-all duration-300 group-hover:rotate-180"
+                                            viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M31 20.5L24 27.5L17 20.5" class="group-hover:stroke-primary-600"
+                                                stroke="#181C47" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </a>
+                                    <!-- submenu -->
+                                    <ul
+                                        class="absolute z-30 flex flex-col invisible w-64 gap-2 p-4 font-medium transition-all duration-300 bg-white shadow-md opacity-0 rounded-xl top-full group-hover:visible group-hover:opacity-100">
+                                        <li
+                                            class="py-1 transition-all duration-300 rounded-md hover:bg-primary-800 group/leveltwo">
+                                            <a href=""
+                                                class="transition-all duration-300 block text-secondary-800 group-hover/leveltwo:text-white">ویزای
+                                                شینگن</a>
+                                        </li>
+                                        <li class="py-1"><a href="">ویزای شینگن</a></li>
+                                        <li class="py-1"><a href="">ویزای شینگن</a></li>
+                                    </ul>
+                                    <!-- submenu end -->
+                                </li>
+                                <li class="relative flex items-center h-full group">
+                                    <a href=""
+                                        class="flex items-center gap-2 px-3 border-r border-solid border-primary-800 h-12 transition-all duration-300 group text-secondary-800 hover:text-primary-600 xl:flex-shrink-0">تور
+                                        های نوروز1404
+                                        <svg width="48" height="48"
+                                            class="transition-all duration-300 group-hover:rotate-180"
+                                            viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M31 20.5L24 27.5L17 20.5" class="group-hover:stroke-primary-600"
+                                                stroke="#181C47" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+
+                                    </a>
+                                    <!-- submenu -->
+                                    <ul
+                                        class="absolute z-30 flex flex-col invisible w-64 gap-2 p-4 font-medium transition-all duration-300 bg-white shadow-md opacity-0 rounded-xl top-full group-hover:visible group-hover:opacity-100">
+                                        <li
+                                            class="py-1 transition-all duration-300 rounded-md hover:bg-primary-800 group/leveltwo">
+                                            <a href=""
+                                                class="transition-all duration-300 block text-secondary-800 group-hover/leveltwo:text-white">ویزای
+                                                شینگن</a>
+                                        </li>
+                                        <li class="py-1"><a href="">ویزای شینگن</a></li>
+                                        <li class="py-1"><a href="">ویزای شینگن</a></li>
+                                    </ul>
+                                    <!-- submenu end -->
+                                </li>
+                                <li class="relative flex items-center h-full group">
+                                    <a href="Hotels"
+                                        class="flex items-center gap-2 px-3 border-r border-solid border-primary-800 h-12 transition-all duration-300 group text-secondary-800 hover:text-primary-600 xl:flex-shrink-0">تور
+                                        های نمایشگاهی
+                                        <svg width="48" height="48"
+                                            class="transition-all duration-300 group-hover:rotate-180"
+                                            viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M31 20.5L24 27.5L17 20.5" class="group-hover:stroke-primary-600"
+                                                stroke="#181C47" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+
+                                    </a>
+                                    <!-- submenu -->
+                                    <ul
+                                        class="absolute z-30 flex flex-col invisible w-64 gap-2 p-4 font-medium transition-all duration-300 bg-white shadow-md opacity-0 rounded-xl top-full group-hover:visible group-hover:opacity-100">
+                                        <li
+                                            class="py-1 transition-all duration-300 rounded-md hover:bg-primary-800 group/leveltwo">
+                                            <a href=""
+                                                class="transition-all duration-300 block text-secondary-800 group-hover/leveltwo:text-white">ویزای
+                                                شینگن</a>
+                                        </li>
+                                        <li class="py-1"><a href="">ویزای شینگن</a></li>
+                                        <li class="py-1"><a href="">ویزای شینگن</a></li>
+                                    </ul>
+                                    <!-- submenu end -->
+                                </li>
+                                <li class="flex items-center h-full">
+                                    <a href=""
+                                        class="flex items-center transition-all duration-300 px-3 border-r border-solid border-primary-800 h-12 text-secondary-800 hover:text-primary-600 xl:flex-shrink-0">خدمات
+                                        ویزا</a>
+                                </li>
+                                <li class="relative flex items-center h-full group">
+                                    <a href="Hotels"
+                                        class="flex items-center gap-2 px-3 border-r border-solid border-primary-800 h-12 transition-all duration-300 group text-secondary-800 hover:text-primary-600 xl:flex-shrink-0">سبک
+                                        سفر
+                                        <svg width="48" height="48"
+                                            class="transition-all duration-300 group-hover:rotate-180"
+                                            viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M31 20.5L24 27.5L17 20.5" class="group-hover:stroke-primary-600"
+                                                stroke="#181C47" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+
+                                    </a>
+                                    <!-- submenu -->
+                                    <ul
+                                        class="absolute z-30 flex flex-col invisible w-64 gap-2 p-4 font-medium transition-all duration-300 bg-white shadow-md opacity-0 rounded-xl top-full group-hover:visible group-hover:opacity-100">
+                                        <li
+                                            class="py-1 transition-all duration-300 rounded-md hover:bg-primary-800 group/leveltwo">
+                                            <a href=""
+                                                class="transition-all duration-300 block text-secondary-800 group-hover/leveltwo:text-white">ویزای
+                                                شینگن</a>
+                                        </li>
+                                        <li class="py-1"><a href="">ویزای شینگن</a></li>
+                                        <li class="py-1"><a href="">ویزای شینگن</a></li>
+                                    </ul>
+                                    <!-- submenu end -->
+                                </li>
+                                <li class="relative flex items-center h-full group">
+                                    <a href="Hotels"
+                                        class="flex items-center gap-2 pr-3 border-r border-solid border-primary-800 h-12 transition-all duration-300 group text-secondary-800 hover:text-primary-600 xl:flex-shrink-0">مجله
+                                        گردشگری
+                                        <svg width="48" height="48"
+                                            class="transition-all duration-300 group-hover:rotate-180"
+                                            viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M31 20.5L24 27.5L17 20.5" class="group-hover:stroke-primary-600"
+                                                stroke="#181C47" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+
+                                    </a>
+                                    <!-- submenu -->
+                                    <ul
+                                        class="absolute z-30 flex flex-col invisible w-64 gap-2 p-4 font-medium transition-all duration-300 bg-white shadow-md opacity-0 rounded-xl top-full group-hover:visible group-hover:opacity-100">
+                                        <li class="py-1 rounded-sm"><a href=""
+                                                class="transition-all duration-300 text-secondary-800 hover:bg-secondary-200">تور
+                                                شینگن</a></li>
+                                        <li class="py-1"><a href="">ویزای شینگن</a></li>
+                                        <li class="py-1"><a href="">ویزای شینگن</a></li>
+                                    </ul>
+                                    <!-- submenu end -->
+                                </li>
+
+                            </ul>
+                        </nav>
+                    </div>
+                    <div
+                        class="relative group z-10 overflow-hidden hidden lg:flex bg-primary-800 text-sm items-center text-white justify-center w-[153px] h-12 mt-1">
+                        تماس با کارشناسان
+                        <span class="absolute bottom-0 left-0 w-40 transition-all duration-300 ease-out translate-x-full translate-y-full rounded h-14 -z-10 bg-secondary-700 group-hover:translate-x-0 group-hover:translate-y-0"></span>
+                    </div>
+                </div>
+                <a href="/"><img src="../assets/images/logo-header.png" alt="logo-header" width="94" height="45"
+                        loading="lazy" class="transition-transform duration-300 lg:hidden hover:scale-90" /></a>
+            </div>
+            <!-- header menu -->
+            <div
+                class="header-menu bg-white fixed z-30 translate-x-[1024px] lg:translate-x-0 lg:invisible lg:opacity-0 inset-0 w-full transition-all duration-300 overflow-scroll lg:absolute lg:inset-auto lg:shadow-md lg:right-0 lg:top-16 lg:w-60 lg:rounded lg:overflow-auto">
+                <div>
+                    <div class="flex items-center justify-between py-3 mx-auto w-[90%]">
+                        <a href="/"><img src="../assets/images/logo-header.png" alt="logo-header" width="94" height="34"
+                                loading="lazy" class="transition-transform duration-300 hover:scale-105" /></a>
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
+                            class="cursor-pointer header-menu-close" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M24.8129 23.5001L29.7277 18.5853C30.0908 18.2222 30.0908 17.6354 29.7277 17.2723C29.3646 16.9092 28.7778 16.9092 28.4148 17.2723L23.5 22.1871L18.5852 17.2723C18.2222 16.9092 17.6354 16.9092 17.2723 17.2723C16.9092 17.6354 16.9092 18.2222 17.2723 18.5853L22.187 23.5001L17.2723 28.415C16.9092 28.778 16.9092 29.3649 17.2723 29.7279C17.4534 29.909 17.6911 30 17.9288 30C18.1665 30 18.4042 29.909 18.5852 29.7279L23.5 24.8132L28.4148 29.7279C28.5958 29.909 28.8335 30 29.0712 30C29.3089 30 29.5466 29.909 29.7277 29.7279C30.0908 29.3649 30.0908 28.778 29.7277 28.415L24.8129 23.5001Z"
+                                fill="#284E65" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="relative mx-auto w-[90%] mt-3">
+                    <input type="text"
+                        class="bg-zinc-100 placeholder-zinc-600 pr-3 py-3 rounded-lg w-full outline-none text-zinc-600"
+                        name="" id="" placeholder="جستجو کنید">
+                    <button
+                        class="absolute top-0 left-1 bg-primary-800 rounded-lg w-12 h-12 flex items-center justify-center">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M11.2485 3.50024C7.22315 3.50024 3.95996 6.76343 3.95996 10.7888C3.95996 14.8141 7.22315 18.0773 11.2485 18.0773C15.2738 18.0773 18.537 14.8141 18.537 10.7888C18.537 6.76343 15.2738 3.50024 11.2485 3.50024ZM2.45996 10.7888C2.45996 5.93501 6.39472 2.00024 11.2485 2.00024C16.1023 2.00024 20.037 5.93501 20.037 10.7888C20.037 15.6426 16.1023 19.5773 11.2485 19.5773C6.39472 19.5773 2.45996 15.6426 2.45996 10.7888Z"
+                                fill="white" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M16.7361 15.6477L22.3516 21.2486L21.2923 22.3106L15.6768 16.7097L16.7361 15.6477Z"
+                                fill="white" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="pb-5 bg-white w-[90%] mx-auto">
+                    <nav class="pt-2">
+                        <ul class="text-sm divide-y divide-primary-50">
+                            <li class="py-3"><a href="/" class="text-secondary-800">صفحه اصلی</a></li>
+                            <li class="">
+                                <div class="flex items-center justify-between cursor-pointer toggle-dropdown">
+                                    <a href="" class="text-secondary-800">تورهای گردشگران</a>
+                                    <svg width="48" class="transition-all duration-300 dropdown-icon" height="48"
+                                        viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M31 20.5L24 27.5L17 20.5" stroke="#181C47" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <!-- submenu -->
+                                <ul
+                                    class="flex flex-col overflow-hidden transition-all duration-300 bg-white divide-y opacity-0 submenu divide-primary-50 max-h-0">
+                                    <li class="px-10 py-2 "><a href="" class="text-secondary-800">ویزای شینگن</a></li>
+                                    <li class="px-10 py-2"><a href="">ویزای شینگن</a></li>
+                                    <li class="px-10 py-2"><a href="">ویزای شینگن</a></li>
+                                </ul>
+                                <!-- submenu end -->
+                            </li>
+                            <li class="">
+                                <div class="flex items-center justify-between cursor-pointer toggle-dropdown">
+                                    <a href="" class="text-secondary-800">تور های نوروز1404</a>
+                                    <svg width="48" height="48" class="transition-all duration-300 dropdown-icon"
+                                        viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M31 20.5L24 27.5L17 20.5" stroke="#181C47" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <!-- submenu -->
+                                <ul
+                                    class="flex flex-col overflow-hidden transition-all duration-300 bg-white divide-y opacity-0 submenu divide-primary-50 max-h-0">
+                                    <li class="px-10 py-2 "><a href="" class="text-secondary-800">ویزای شینگن</a></li>
+                                    <li class="px-10 py-2"><a href="">ویزای شینگن</a></li>
+                                    <li class="px-10 py-2"><a href="">ویزای شینگن</a></li>
+                                </ul>
+                                <!-- submenu end -->
+
+                            </li>
+
+                            <li class="">
+                                <div class="flex items-center justify-between cursor-pointer toggle-dropdown">
+                                    <a href="" class="text-secondary-800">تور های نمایشگاهی</a>
+                                    <svg width="48" height="48" class="transition-all duration-300 dropdown-icon"
+                                        viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M31 20.5L24 27.5L17 20.5" stroke="#181C47" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <!-- submenu -->
+                                <ul
+                                    class="flex flex-col overflow-hidden transition-all duration-300 bg-white divide-y opacity-0 submenu divide-primary-50 max-h-0">
+                                    <li class="px-10 py-2 "><a href="" class="text-secondary-800">ویزای شینگن</a></li>
+                                    <li class="px-10 py-2"><a href="">ویزای شینگن</a></li>
+                                    <li class="px-10 py-2"><a href="">ویزای شینگن</a></li>
+                                </ul>
+                                <!-- submenu end -->
+
+                            </li>
+                            <li class="flex items-center py-3 ">
+                                <a href="" class="w-full text-secondary-800">خدمات ویزا</a>
+                            </li>
+                            <li class="">
+                                <div class="flex items-center justify-between cursor-pointer toggle-dropdown">
+                                    <a href="" class="text-secondary-800">سبک سفر</a>
+                                    <svg width="48" height="48" class="transition-all duration-300 dropdown-icon"
+                                        viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M31 20.5L24 27.5L17 20.5" stroke="#181C47" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <!-- submenu -->
+                                <ul
+                                    class="flex flex-col overflow-hidden transition-all duration-300 bg-white divide-y opacity-0 submenu divide-primary-50 max-h-0">
+                                    <li class="px-10 py-2 "><a href="" class="text-secondary-800">ویزای شینگن</a></li>
+                                    <li class="px-10 py-2"><a href="">ویزای شینگن</a></li>
+                                    <li class="px-10 py-2"><a href="">ویزای شینگن</a></li>
+                                </ul>
+                                <!-- submenu end -->
+
+                            </li>
+                            <li class="">
+                                <div class="flex items-center justify-between cursor-pointer toggle-dropdown">
+                                    <a href="" class="text-secondary-800">مجله گردشگری</a>
+                                    <svg width="48" height="48" class="transition-all duration-300 dropdown-icon"
+                                        viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M31 20.5L24 27.5L17 20.5" stroke="#181C47" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <!-- submenu -->
+                                <ul
+                                    class="flex flex-col overflow-hidden transition-all duration-300 bg-white divide-y opacity-0 submenu divide-primary-50 max-h-0">
+                                    <li class="px-10 py-2 "><a href="" class="text-secondary-800">ویزای شینگن</a></li>
+                                    <li class="px-10 py-2"><a href="">ویزای شینگن</a></li>
+                                    <li class="px-10 py-2"><a href="">ویزای شینگن</a></li>
+                                </ul>
+                                <!-- submenu end -->
+
+                            </li>
+
+                            <li class="">
+                                <div class="flex items-center justify-between cursor-pointer toggle-dropdown">
+                                    <a href="" class="text-secondary-800">دیگر مجموعه های ما</a>
+                                    <svg width="48" height="48" class="transition-all duration-300 dropdown-icon"
+                                        viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M31 20.5L24 27.5L17 20.5" stroke="#181C47" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <!-- submenu -->
+                                <ul
+                                    class="flex flex-col overflow-hidden transition-all duration-300 bg-white divide-y opacity-0 submenu divide-primary-50 max-h-0">
+                                    <li class="px-10 py-2 "><a href="" class="text-secondary-800">ویزای شینگن</a></li>
+                                    <li class="px-10 py-2"><a href="">ویزای شینگن</a></li>
+                                    <li class="px-10 py-2"><a href="">ویزای شینگن</a></li>
+                                </ul>
+                                <!-- submenu end -->
+
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="flex items-center gap-1 mt-2">
+
+                        <a href="tel:"
+                            class="flex w-full items-center justify-end bg-primary-800 text-white text-sm pr-1 lg:pl-4 rounded-r-xl rounded-l-[50px] text-center transition-all hover:bg-primary-200 cursor-pointer duration-300">
+                            <!-- <basis core="call" file="authentication/modal" lid="1"></basis> -->
+                            <span class="flex-1">031-36166</span>
+                            <div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary-100 ">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M16.8854 14.3568L13.9404 15.984C13.4204 15.8112 11.9254 15.2324 10.5584 13.92C9.27541 12.6884 8.73941 11.328 8.58241 10.8528L10.2814 8.01987L6.58441 3.14307L6.19441 3.36387C4.61241 4.25475 3.45041 5.36835 2.54141 6.86979L2.48341 7.02243C1.96941 9.65571 3.53841 13.538 6.38741 16.6829C9.47841 20.0948 13.4894 22.0167 17.4734 22.0167C17.6534 22.0167 17.8334 22.0138 18.0134 22.0052L18.1324 22.0004L18.2354 21.9447C19.8374 21.0826 21.0014 19.9652 21.8984 18.4272L22.1134 18.0576L16.8854 14.3568Z"
+                                        fill="#008A8C" />
+                                </svg>
+                            </div>
+
+                        </a>
+                        <a href=""
+                            class="hidden lg:flex items-center py-1 px-6 text-sm transition-all duration-300 border border-solid border-secondary-100 rounded-[30px] hover:bg-secondary-100 hover:border-primary-900">
+                            <span>021-88997766</span>
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M23.5317 24.4724C27.5208 28.4604 28.4258 23.8467 30.9656 26.3848C33.4143 28.8328 34.8216 29.3232 31.7192 32.4247C31.3306 32.737 28.8616 36.4943 20.1846 27.8197C11.5065 19.144 15.2616 16.6724 15.574 16.2839C18.6839 13.1738 19.1659 14.5894 21.6145 17.0373C24.1544 19.5765 19.5427 20.4844 23.5317 24.4724Z"
+                                    fill="#516E8C"></path>
+                            </svg>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <!-- header menu -->
+        </section>
+    </header>
+
+    <main>
+        <div class="bg-center bg-cover bg-contactBg h-[317px] pt-36">
+            <section class="max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto bg-white shadow-xl p-2 rounded-lg">
+                <div class="bg-secondary-600 p-2 rounded-lg">
+                    <h1 class="text-white text-lg font-bold mb-2">ارتباط با ما</h1>
+                    <div class="flex flex-col gap-2 mb-2">
+                        <div class="flex items-center gap-2 text-white">
+                            <svg width="24" height="24" class="flex-shrink-0" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M12.5006 13.225C10.9796 13.225 9.74161 11.987 9.74161 10.466C9.74161 8.945 10.9796 7.707 12.5006 7.707C14.0216 7.707 15.2586 8.945 15.2586 10.466C15.2586 11.987 14.0216 13.225 12.5006 13.225ZM12.5006 2.5C8.07561 2.5 4.47461 6.101 4.47461 10.527C4.47461 16.163 11.0666 21.5 12.5006 21.5C13.9346 21.5 20.5266 16.163 20.5266 10.527C20.5266 6.101 16.9256 2.5 12.5006 2.5Z"
+                                    fill="white" />
+                            </svg>
+                            بوستان سعدی ساختمان گردشگران پلاک 100
+                        </div>
+                            <a href="tel:" class="group inline-flex items-center gap-2 text-white mt-2">
+
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M11.5317 12.4724C15.5208 16.4604 16.4258 11.8467 18.9656 14.3848C21.4143 16.8328 22.8216 17.3232 19.7192 20.4247C19.3306 20.737 16.8616 24.4943 8.1846 15.8197C-0.493478 7.144 3.26158 4.67244 3.57397 4.28395C6.68387 1.17385 7.16586 2.58938 9.61449 5.03733C12.1544 7.5765 7.54266 8.48441 11.5317 12.4724Z"
+                                        fill="white" />
+                                </svg>
+                                <span class="relative z-10">
+                                    <span
+                                        class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-px bg-primary-600 group-hover:w-full"></span>
+                                    031-36166
+                                </span>
+                            </a>
+                            <a href="mailto:"
+                                class="group inline-flex items-center gap-2 font-bold mt-2 text-xl text-primary-600">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M4.499 6.84039L10.374 11.6194C11.379 12.3914 12.689 12.3974 13.62 11.6244L19.496 6.83039C19.739 7.29239 19.896 7.81839 19.956 8.39039L14.574 12.7814C13.845 13.3904 12.949 13.6934 12.039 13.6934C11.137 13.6934 10.222 13.3954 9.442 12.7954L4.042 8.40239C4.102 7.83039 4.257 7.30339 4.499 6.84039ZM21.5 8.89839C21.5 8.58839 21.468 8.29239 21.42 8.00239C21.389 7.78539 21.341 7.57839 21.288 7.37139C21.283 7.35239 21.281 7.33239 21.276 7.31339L21.273 7.31639C21.134 6.79539 20.945 6.30139 20.682 5.86139L20.689 5.85639C20.679 5.83939 20.666 5.82339 20.655 5.80639C20.649 5.79639 20.641 5.78739 20.635 5.77639C20.469 5.50839 20.278 5.26239 20.071 5.03239C20.051 5.01039 20.033 4.98739 20.013 4.96639C19.796 4.73439 19.561 4.52439 19.306 4.33939C19.288 4.32639 19.268 4.31439 19.25 4.30139C18.998 4.12339 18.732 3.96839 18.449 3.84039C18.435 3.83439 18.422 3.82639 18.408 3.81939C18.129 3.69739 17.835 3.60439 17.531 3.53539C17.471 3.52139 17.41 3.51039 17.348 3.49839C17.044 3.44139 16.734 3.40239 16.41 3.40139C16.406 3.40139 16.403 3.40039 16.4 3.40039H7.6C7.597 3.40039 7.594 3.40139 7.591 3.40139C7.25 3.40239 6.924 3.44339 6.608 3.50339C6.574 3.51039 6.54 3.51539 6.506 3.52339C5.122 3.81639 3.99 4.65239 3.288 5.85539L3.311 5.87439C3.049 6.31439 2.861 6.80839 2.723 7.32939L2.713 7.32139C2.7 7.37439 2.693 7.43139 2.68 7.48439C2.643 7.64639 2.607 7.80639 2.582 7.97339C2.534 8.27239 2.5 8.57739 2.5 8.89839V15.1004L2.501 15.1064C2.501 15.5084 2.539 15.8964 2.609 16.2694C2.616 16.3064 2.631 16.3404 2.639 16.3774C2.707 16.7094 2.795 17.0304 2.913 17.3324C2.981 17.5094 3.075 17.6674 3.158 17.8334C3.229 17.9714 3.288 18.1174 3.369 18.2474C3.541 18.5284 3.739 18.7824 3.955 19.0194C3.957 19.0214 3.958 19.0244 3.961 19.0264C4.01 19.0814 4.048 19.1484 4.1 19.2004C5 20.1004 6.2 20.6004 7.6 20.6004H16.4C16.73 20.6004 17.053 20.5674 17.368 20.5044C18.294 20.3344 19.099 19.9104 19.757 19.3094C19.803 19.2704 19.855 19.2414 19.9 19.2004C19.917 19.1834 19.929 19.1614 19.945 19.1444C20.913 18.1624 21.499 16.7554 21.5 15.1044V8.89839Z"
+                                        fill="white" />
+                                </svg>
+                                <span class="relative z-10">
+                                    Info@gato.ir
+                                    <span
+                                        class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-primary-600 group-hover:w-full"></span>
+                                </span>
+                            </a>
+                    </div>
+                    <img src="../assets/images/contact-map.png" class="rounded-lg object-cover h-52" alt="map" width="256" height="201" loading="lazy">
+                </div>
+                <div class="mt-6">
+                    <img src="../assets/images/logo-header-desktop.png" alt="logo" width="109" height="38">
+                    <div class="text-sm text-justify mt-5">
+                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوعلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوعلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ،
+                    </div>
+                </div>
+            </section>
+
+            <section class="relative max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto mt-16 pt-3">
+                <div class="w-full h-[6px] bg-primary-600 mb-16"></div>
+    
+                <div class="absolute left-0 right-0 top-0 z-20 flex justify-center">
+                    <h2 class=" text-lg text-primary-700 font-bold bg-white px-5">سوالات متداول</h2>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                    <div class="text-secondary-600 text-sm flex flex-col border border-solid border-secondary-100 py-3 px-2 rounded-lg">
+                        <div class="flex items-center">
+                            آیا اتباع خارجی امکان استفاده از خدمات تیناب سفر پارسه را دارند؟
+                            <svg width="48" height="48" class="flex-shrink-0 faq-btn transition-all duration-300" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M31 20.5L24 27.5L17 20.5" stroke="#1F2453" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>   
+                        </div>
+                            <div class="text-secondary-600 mr-auto text-sm text-justify faq-answer overflow-hidden transition-all duration-300 max-h-0 opacity-0">
+                                آیا اتباع خارجی امکان استفاده از خدمات تیناب سفر پارسه را دارند؟
+                            </div>                         
+                    </div>
+                    <div class="text-secondary-600 text-sm flex items-center border border-solid border-secondary-100 py-3 px-2 rounded-lg">
+                        آیا اتباع خارجی امکان استفاده از خدمات تیناب سفر پارسه را دارند؟
+                        <svg width="48" height="48" class="flex-shrink-0" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M31 20.5L24 27.5L17 20.5" stroke="#1F2453" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>                            
+                    </div>
+                </div>
+            </section>
+
+            <section class="max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto bg-secondary-600 py-6 px-2 mt-9 rounded-lg mb-5">
+                <h2 class="text-center font-bold text-white text-lg mb-4">سوال خود را از ما بپرسید</h2>
+            </section>
+        </div>
+
+    </main>
+
+    <script src="../assets/js/gato.js"></script>
+</body>
+</html>

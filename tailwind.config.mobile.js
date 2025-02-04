@@ -7,6 +7,8 @@ module.exports = {
     extend: {
       backgroundImage: {
         defaultBg: "var(--default-bg)",
+        tourListBg: "var(--tourlist-bg)",
+        contactBg: "var(--contact-bg)",
       },
       colors: {
         primary: {

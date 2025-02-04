@@ -46,6 +46,8 @@
     
     ---bg: url("");
     --default-bg: url("../images/default-back.jpg");
+    --tourlist-bg: url("../images/tour-list-back.jpg");
+    --contact-bg: url("../images/contact-back.jpg");
   }
   
   @font-face {
