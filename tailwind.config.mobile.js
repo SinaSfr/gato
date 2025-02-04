@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        defaultBg: "var(--default-bg)",
+      },
       colors: {
         primary: {
            DEFAULT: "var(--primary)",
