@@ -8,6 +8,7 @@ module.exports = {
       backgroundImage: {
         defaultBg: "var(--default-bg)",
         tourListBg: "var(--tourlist-bg)",
+        articleListBg: "var(--articlelist-bg)",
         contactBg: "var(--contact-bg)",
       },
       colors: {
