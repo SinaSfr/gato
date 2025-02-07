@@ -574,7 +574,7 @@
                                                     action="/Tem3_Multicity_Search.bc" data-form="multiflight"
                                                     autocomplete="off"
                                                     onsubmit="formMulticity_search_isSubmited(this,event)"
-                                                    class="form-search mt-5 overflow-y-auto max-h-[520px]">
+                                                    class="form-search mt-5 overflow-y-auto max-h-[440px]">
                                                     <input type="hidden" name="persiancurrent" class="persiancurrent"
                                                         value /><input type="hidden" name="select-age"
                                                         class="select-age-value" value="0" /><input type="hidden"
@@ -1106,8 +1106,9 @@
                                                         </div>
                                                     </div>
                                                     <div class="clr"></div>
-                                                    <div
-                                                        class="flex justify-between w-full mx-auto passenger-section-mc bg-white py-2 rounded-lg mt-6">
+                                                    <div class="flex items-center justify-between">
+                                                        <div
+                                                        class="flex justify-between w-[535px] passenger-section-mc bg-white py-2 rounded-lg mt-6">
                                                         <div
                                                             class="passengers-part contentRooms relative w-full flex items-center justify-between gap-1 rounded-lg h-16 pr-2">
                                                             <div class="">
@@ -1247,18 +1248,20 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <section class="section-submit-btn dir-ltr ">
+                                                        <button
+                                                            class="flex items-center w-56 px-2 text-center text-white bg-specialcolor-2 route-plus-btn form_search-btn rounded-xl h-20 mt-6"
+                                                            type="button" onclick="addMulticityRoute(this)">
+                                                            <span class="w-full">افزودن مسیر جدید</span>
+                                                        </button>
+                                                    </section>
+                                                    </div>
                                                     <div
                                                         class="flex flex-col justify-between w-full gap-2 mt-2 btns-part">
-                                                        <section class="section-submit-btn dir-ltr ">
-                                                            <button
-                                                                class="flex items-center w-56 px-2 text-center text-white bg-specialcolor-2 route-plus-btn form_search-btn rounded-xl h-20 mt-6"
-                                                                type="button" onclick="addMulticityRoute(this)">
-                                                                <span class="w-full">افزودن مسیر جدید</span>
-                                                            </button>
-                                                        </section>
+
                                                         <div class="flex items-center justify-center dir-ltr"><button type="submit"
                                                                 aria-label="search"
-                                                                class="w-[116px] text-center flex items-center justify-center text-white bg-primary-800 hover:bg-primary-700 h-10 rounded-lg mt-6">
+                                                                class="w-[116px] text-sm text-center flex items-center justify-center text-white bg-primary-800 hover:bg-primary-700 h-10 rounded-lg mt-6">
                                                             جستجو
                                                             </button></div>
                                                     </div>
@@ -1589,7 +1592,7 @@
                                                 </div>
                                                 <div class="flex items-center justify-center dir-ltr mt-6"><button type="submit"
                                                         aria-label="search"
-                                                        class="w-[116px] text-center flex items-center justify-center text-white bg-primary-800 hover:bg-primary-700 h-10 rounded-lg">
+                                                        class="w-[116px] text-sm text-center flex items-center justify-center text-white bg-primary-800 hover:bg-primary-700 h-10 rounded-lg">
                                                     جستجو
                                                     </button></div>
                                             </form>
@@ -1600,7 +1603,7 @@
                                             <form id="flightHotel-form" method="post"
                                                 action="/Tem3_FlightHotel_Search.bc" data-form="flightHotel"
                                                 autocomplete="off" onsubmit="form_search_isSubmited(this,event)"
-                                                class="relative flex flex-col justify-between pb-6 form-search ">
+                                                class="relative flex flex-col justify-between form-search ">
                                                 <input type="hidden" name="persiancurrent" class="persiancurrent"
                                                     value />
                                                 <div class="flex justify-end">
@@ -2083,7 +2086,7 @@
                                                     </div>
                                                     <div class="flex items-center justify-center dir-ltr w-120px"><button type="submit"
                                                             aria-label="search"
-                                                            class="w-[116px] text-center flex items-center justify-center text-white bg-primary-800 hover:bg-primary-700 h-10 rounded-lg mt-6">
+                                                            class="w-[116px] text-sm text-center flex items-center justify-center text-white bg-primary-800 hover:bg-primary-700 h-10 rounded-lg mt-6">
                                                         جستجو
                                                         </button></div>
 
@@ -2357,7 +2360,7 @@
                                                </div>
                                                 <div class="flex items-center justify-center dir-ltr mt-6"><button type="submit"
                                                         aria-label="search"
-                                                        class="w-[116px] text-center flex items-center justify-center text-white bg-primary-800 hover:bg-primary-700 h-10 rounded-lg">
+                                                        class="w-[116px] text-sm text-center flex items-center justify-center text-white bg-primary-800 hover:bg-primary-700 h-10 rounded-lg">
                                                     جستجو
                                                     </button></div>
                                             </form>
@@ -2509,7 +2512,7 @@
                                                </div>
                                                 <div class=" dir-ltr mt-6 flex justify-center items-center"><button type="submit"
                                                         aria-label="search"
-                                                        class="w-[116px] text-center flex items-center justify-center text-white bg-primary-800 hover:bg-primary-700 h-10 rounded-lg">جستجو
+                                                        class="w-[116px] text-sm text-center flex items-center justify-center text-white bg-primary-800 hover:bg-primary-700 h-10 rounded-lg">جستجو
                                                     </button></div>
                                             </form>
                                         </div>
@@ -3078,7 +3081,7 @@
 
         </section>
 
-        <section class="relative mt-10 max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto bg-secondary-700 rounded-3xl overflow-hidden border border-solid border-secondary-800">
+        <section class="relative mt-16 max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto bg-secondary-700 rounded-3xl overflow-hidden border border-solid border-secondary-800">
             <div class="flex pr-6 gap-6">
                 <div class="py-7">
                     <h2 class="font-bold text-2xl mb-1 text-white">تور های تابستانه آنتالیا</h2>
@@ -3088,11 +3091,11 @@
                     <a href=""
                         class="bg-primary-800 flex items-center justify-center w-28 py-2 rounded-lg text-white text-sm">مشاهده</a>
                 </div>
-                <img src="../assets/images/ship-sea.jpg" alt="tour" class="clip-airplane h-44" width="" height="174" loading="lazy">
+                <img src="../assets/images/beach-sea.png" alt="tour" class="h-44" width="" height="174" loading="lazy">
             </div>
         </section>
 
-        <section class="max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto mt-10">
+        <section class="max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto mt-16">
             <div class="flex pr-16">
                 <h2 class="absolute z-10 text-2xl text-primary-700 font-bold bg-white px-5">سبک سفر</h2>
             </div>
@@ -3348,8 +3351,8 @@
                                 alt="card-tour-popular" width="100%" height="116">
                         </div>
                         <div class="relative text-center w-full pt-1 pb-6">
-                            <h2 class="text-xl font-bold text-zinc-900 mr-20">ویزای روسیه</h2>
-                            <img src="../assets/images/flag.svg" class="absolute -top-10 right-4" alt="flag" width="77"
+                            <h2 class="text-xl font-bold text-zinc-900 mr-16">ویزای روسیه</h2>
+                            <img src="../assets/images/flag.svg" class="absolute -top-10 right-10" alt="flag" width="77"
                                 height="77">
                         </div>
                     </div>
@@ -3361,8 +3364,8 @@
                                 alt="card-tour-popular" width="100%" height="116">
                         </div>
                         <div class="relative text-center w-full pt-1 pb-6">
-                            <h2 class="text-xl font-bold text-zinc-900 mr-20">ویزای روسیه</h2>
-                            <img src="../assets/images/flag.svg" class="absolute -top-10 right-4" alt="flag" width="77"
+                            <h2 class="text-xl font-bold text-zinc-900 mr-16">ویزای روسیه</h2>
+                            <img src="../assets/images/flag.svg" class="absolute -top-10 right-10" alt="flag" width="77"
                                 height="77">
                         </div>
                     </div>
@@ -3374,8 +3377,8 @@
                                 alt="card-tour-popular" width="100%" height="116">
                         </div>
                         <div class="relative text-center w-full pt-1 pb-6">
-                            <h2 class="text-xl font-bold text-zinc-900 mr-20">ویزای روسیه</h2>
-                            <img src="../assets/images/flag.svg" class="absolute -top-10 right-4" alt="flag" width="77"
+                            <h2 class="text-xl font-bold text-zinc-900 mr-16">ویزای روسیه</h2>
+                            <img src="../assets/images/flag.svg" class="absolute -top-10 right-10" alt="flag" width="77"
                                 height="77">
                         </div>
                     </div>
@@ -3387,8 +3390,8 @@
                                 alt="card-tour-popular" width="100%" height="116">
                         </div>
                         <div class="relative text-center w-full pt-1 pb-6">
-                            <h2 class="text-xl font-bold text-zinc-900 mr-20">ویزای روسیه</h2>
-                            <img src="../assets/images/flag.svg" class="absolute -top-10 right-4" alt="flag" width="77"
+                            <h2 class="text-xl font-bold text-zinc-900 mr-16">ویزای روسیه</h2>
+                            <img src="../assets/images/flag.svg" class="absolute -top-10 right-10" alt="flag" width="77"
                                 height="77">
                         </div>
                     </div>
@@ -3400,8 +3403,8 @@
                                 alt="card-tour-popular" width="100%" height="116">
                         </div>
                         <div class="relative text-center w-full pt-1 pb-6">
-                            <h2 class="text-xl font-bold text-zinc-900 mr-20">ویزای روسیه</h2>
-                            <img src="../assets/images/flag.svg" class="absolute -top-10 right-4" alt="flag" width="77"
+                            <h2 class="text-xl font-bold text-zinc-900 mr-16">ویزای روسیه</h2>
+                            <img src="../assets/images/flag.svg" class="absolute -top-10 right-10" alt="flag" width="77"
                                 height="77">
                         </div>
                     </div>
