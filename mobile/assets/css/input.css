@@ -85,3 +85,16 @@
   .active-module path{
     fill: white;
   }
+
+  .tour-cat-li:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px; 
+    height: 80%; 
+    background-color: #8E93AE; 
+    border-radius: 2px;
+    margin-right: 12px;
+  }

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/output.css">
+    <link rel="stylesheet" href="./assets/css/output.css">
     <title>Document</title>
 </head>
 
@@ -66,7 +66,7 @@
                             </a>
                         </div>
                         <div
-                            class="lg:hidden flex items-center gap-2 text-white text-sm text-center transition-all hover:bg-primary-200 cursor-pointer duration-300">
+                            class="email-icon lg:hidden flex items-center gap-2 text-white text-sm text-center transition-all hover:bg-primary-200 cursor-pointer duration-300">
                             <!-- <basis core="call" file="authentication/modal" lid="1"></basis> -->
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -77,7 +77,37 @@
 
 
                             <span>تماس با کارشناسان</span>
-                            
+
+                        </div>
+                        <div
+                            class="email-popup z-40 w-full overflow-auto fixed top-0 bottom-0 right-0 lg:rounded-3xl shadow-lg transition-all translate-x-full duration-300 pointer-events-none opacity-0 lg:w-[1022px] h-fit">
+                            <div class="flex flex-col lg:flex-row-reverse">
+                                <div class="bg-secondary-900 p-6 w-full">
+                                    <div class="flex justify-end">
+                                        <svg width="48" height="48" class="cursor-pointer close-icon" viewBox="0 0 48 48" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M24.8129 23.5001L29.7277 18.5853C30.0908 18.2222 30.0908 17.6354 29.7277 17.2723C29.3646 16.9092 28.7778 16.9092 28.4148 17.2723L23.5 22.1871L18.5852 17.2723C18.2222 16.9092 17.6354 16.9092 17.2723 17.2723C16.9092 17.6354 16.9092 18.2222 17.2723 18.5853L22.187 23.5001L17.2723 28.415C16.9092 28.778 16.9092 29.3649 17.2723 29.7279C17.4534 29.909 17.6911 30 17.9288 30C18.1665 30 18.4042 29.909 18.5852 29.7279L23.5 24.8132L28.4148 29.7279C28.5958 29.909 28.8335 30 29.0712 30C29.3089 30 29.5466 29.909 29.7277 29.7279C30.0908 29.3649 30.0908 28.778 29.7277 28.415L24.8129 23.5001Z"
+                                                fill="white" />
+                                        </svg>
+                                    </div>
+                                    <div class="mt-5">
+                                        <img src="./assets/images/support-team.jpg" class="h-32 lg:h-[307px] object-cover rounded-3xl" alt=""
+                                            width="100%" height="120" loading="lazy">
+                                    </div>
+                                    <div class="mt-10">
+                                        <h2 class="text-white text-xl font-bold mb-2">تماس با کارشناسان ما</h2>
+                                        <div class="text-sm text-white text-justify">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از
+                                            طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که
+                                            لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع لورم ایپسوم
+                                            متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک
+                                            است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان</div>
+                                    </div>
+                                </div>
+                                <div class="bg-white pt-8 pb-6 px-4 lg:py-20 lg:pr-6 lg:pl-9">
+                                    hello
+                                </div>
+                            </div>
                         </div>
                         <div
                             class="relative group hidden lg:flex items-center gap-2 text-white text-sm text-center transition-all cursor-pointer duration-300">
@@ -93,7 +123,7 @@
                                 </svg>
                             </a>
                             <ul
-                                class="absolute z-40 flex flex-col items-start invisible w-full gap-2 p-4 font-medium transition-all duration-300 bg-white shadow-md opacity-0 rounded-xl top-full group-hover:visible group-hover:opacity-100">
+                                class="absolute z-40 flex flex-col items-start invisible w-full gap-2 p-4 font-medium transition-all duration-100 bg-white shadow-md opacity-0 rounded-xl top-full group-hover:visible group-hover:opacity-100">
                                 <li class="py-1 rounded-sm"><a href=""
                                         class="transition-all duration-300 text-secondary-800 hover:bg-secondary-200">تور
                                         شینگن</a></li>
@@ -146,7 +176,7 @@
                                     </a>
                                     <!-- submenu -->
                                     <ul
-                                        class="absolute z-30 flex flex-col invisible w-64 gap-2 p-4 font-medium transition-all duration-300 bg-white shadow-md opacity-0 rounded-xl top-full group-hover:visible group-hover:opacity-100">
+                                        class="absolute z-30 flex flex-col invisible w-64 gap-2 p-4 font-medium transition-all duration-100 bg-white shadow-md opacity-0 rounded-xl top-full group-hover:visible group-hover:opacity-100">
                                         <li
                                             class="py-1 transition-all duration-300 rounded-md hover:bg-primary-800 group/leveltwo">
                                             <a href=""
@@ -173,7 +203,7 @@
                                     </a>
                                     <!-- submenu -->
                                     <ul
-                                        class="absolute z-30 flex flex-col invisible w-64 gap-2 p-4 font-medium transition-all duration-300 bg-white shadow-md opacity-0 rounded-xl top-full group-hover:visible group-hover:opacity-100">
+                                        class="absolute z-30 flex flex-col invisible w-64 gap-2 p-4 font-medium transition-all duration-100 bg-white shadow-md opacity-0 rounded-xl top-full group-hover:visible group-hover:opacity-100">
                                         <li
                                             class="py-1 transition-all duration-300 rounded-md hover:bg-primary-800 group/leveltwo">
                                             <a href=""
@@ -200,7 +230,7 @@
                                     </a>
                                     <!-- submenu -->
                                     <ul
-                                        class="absolute z-30 flex flex-col invisible w-64 gap-2 p-4 font-medium transition-all duration-300 bg-white shadow-md opacity-0 rounded-xl top-full group-hover:visible group-hover:opacity-100">
+                                        class="absolute z-30 flex flex-col invisible w-64 gap-2 p-4 font-medium transition-all duration-100 bg-white shadow-md opacity-0 rounded-xl top-full group-hover:visible group-hover:opacity-100">
                                         <li
                                             class="py-1 transition-all duration-300 rounded-md hover:bg-primary-800 group/leveltwo">
                                             <a href=""
@@ -232,7 +262,7 @@
                                     </a>
                                     <!-- submenu -->
                                     <ul
-                                        class="absolute z-30 flex flex-col invisible w-64 gap-2 p-4 font-medium transition-all duration-300 bg-white shadow-md opacity-0 rounded-xl top-full group-hover:visible group-hover:opacity-100">
+                                        class="absolute z-30 flex flex-col invisible w-64 gap-2 p-4 font-medium transition-all duration-100 bg-white shadow-md opacity-0 rounded-xl top-full group-hover:visible group-hover:opacity-100">
                                         <li
                                             class="py-1 transition-all duration-300 rounded-md hover:bg-primary-800 group/leveltwo">
                                             <a href=""
@@ -259,7 +289,7 @@
                                     </a>
                                     <!-- submenu -->
                                     <ul
-                                        class="absolute z-30 flex flex-col invisible w-64 gap-2 p-4 font-medium transition-all duration-300 bg-white shadow-md opacity-0 rounded-xl top-full group-hover:visible group-hover:opacity-100">
+                                        class="absolute z-30 flex flex-col invisible w-64 gap-2 p-4 font-medium transition-all duration-100 bg-white shadow-md opacity-0 rounded-xl top-full group-hover:visible group-hover:opacity-100">
                                         <li class="py-1 rounded-sm"><a href=""
                                                 class="transition-all duration-300 text-secondary-800 hover:bg-secondary-200">تور
                                                 شینگن</a></li>
@@ -273,9 +303,10 @@
                         </nav>
                     </div>
                     <div
-                        class="relative group z-10 overflow-hidden hidden lg:flex bg-primary-800 text-sm items-center text-white justify-center w-[153px] h-12 mt-1">
+                        class="email-icon relative group z-10 overflow-hidden hidden lg:flex bg-primary-800 text-sm items-center text-white justify-center w-[153px] h-12 mt-1">
                         تماس با کارشناسان
-                        <span class="absolute bottom-0 left-0 w-40 transition-all duration-300 ease-out translate-x-full translate-y-full rounded h-14 -z-10 bg-secondary-700 group-hover:translate-x-0 group-hover:translate-y-0"></span>
+                        <span
+                            class="absolute bottom-0 left-0 w-40 transition-all duration-300 ease-out translate-x-full translate-y-full rounded h-14 -z-10 bg-secondary-700 group-hover:translate-x-0 group-hover:translate-y-0"></span>
                     </div>
                 </div>
                 <a href="/"><img src="../assets/images/logo-header.png" alt="logo-header" width="94" height="45"
@@ -488,8 +519,8 @@
                     </section>
 
                     <section class="relative mt-6 lg:flex-1 lg:mt-0">
-                        <img src="../assets/images/map-svg.svg" class="hidden lg:block absolute top-12" alt="footer-map" loading="lazy"
-                            width="404" height="93">
+                        <img src="../assets/images/map-svg.svg" class="hidden lg:block absolute top-12" alt="footer-map"
+                            loading="lazy" width="404" height="93">
                         <div class="relative">
                             <h2 class="font-bold text-white mb-1">ارتباط با ما</h2>
                             <div class="flex items-center gap-2 text-sm text-white">
@@ -502,7 +533,8 @@
                                 بوستان سعدی ساختمان گردشگران پلاک 100
                             </div>
                             <div class="inline-flex flex-col">
-                                <a href="tel:" class="group inline-flex items-center text-sm gap-2 text-white mt-2 transition-all duration-300 hover:text-primary-600">
+                                <a href="tel:"
+                                    class="group inline-flex items-center text-sm gap-2 text-white mt-2 transition-all duration-300 hover:text-primary-600">
 
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -582,76 +614,95 @@
 
                 <section class="mt-10 lg:order-1 lg:flex lg:justify-between lg:mt-0 lg:mb-10">
                     <ul class="flex items-center justify-between divide-x divide-primary-600 divide-x-reverse lg:gap-3">
-                        <li class="text-white text-sm"><a href="" class="relative group z-10 transition-all duration-300 hover:text-primary-600">خدمات ویزا
+                        <li class="text-white text-sm"><a href=""
+                                class="relative group z-10 transition-all duration-300 hover:text-primary-600">خدمات
+                                ویزا
                                 <span
                                     class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-px bg-primary-600 group-hover:w-full"></span>
                             </a></li>
-                        <li class="text-white text-sm pr-1 lg:pr-3"><a href="" class="relative group z-10 transition-all duration-300 hover:text-primary-600">سبک سفر
+                        <li class="text-white text-sm pr-1 lg:pr-3"><a href=""
+                                class="relative group z-10 transition-all duration-300 hover:text-primary-600">سبک سفر
                                 <span
                                     class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-px bg-primary-600 group-hover:w-full"></span>
                             </a></li>
-                        <li class="text-white text-sm pr-1 lg:pr-3"><a href="" class="relative group z-10 transition-all duration-300 hover:text-primary-600">مجله گردشگری
+                        <li class="text-white text-sm pr-1 lg:pr-3"><a href=""
+                                class="relative group z-10 transition-all duration-300 hover:text-primary-600">مجله
+                                گردشگری
                                 <span
                                     class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-px bg-primary-600 group-hover:w-full"></span>
                             </a></li>
-                        <li class="text-white text-sm pr-1 lg:pr-3"><a href="" class="relative group z-10 transition-all duration-300 hover:text-primary-600">تماس با ما
+                        <li class="text-white text-sm pr-1 lg:pr-3"><a href=""
+                                class="relative group z-10 transition-all duration-300 hover:text-primary-600">تماس با
+                                ما
                                 <span
                                     class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-px bg-primary-600 group-hover:w-full"></span>
                             </a></li>
                     </ul>
                     <div class="flex items-center justify-between mt-3 lg:mt-0 lg:gap-2">
-                        <a href="" rel="noopener" aria-label="telegram" class="group w-12 h-12 bg-secondary-500 flex items-center justify-center rounded overflow-hidden transition-all duration-300 hover:bg-primary-300">
+                        <a href="" rel="noopener" aria-label="telegram"
+                            class="group w-12 h-12 bg-secondary-500 flex items-center justify-center rounded overflow-hidden transition-all duration-300 hover:bg-primary-300">
 
-                                <svg width="24" height="26" viewBox="0 0 24 26" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" class="transition-all duration-300 group-hover:fill-secondary-700"
-                                        d="M12.5558 18.28L10.2518 20.421C9.96978 20.684 9.51078 20.468 9.53678 20.083C9.60878 18.995 9.72078 17.342 9.79578 16.423C9.80778 16.278 9.92978 16.116 10.0458 16.011C12.7368 13.571 15.4338 11.137 18.1298 8.70101C18.2298 8.61101 18.3478 8.38901 18.2858 8.27201C18.2158 8.14001 17.8928 8.18001 17.7588 8.26401C14.3348 10.42 10.9108 12.575 7.49178 14.738C7.28178 14.87 7.02478 14.902 6.78878 14.826C5.37878 14.373 3.96078 13.944 2.54778 13.498C2.22278 13.395 1.83678 13.293 1.79978 12.89C1.76078 12.469 2.12178 12.269 2.44778 12.138C3.76178 11.608 5.08478 11.101 6.40578 10.591C11.1578 8.76001 15.9098 6.93001 20.6618 5.10001C20.8208 5.03901 21.0328 5.00101 21.1988 4.96801C21.6968 4.86801 22.1448 5.11801 22.1938 5.62201C22.2308 5.99101 22.1658 6.40201 22.0888 6.76701C21.0988 11.476 20.0958 16.183 19.0938 20.891C18.8238 22.163 18.1698 22.404 17.1168 21.627C15.7598 20.625 12.5558 18.28 12.5558 18.28Z"
-                                        fill="white" />
-                                </svg>
+                            <svg width="24" height="26" viewBox="0 0 24 26" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    class="transition-all duration-300 group-hover:fill-secondary-700"
+                                    d="M12.5558 18.28L10.2518 20.421C9.96978 20.684 9.51078 20.468 9.53678 20.083C9.60878 18.995 9.72078 17.342 9.79578 16.423C9.80778 16.278 9.92978 16.116 10.0458 16.011C12.7368 13.571 15.4338 11.137 18.1298 8.70101C18.2298 8.61101 18.3478 8.38901 18.2858 8.27201C18.2158 8.14001 17.8928 8.18001 17.7588 8.26401C14.3348 10.42 10.9108 12.575 7.49178 14.738C7.28178 14.87 7.02478 14.902 6.78878 14.826C5.37878 14.373 3.96078 13.944 2.54778 13.498C2.22278 13.395 1.83678 13.293 1.79978 12.89C1.76078 12.469 2.12178 12.269 2.44778 12.138C3.76178 11.608 5.08478 11.101 6.40578 10.591C11.1578 8.76001 15.9098 6.93001 20.6618 5.10001C20.8208 5.03901 21.0328 5.00101 21.1988 4.96801C21.6968 4.86801 22.1448 5.11801 22.1938 5.62201C22.2308 5.99101 22.1658 6.40201 22.0888 6.76701C21.0988 11.476 20.0958 16.183 19.0938 20.891C18.8238 22.163 18.1698 22.404 17.1168 21.627C15.7598 20.625 12.5558 18.28 12.5558 18.28Z"
+                                    fill="white" />
+                            </svg>
 
                         </a>
 
-                        <a href="" rel="noopener" aria-label="twitter" class="group w-12 h-12 bg-secondary-500 flex items-center justify-center rounded overflow-hidden transition-all duration-300 hover:bg-primary-300">
-                     
-                                <svg width="24" height="26" viewBox="0 0 24 26" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"  class="transition-all duration-300 group-hover:fill-secondary-700"
-                                        d="M21.4219 6.66462C21.3159 6.49862 21.1239 6.40562 20.9259 6.43862L18.9229 6.73662C18.3579 6.10462 16.6279 4.49262 14.2409 5.21462C12.1739 5.84862 11.1899 8.04662 11.1309 9.72462C8.56788 9.25462 6.17588 7.99262 4.34388 6.13262C4.21288 5.99962 4.01788 5.95062 3.83788 6.00662C3.65788 6.06262 3.52588 6.21462 3.49488 6.39962C2.57988 11.8426 3.76188 15.4756 7.21188 17.7556C5.93088 18.4616 4.46188 18.8246 3.01588 18.7726C2.81788 18.7716 2.63688 18.8766 2.55088 19.0536C2.46388 19.2296 2.48988 19.4406 2.61588 19.5926C4.09788 21.3746 6.88988 21.9856 9.11488 21.9856C9.37188 21.9856 9.62088 21.9776 9.85988 21.9626C13.0999 21.7606 15.7709 20.4226 17.5839 18.0916C19.3009 15.8846 20.1319 12.8516 19.9229 9.52662L19.9169 9.47762L21.4169 7.20862C21.5259 7.04462 21.5279 6.83062 21.4219 6.66462Z"
-                                        fill="white" />
-                                </svg>
-                    
+                        <a href="" rel="noopener" aria-label="twitter"
+                            class="group w-12 h-12 bg-secondary-500 flex items-center justify-center rounded overflow-hidden transition-all duration-300 hover:bg-primary-300">
+
+                            <svg width="24" height="26" viewBox="0 0 24 26" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    class="transition-all duration-300 group-hover:fill-secondary-700"
+                                    d="M21.4219 6.66462C21.3159 6.49862 21.1239 6.40562 20.9259 6.43862L18.9229 6.73662C18.3579 6.10462 16.6279 4.49262 14.2409 5.21462C12.1739 5.84862 11.1899 8.04662 11.1309 9.72462C8.56788 9.25462 6.17588 7.99262 4.34388 6.13262C4.21288 5.99962 4.01788 5.95062 3.83788 6.00662C3.65788 6.06262 3.52588 6.21462 3.49488 6.39962C2.57988 11.8426 3.76188 15.4756 7.21188 17.7556C5.93088 18.4616 4.46188 18.8246 3.01588 18.7726C2.81788 18.7716 2.63688 18.8766 2.55088 19.0536C2.46388 19.2296 2.48988 19.4406 2.61588 19.5926C4.09788 21.3746 6.88988 21.9856 9.11488 21.9856C9.37188 21.9856 9.62088 21.9776 9.85988 21.9626C13.0999 21.7606 15.7709 20.4226 17.5839 18.0916C19.3009 15.8846 20.1319 12.8516 19.9229 9.52662L19.9169 9.47762L21.4169 7.20862C21.5259 7.04462 21.5279 6.83062 21.4219 6.66462Z"
+                                    fill="white" />
+                            </svg>
+
                         </a>
 
-                        <a href="" rel="noopener" aria-label="instagram" class="group w-12 h-12 bg-secondary-500 flex items-center justify-center rounded overflow-hidden transition-all duration-300 hover:bg-primary-300">
-                                <svg width="24" height="26" viewBox="0 0 24 26" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" class="transition-all duration-300 group-hover:fill-secondary-700"
-                                        d="M11.8448 11.0889C10.3268 11.0889 9.0918 12.3219 9.0918 13.8389C9.0918 15.3559 10.3268 16.5889 11.8448 16.5889C13.3628 16.5889 14.5968 15.3559 14.5968 13.8389C14.5968 12.3219 13.3628 11.0889 11.8448 11.0889Z"
-                                        fill="white" />
-                                    <path fill-rule="evenodd" clip-rule="evenodd" class="transition-all duration-300 group-hover:fill-secondary-700"
-                                        d="M16.864 9.91779C16.294 9.91779 15.829 9.45579 15.829 8.88879C15.829 8.31979 16.294 7.85779 16.864 7.85779C17.434 7.85779 17.898 8.31979 17.898 8.88879C17.898 9.45579 17.434 9.91779 16.864 9.91779ZM11.844 18.0888C9.5 18.0888 7.592 16.1828 7.592 13.8388C7.592 11.4948 9.5 9.58879 11.844 9.58879C14.189 9.58879 16.096 11.4948 16.096 13.8388C16.096 16.1828 14.189 18.0888 11.844 18.0888ZM16.217 4.00879H7.782C4.623 4.00879 2.5 6.23079 2.5 9.53879V17.4788C2.5 20.7858 4.623 23.0088 7.782 23.0088H16.216C19.376 23.0088 21.5 20.7858 21.5 17.4788V9.53879C21.5 6.23079 19.377 4.00879 16.217 4.00879Z"
-                                        fill="white" />
-                                </svg>
+                        <a href="" rel="noopener" aria-label="instagram"
+                            class="group w-12 h-12 bg-secondary-500 flex items-center justify-center rounded overflow-hidden transition-all duration-300 hover:bg-primary-300">
+                            <svg width="24" height="26" viewBox="0 0 24 26" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    class="transition-all duration-300 group-hover:fill-secondary-700"
+                                    d="M11.8448 11.0889C10.3268 11.0889 9.0918 12.3219 9.0918 13.8389C9.0918 15.3559 10.3268 16.5889 11.8448 16.5889C13.3628 16.5889 14.5968 15.3559 14.5968 13.8389C14.5968 12.3219 13.3628 11.0889 11.8448 11.0889Z"
+                                    fill="white" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    class="transition-all duration-300 group-hover:fill-secondary-700"
+                                    d="M16.864 9.91779C16.294 9.91779 15.829 9.45579 15.829 8.88879C15.829 8.31979 16.294 7.85779 16.864 7.85779C17.434 7.85779 17.898 8.31979 17.898 8.88879C17.898 9.45579 17.434 9.91779 16.864 9.91779ZM11.844 18.0888C9.5 18.0888 7.592 16.1828 7.592 13.8388C7.592 11.4948 9.5 9.58879 11.844 9.58879C14.189 9.58879 16.096 11.4948 16.096 13.8388C16.096 16.1828 14.189 18.0888 11.844 18.0888ZM16.217 4.00879H7.782C4.623 4.00879 2.5 6.23079 2.5 9.53879V17.4788C2.5 20.7858 4.623 23.0088 7.782 23.0088H16.216C19.376 23.0088 21.5 20.7858 21.5 17.4788V9.53879C21.5 6.23079 19.377 4.00879 16.217 4.00879Z"
+                                    fill="white" />
+                            </svg>
                         </a>
 
-                        <a href="" rel="noopener" aria-label="whatsapp" class="group w-12 h-12 bg-secondary-500 flex items-center justify-center rounded overflow-hidden transition-all duration-300 hover:bg-primary-300">
-                         
-                                <svg width="24" height="26" viewBox="0 0 24 26" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"  class="transition-all duration-300 group-hover:fill-secondary-700"
-                                        d="M14.5109 15.0668L14.4079 14.9958C14.1989 14.8498 13.9099 14.8688 13.7369 15.0408L13.5049 15.2748C13.2629 15.5208 12.8819 15.5678 12.5849 15.3898C11.4329 14.6958 10.8579 14.0258 10.1389 12.9568C9.94185 12.6628 9.97685 12.2698 10.2239 12.0158L10.4569 11.7758C10.6399 11.5888 10.6619 11.3098 10.5129 11.0928C10.3539 10.8708 10.1989 10.6478 10.0509 10.4348C9.96485 10.3128 9.82385 10.2328 9.66885 10.2198C9.65585 10.2188 9.64085 10.2178 9.62385 10.2178C9.52985 10.2178 9.38585 10.2438 9.26185 10.3688L9.13685 10.4948L9.13385 10.4978C8.07185 11.5628 9.21885 13.4688 10.6469 14.8978C12.0569 16.3028 13.9449 17.4308 15.0069 16.3668L15.1539 16.2288C15.2829 16.0978 15.2919 15.9228 15.2839 15.8328C15.2759 15.7418 15.2369 15.5728 15.0659 15.4538C14.8819 15.3218 14.7009 15.1978 14.5109 15.0668Z"
-                                        fill="white" />
-                                    <path fill-rule="evenodd" clip-rule="evenodd"  class="transition-all duration-300 group-hover:fill-secondary-700"
-                                        d="M16.1957 17.3073L16.0477 17.4473C15.4677 18.0243 14.7667 18.3093 13.9857 18.3093C12.6777 18.3093 11.1457 17.5133 9.58671 15.9593C7.11071 13.4833 6.52971 10.9853 8.06871 9.44026L8.19571 9.31226C8.62071 8.88626 9.21271 8.67026 9.79671 8.72526C10.3947 8.77726 10.9347 9.08726 11.2797 9.57726C11.4257 9.78826 11.5777 10.0053 11.7397 10.2313C12.2437 10.9613 12.2207 11.9123 11.7187 12.6013C12.0777 13.0903 12.4117 13.4513 12.8877 13.7963C13.5797 13.2793 14.5347 13.2573 15.2617 13.7633L15.3607 13.8303C15.5597 13.9683 15.7497 14.0983 15.9317 14.2303C16.4127 14.5643 16.7237 15.1023 16.7777 15.6983C16.8317 16.2963 16.6187 16.8823 16.1957 17.3073ZM21.3317 11.6963C20.6197 7.90926 17.5957 4.88626 13.8087 4.17626C10.9957 3.64726 8.13471 4.38526 5.95271 6.19526C3.75871 8.01526 2.50171 10.6803 2.50171 13.5083C2.50171 14.9303 2.82571 16.3433 3.46371 17.7043C3.51571 17.8223 3.53171 17.9413 3.50771 18.0513C3.35171 18.7603 3.02471 20.1873 2.78871 21.2073C2.68971 21.6383 2.81971 22.0783 3.13371 22.3833C3.44471 22.6853 3.88471 22.8043 4.30471 22.6933C5.25571 22.4533 6.55871 22.1343 7.37671 21.9433C7.48371 21.9183 7.60171 21.9333 7.72471 21.9943C9.04371 22.6583 10.5227 23.0083 12.0017 23.0083C14.8277 23.0083 17.4917 21.7513 19.3097 19.5603C21.1227 17.3773 21.8587 14.5103 21.3317 11.6963Z"
-                                        fill="white" />
-                                </svg>
-                     
+                        <a href="" rel="noopener" aria-label="whatsapp"
+                            class="group w-12 h-12 bg-secondary-500 flex items-center justify-center rounded overflow-hidden transition-all duration-300 hover:bg-primary-300">
+
+                            <svg width="24" height="26" viewBox="0 0 24 26" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    class="transition-all duration-300 group-hover:fill-secondary-700"
+                                    d="M14.5109 15.0668L14.4079 14.9958C14.1989 14.8498 13.9099 14.8688 13.7369 15.0408L13.5049 15.2748C13.2629 15.5208 12.8819 15.5678 12.5849 15.3898C11.4329 14.6958 10.8579 14.0258 10.1389 12.9568C9.94185 12.6628 9.97685 12.2698 10.2239 12.0158L10.4569 11.7758C10.6399 11.5888 10.6619 11.3098 10.5129 11.0928C10.3539 10.8708 10.1989 10.6478 10.0509 10.4348C9.96485 10.3128 9.82385 10.2328 9.66885 10.2198C9.65585 10.2188 9.64085 10.2178 9.62385 10.2178C9.52985 10.2178 9.38585 10.2438 9.26185 10.3688L9.13685 10.4948L9.13385 10.4978C8.07185 11.5628 9.21885 13.4688 10.6469 14.8978C12.0569 16.3028 13.9449 17.4308 15.0069 16.3668L15.1539 16.2288C15.2829 16.0978 15.2919 15.9228 15.2839 15.8328C15.2759 15.7418 15.2369 15.5728 15.0659 15.4538C14.8819 15.3218 14.7009 15.1978 14.5109 15.0668Z"
+                                    fill="white" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    class="transition-all duration-300 group-hover:fill-secondary-700"
+                                    d="M16.1957 17.3073L16.0477 17.4473C15.4677 18.0243 14.7667 18.3093 13.9857 18.3093C12.6777 18.3093 11.1457 17.5133 9.58671 15.9593C7.11071 13.4833 6.52971 10.9853 8.06871 9.44026L8.19571 9.31226C8.62071 8.88626 9.21271 8.67026 9.79671 8.72526C10.3947 8.77726 10.9347 9.08726 11.2797 9.57726C11.4257 9.78826 11.5777 10.0053 11.7397 10.2313C12.2437 10.9613 12.2207 11.9123 11.7187 12.6013C12.0777 13.0903 12.4117 13.4513 12.8877 13.7963C13.5797 13.2793 14.5347 13.2573 15.2617 13.7633L15.3607 13.8303C15.5597 13.9683 15.7497 14.0983 15.9317 14.2303C16.4127 14.5643 16.7237 15.1023 16.7777 15.6983C16.8317 16.2963 16.6187 16.8823 16.1957 17.3073ZM21.3317 11.6963C20.6197 7.90926 17.5957 4.88626 13.8087 4.17626C10.9957 3.64726 8.13471 4.38526 5.95271 6.19526C3.75871 8.01526 2.50171 10.6803 2.50171 13.5083C2.50171 14.9303 2.82571 16.3433 3.46371 17.7043C3.51571 17.8223 3.53171 17.9413 3.50771 18.0513C3.35171 18.7603 3.02471 20.1873 2.78871 21.2073C2.68971 21.6383 2.81971 22.0783 3.13371 22.3833C3.44471 22.6853 3.88471 22.8043 4.30471 22.6933C5.25571 22.4533 6.55871 22.1343 7.37671 21.9433C7.48371 21.9183 7.60171 21.9333 7.72471 21.9943C9.04371 22.6583 10.5227 23.0083 12.0017 23.0083C14.8277 23.0083 17.4917 21.7513 19.3097 19.5603C21.1227 17.3773 21.8587 14.5103 21.3317 11.6963Z"
+                                    fill="white" />
+                            </svg>
+
                         </a>
                     </div>
                 </section>
 
                 <section class="mt-10 lg:order-3 lg:flex lg:gap-5">
-                    <a href="https://www.basisfly.com/" target="_blank" class="flex text-secondary-100 text-sm text-center transition-all duration-300 hover:text-primary-600">طراحی سایت آژانس مسافرتی و رزرواسیون
+                    <a href="https://www.basisfly.com/" target="_blank"
+                        class="flex text-secondary-100 text-sm text-center transition-all duration-300 hover:text-primary-600">طراحی
+                        سایت آژانس مسافرتی و رزرواسیون
                         آنلاین توسط بیسیس فلای</a>
                     <div
                         class="mt-1 flex items-center justify-center lg:flex-row-reverse lg:justify-between lg:flex-1 lg:items-center">
@@ -664,11 +715,11 @@
             </div>
         </div>
     </footer>
-    
-      
-      
 
-    <script src="../assets/js/gato.js"></script>
+
+
+
+    <script src="./assets/js/gato.js"></script>
 </body>
 
 </html>

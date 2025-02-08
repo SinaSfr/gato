@@ -65,3 +65,43 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  if (document.querySelector(".email-icon")) {
+    const emailIcon = document.querySelectorAll(".email-icon");
+    const emailPopup = document.querySelector(".email-popup");
+    const closeIcon = document.querySelector(".close-icon");
+
+    // تغییرات مربوط به پاپ‌آپ برای موبایل و دسکتاپ
+    emailIcon.forEach(icon => {
+      icon.addEventListener("click", function () {
+        if (window.innerWidth < 1024) {
+          emailPopup.style.opacity = '1';
+          emailPopup.style.transform = 'translateX(0)';
+          emailPopup.style.pointerEvents = 'auto';
+        } else {
+          emailPopup.style.position = 'fixed';
+          emailPopup.style.top = '50%';
+          emailPopup.style.left = '50%';
+          emailPopup.style.transform = 'translate(-40%, -50%)'; 
+          emailPopup.style.opacity = '1';
+          emailPopup.style.pointerEvents = 'auto';
+        }
+      });
+    });
+
+    closeIcon.addEventListener("click", function () {
+      if (window.innerWidth < 1024) {
+        emailPopup.style.opacity = '0';
+        emailPopup.style.transform = 'translateX(100%)';
+        emailPopup.style.pointerEvents = 'none';
+      } else {
+        emailPopup.style.opacity = '0';
+        emailPopup.style.pointerEvents = 'none';
+      }
+    });
+    
+  }
+});
+
+

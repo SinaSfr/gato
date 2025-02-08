@@ -4,6 +4,6 @@
   },
   "scripts": {
     "watch:mobile": "npx tailwindcss -c tailwind.config.mobile.js -i ./mobile/assets/css/input.css -o ./mobile/assets/css/output.css --watch",
-    "watch:pc": "npx tailwindcss -c tailwind.config.web.js -i ./pc/assets/css/input.css -o ./pc/assets/css/output.css --watch"
+    "watch:web": "npx tailwindcss -c tailwind.config.web.js -i ./web/assets/css/input.css -o ./web/assets/css/output.css --watch"
   }
 }
