@@ -9,6 +9,9 @@
 <basis core="dbsource" source="basiscore" lid="1" mid="20" name="db" catid="[##cms.query.catid##]">
     <member name="navigation" type="tree" request="navcatid" parentid="[##cms.query.catid##]" />
 </basis>
+<basis core="dbsource" source="basiscore" lid="1" mid="1" name="db" usedforid="[##cms.query.aid##]">
+    <member name="p-under" type="view" size="" propertyid="" />
+</basis>
 
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
@@ -95,10 +98,17 @@
             <div class="relative pt-3 mt-6">
                 <div class="w-full h-[6px] bg-secondary-50"></div>
 
-                <div class="absolute left-0 right-0 top-0 z-20 flex mr-16">
-                    <h2 class=" text-2xl font-bold bg-white px-5 text-zinc-900">تور‌های
-                        پوکت</h2>
-                </div>
+                <basis core="print" datamembername="db.scalar">
+                    <layout>
+                        <div class="absolute left-0 right-0 top-0 z-20 flex mr-16">
+                            @child
+                        </div>
+                    </layout>
+                    <face>
+                        <h2 class=" text-2xl font-bold bg-white px-5 text-zinc-900">@column1</h2>
+                    </face>
+                </basis>
+
 
                 <basis core="list" datamembername="db.tour-list">
                     <layout>
@@ -109,16 +119,15 @@
                     </layout>
 
                     <face filter="link is null">
-                        <div class="rounded-lg bg-zinc-100 p-2 transition-all duration-300 hover:bg-primary-700">
+                        <div class="rounded-lg bg-zinc-100 p-2 transition-all duration-300 hover:bg-primary-800">
                             <div class="relative overflow-hidden rounded-xl">
-                                <img src="../assets/images/card-luxury-tour.jpg" class="h-[311px] object-cover mb-24"
+                                <img src="@00401X00311prp" class="h-[311px] object-cover mb-24"
                                     alt="@title" width="100%" height="311">
-                                <div
-                                    class="absolute bottom-0 w-full p-6 bg-white rounded-b-[20px] rounded-tl-[56px] mt-7">
+                                <div class="absolute bottom-0 w-full p-6 bg-white rounded-b-[20px] rounded-tl-[56px] mt-7">
                                     <h2 class="text-xl font-medium mb-3 text-zinc-900">@title</h2>
-                                    <span class="text-zinc-700 text-sm">14 فروردین 1403</span>
+                                    <span class="text-zinc-700 text-sm">prp_8077</span>
                                     <div class="font-medium mb-2 mt-3">از:
-                                        <span class="text-zinc-900 font-normal">160/000/000 ریال</span>
+                                        <span class="text-zinc-900 font-normal">@prp_8181</span>
                                     </div>
                                     <div class="flex justify-between items-center">
                                         <span class="text-zinc-800 flex items-center gap-1">
@@ -128,21 +137,19 @@
                                                     d="M12 21C16.9709 21 21 16.9699 21 12C21 7.02908 16.9709 3 12 3C7.02908 3 3 7.02908 3 12C3 16.9699 7.02908 21 12 21Z"
                                                     stroke="#008A8C" stroke-width="1.5" stroke-linecap="round"
                                                     stroke-linejoin="round" />
-                                                <path d="M14.8467 14.5716L11.6719 12.6743V8.57617" stroke="#008A8C"
-                                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M14.8467 14.5716L11.6719 12.6743V8.57617" stroke="#008A8C" stroke-width="1.5"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
                                             </svg>
-                                            11 روز
+                                            @prp_8076
                                         </span>
                                         <a href="/tour.bc?id=@id"
                                             class="text-zinc-800 font-bold flex items-center gap-1 group transition-all duration-300 hover:text-primary-600">
                                             مشاهده تور
-                                            <svg width="48" height="48"
-                                                class="transition-all duration-300 group-hover:-translate-x-4"
+                                            <svg width="48" height="48" class="transition-all duration-300 group-hover:-translate-x-4"
                                                 viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M27.5 31L20.5 24L27.5 17"
-                                                    class="transition-all duration-300 group-hover:stroke-primary-600"
-                                                    stroke="#27272A" stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
+                                                <path d="M27.5 31L20.5 24L27.5 17" stroke="#27272A"
+                                                    class="transition-all duration-300 group-hover:stroke-primary-600" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
                                             </svg>
                                         </a>
                                     </div>
@@ -151,16 +158,15 @@
                         </div>
                     </face>
                     <face>
-                        <div class="rounded-lg bg-zinc-100 p-2 transition-all duration-300 hover:bg-primary-700">
+                        <div class="rounded-lg bg-zinc-100 p-2 transition-all duration-300 hover:bg-primary-800">
                             <div class="relative overflow-hidden rounded-xl">
-                                <img src="../assets/images/card-luxury-tour.jpg" class="h-[311px] object-cover mb-24"
+                                <img src="@00401X00311prp" class="h-[311px] object-cover mb-24"
                                     alt="@title" width="100%" height="311">
-                                <div
-                                    class="absolute bottom-0 w-full p-6 bg-white rounded-b-[20px] rounded-tl-[56px] mt-7">
+                                <div class="absolute bottom-0 w-full p-6 bg-white rounded-b-[20px] rounded-tl-[56px] mt-7">
                                     <h2 class="text-xl font-medium mb-3 text-zinc-900">@title</h2>
-                                    <span class="text-zinc-700 text-sm">14 فروردین 1403</span>
+                                    <span class="text-zinc-700 text-sm">prp_8077</span>
                                     <div class="font-medium mb-2 mt-3">از:
-                                        <span class="text-zinc-900 font-normal">160/000/000 ریال</span>
+                                        <span class="text-zinc-900 font-normal">@prp_8181</span>
                                     </div>
                                     <div class="flex justify-between items-center">
                                         <span class="text-zinc-800 flex items-center gap-1">
@@ -170,21 +176,19 @@
                                                     d="M12 21C16.9709 21 21 16.9699 21 12C21 7.02908 16.9709 3 12 3C7.02908 3 3 7.02908 3 12C3 16.9699 7.02908 21 12 21Z"
                                                     stroke="#008A8C" stroke-width="1.5" stroke-linecap="round"
                                                     stroke-linejoin="round" />
-                                                <path d="M14.8467 14.5716L11.6719 12.6743V8.57617" stroke="#008A8C"
-                                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M14.8467 14.5716L11.6719 12.6743V8.57617" stroke="#008A8C" stroke-width="1.5"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
                                             </svg>
-                                            11 روز
+                                            @prp_8076
                                         </span>
                                         <a href="@link"
                                             class="text-zinc-800 font-bold flex items-center gap-1 group transition-all duration-300 hover:text-primary-600">
                                             مشاهده تور
-                                            <svg width="48" height="48"
-                                                class="transition-all duration-300 group-hover:-translate-x-4"
+                                            <svg width="48" height="48" class="transition-all duration-300 group-hover:-translate-x-4"
                                                 viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M27.5 31L20.5 24L27.5 17"
-                                                    class="transition-all duration-300 group-hover:stroke-primary-600"
-                                                    stroke="#27272A" stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
+                                                <path d="M27.5 31L20.5 24L27.5 17" stroke="#27272A"
+                                                    class="transition-all duration-300 group-hover:stroke-primary-600" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
                                             </svg>
                                         </a>
                                     </div>
@@ -195,37 +199,99 @@
                 </basis>
 
 
-
-                <ul class="flex items-center justify-center gap-1 mt-20">
-                    <li class="flex items-center justify-center w-12 h-12 p-2 rounded-lg bg-secondary-700 ml-3">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M8.2501 3.58606L16.6641 12.0001L8.2501 20.4141L6.8361 19.0001L13.8361 12.0001L6.8361 5.00006L8.2501 3.58606Z"
-                                fill="white" />
-                        </svg>
-
-                    </li>
-                    <li
-                        class="flex items-center justify-center w-12 h-12 p-2 text-secondary-600 rounded-lg bg-secondary-50">
-                        1
-                    </li>
-                    <li
-                        class="flex items-center justify-center w-12 h-12 p-2 text-secondary-600 rounded-lg bg-secondary-100">
-                        1
-                    </li>
-                    <li
-                        class="flex items-center justify-center w-12 h-12 p-2 text-secondary-600 rounded-lg bg-secondary-50">
-                        1
-                    </li>
-                    <li class="flex items-center justify-center w-12 h-12 p-2 rounded-lg bg-secondary-700 mr-3">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M15.7499 20.4139L7.33594 11.9999L15.7499 3.58594L17.1639 4.99994L10.1639 11.9999L17.1639 18.9999L15.7499 20.4139Z"
-                                fill="white" />
-                        </svg>
-
-                    </li>
-                </ul>
+                <div id="paging" class="flex justify-center mt-20">
+                    <ul class="flex items-center gap-1 cd-pagination no-space direction-ltr" id="wibpaging">
+                        <basis core="print" datamembername="db.paging">
+                            <face filter="(@sta='pre')and('[##cms.cms.pageurl##]'='')">
+                                <li
+                                    class="flex items-center justify-center w-12 h-12 p-2 rounded-lg bg-secondary-700 mr-3 transition-all duration-300 hover:bg-secondary-100 group page-no prev-page">
+                                    <a class="flex items-center justify-center w-full cursor-pointer text-zinc-900"
+                                        aria-label="angle-left" href="/[##cms.cms.link_page##]&pagenum=@page">
+                                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path class="transition-all duration-300 group-hover:fill-secondary-700"
+                                                d="M12.1602 16C12.1602 15.8789 12.1852 15.7578 12.2352 15.6367C12.2852 15.5156 12.3502 15.4248 12.4302 15.3643L16.9002 10.8232C17.0802 10.6416 17.3102 10.5508 17.5902 10.5508C17.8702 10.5508 18.1102 10.6416 18.3102 10.8232C18.4902 11.0251 18.5802 11.2673 18.5802 11.5498C18.5802 11.8324 18.4902 12.0645 18.3102 12.2461L14.4702 16.1211L18.3102 19.9961C18.4902 20.1979 18.5802 20.4401 18.5802 20.7227C18.5802 21.0052 18.4902 21.2373 18.3102 21.4189C18.1102 21.6208 17.8702 21.7217 17.5902 21.7217C17.3102 21.7217 17.0802 21.6208 16.9002 21.4189L12.4302 16.9082C12.3502 16.7064 12.2852 16.5348 12.2352 16.3936C12.1852 16.2523 12.1602 16.1211 12.1602 16Z"
+                                                fill="#516E8C" />
+                                        </svg>
+                                    </a>
+                                </li>
+                            </face>
+                            <face filter="(@sta='pre')and('[##cms.cms.pageurl##]'<>'')">
+                                <li
+                                    class="flex items-center justify-center w-12 h-12 p-2 rounded-lg bg-secondary-700 mr-3 transition-all duration-300 hover:bg-secondary-100 group page-no prev-page">
+                                    <a class="flex items-center justify-center w-full cursor-pointer text-zinc-900"
+                                        aria-label="angle-left" href="/[##cms.cms.pageurl##]?pagenum=@page"> <svg width="32"
+                                            height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="transition-all duration-300 group-hover:fill-secondary-700"
+                                                d="M12.1602 16C12.1602 15.8789 12.1852 15.7578 12.2352 15.6367C12.2852 15.5156 12.3502 15.4248 12.4302 15.3643L16.9002 10.8232C17.0802 10.6416 17.3102 10.5508 17.5902 10.5508C17.8702 10.5508 18.1102 10.6416 18.3102 10.8232C18.4902 11.0251 18.5802 11.2673 18.5802 11.5498C18.5802 11.8324 18.4902 12.0645 18.3102 12.2461L14.4702 16.1211L18.3102 19.9961C18.4902 20.1979 18.5802 20.4401 18.5802 20.7227C18.5802 21.0052 18.4902 21.2373 18.3102 21.4189C18.1102 21.6208 17.8702 21.7217 17.5902 21.7217C17.3102 21.7217 17.0802 21.6208 16.9002 21.4189L12.4302 16.9082C12.3502 16.7064 12.2852 16.5348 12.2352 16.3936C12.1852 16.2523 12.1602 16.1211 12.1602 16Z"
+                                                fill="#516E8C" />
+                                        </svg></a>
+                                </li>
+                            </face>
+                        </basis>
+                        <basis core="print" datamembername="db.paging">
+                            <face filter="(@page=[##cms.query.pagenum|(1)##])and('[##cms.cms.pageurl##]'='')">
+                                <li
+                                    class="flex items-center justify-center w-12 h-12 p-2 text-secondary-600 rounded-lg bg-secondary-100 page-no">
+                                    <a class="flex items-center justify-center w-full h-full text-white cursor-pointer page-number bg-secondary-100"
+                                        href="/[##cms.cms.link_page##]&pagenum=@page">@page</a>
+                                </li>
+                            </face>
+                            <face filter="(@page=[##cms.query.pagenum|(1)##])and('[##cms.cms.pageurl##]'<>'')">
+                                <li
+                                    class="flex items-center justify-center w-12 h-12 p-2 text-secondary-600 rounded-lg bg-secondary-100 page-no">
+                                    <a class="flex items-center justify-center w-full h-full text-white cursor-pointer page-number bg-secondary-100"
+                                        href="/[##cms.cms.pageurl##]?pagenum=@page">@page</a>
+                                </li>
+                            </face>
+                            <face
+                                filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no') and ('[##cms.cms.pageurl##]'='') ">
+                                <li
+                                    class="flex items-center justify-center w-12 h-12 p-2 text-secondary-600 rounded-lg bg-secondary-50 transition-all duration-300 hover:bg-secondary-100 page-no">
+                                    <a class="flex items-center justify-center w-full h-full cursor-pointer page-number"
+                                        href="/[##cms.cms.link_page##]&pagenum=@page">@page</a>
+                                </li>
+                            </face>
+                            <face
+                                filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no') and ('[##cms.cms.pageurl##]'<>'') ">
+                                <li
+                                    class="flex items-center justify-center w-12 h-12 p-2 text-secondary-600 rounded-lg bg-secondary-50 transition-all duration-300 hover:bg-secondary-100 page-no">
+                                    <a class="flex items-center justify-center w-full h-full cursor-pointer page-number"
+                                        href="/[##cms.cms.pageurl##]?pagenum=@page">@page</a>
+                                </li>
+                            </face>
+                        </basis>
+                        <basis core="print" datamembername="db.paging">
+                            <face filter="(@sta='nex') and ('[##cms.cms.pageurl##]'='')">
+                                <li
+                                    class="flex items-center justify-center w-12 h-12 p-2 rounded-lg bg-secondary-700 mr-3 transition-all duration-300 hover:bg-secondary-100 group page-no next-page">
+                                    <a class="flex items-center justify-center w-full h-full cursor-pointer text-zinc-900"
+                                        aria-label="angle-right" href="/[##cms.cms.link_page##]&pagenum=@page">
+                                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path class="transition-all duration-300 group-hover:fill-secondary-700"
+                                                d="M19.8398 16C19.8398 16.1211 19.8148 16.2422 19.7648 16.3633C19.7148 16.4844 19.6498 16.5752 19.5698 16.6357L15.0998 21.1768C14.9198 21.3584 14.6898 21.4492 14.4098 21.4492C14.1298 21.4492 13.8898 21.3584 13.6898 21.1768C13.5098 20.9749 13.4198 20.7328 13.4198 20.4502C13.4198 20.1676 13.5098 19.9356 13.6898 19.7539L17.5298 15.8789L13.6898 12.0039C13.5098 11.8021 13.4198 11.5599 13.4198 11.2773C13.4198 10.9948 13.5098 10.7627 13.6898 10.5811C13.8898 10.3792 14.1298 10.2783 14.4098 10.2783C14.6898 10.2783 14.9198 10.3792 15.0998 10.5811L19.5698 15.0918C19.6498 15.2936 19.7148 15.4652 19.7648 15.6064C19.8148 15.7477 19.8398 15.8789 19.8398 16Z"
+                                                fill="#516E8C" />
+                                        </svg>
+                                    </a>
+                                </li>
+                            </face>
+                            <face filter="(@sta='nex') and ('[##cms.cms.pageurl##]'<>'')">
+                                <li
+                                    class="flex items-center justify-center w-12 h-12 p-2 rounded-lg bg-secondary-700 mr-3 transition-all duration-300 hover:bg-secondary-100 group page-no next-page">
+                                    <a class="flex items-center justify-center w-full h-full cursor-pointer text-zinc-900"
+                                        aria-label="angle-right" href="/[##cms.cms.pageurl##]?pagenum=@page"> <svg
+                                            width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path class="transition-all duration-300 group-hover:fill-secondary-700"
+                                                d="M19.8398 16C19.8398 16.1211 19.8148 16.2422 19.7648 16.3633C19.7148 16.4844 19.6498 16.5752 19.5698 16.6357L15.0998 21.1768C14.9198 21.3584 14.6898 21.4492 14.4098 21.4492C14.1298 21.4492 13.8898 21.3584 13.6898 21.1768C13.5098 20.9749 13.4198 20.7328 13.4198 20.4502C13.4198 20.1676 13.5098 19.9356 13.6898 19.7539L17.5298 15.8789L13.6898 12.0039C13.5098 11.8021 13.4198 11.5599 13.4198 11.2773C13.4198 10.9948 13.5098 10.7627 13.6898 10.5811C13.8898 10.3792 14.1298 10.2783 14.4098 10.2783C14.6898 10.2783 14.9198 10.3792 15.0998 10.5811L19.5698 15.0918C19.6498 15.2936 19.7148 15.4652 19.7648 15.6064C19.8148 15.7477 19.8398 15.8789 19.8398 16Z"
+                                                fill="#516E8C" />
+                                        </svg></a>
+                                </li>
+                            </face>
+                        </basis>
+                    </ul>
+                </div>
 
 
             </div>

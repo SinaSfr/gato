@@ -75,34 +75,33 @@ document.addEventListener("DOMContentLoaded", function () {
     const closeIcon = document.querySelector(".close-icon");
 
     // تغییرات مربوط به پاپ‌آپ برای موبایل و دسکتاپ
-    emailIcon.forEach(icon => {
+    emailIcon.forEach((icon) => {
       icon.addEventListener("click", function () {
         if (window.innerWidth < 1024) {
-          emailPopup.style.opacity = '1';
-          emailPopup.style.transform = 'translateX(0)';
-          emailPopup.style.pointerEvents = 'auto';
+          emailPopup.style.opacity = "1";
+          emailPopup.style.transform = "translateX(0)";
+          emailPopup.style.pointerEvents = "auto";
         } else {
-          emailPopup.style.position = 'fixed';
-          emailPopup.style.top = '50%';
-          emailPopup.style.left = '50%';
-          emailPopup.style.transform = 'translate(-40%, -50%)'; 
-          emailPopup.style.opacity = '1';
-          emailPopup.style.pointerEvents = 'auto';
+          emailPopup.style.position = "fixed";
+          emailPopup.style.top = "50%";
+          emailPopup.style.left = "50%";
+          emailPopup.style.transform = "translate(-40%, -50%)";
+          emailPopup.style.opacity = "1";
+          emailPopup.style.pointerEvents = "auto";
         }
       });
     });
 
     closeIcon.addEventListener("click", function () {
       if (window.innerWidth < 1024) {
-        emailPopup.style.opacity = '0';
-        emailPopup.style.transform = 'translateX(100%)';
-        emailPopup.style.pointerEvents = 'none';
+        emailPopup.style.opacity = "0";
+        emailPopup.style.transform = "translateX(100%)";
+        emailPopup.style.pointerEvents = "none";
       } else {
-        emailPopup.style.opacity = '0';
-        emailPopup.style.pointerEvents = 'none';
+        emailPopup.style.opacity = "0";
+        emailPopup.style.pointerEvents = "none";
       }
     });
-    
   }
 });
 
@@ -120,12 +119,14 @@ document.addEventListener("DOMContentLoaded", function () {
         fetchContentTour.innerHTML = firstData;
       } catch (error) {
         console.error("Fetch failed:", error);
-        fetchContentTour.innerHTML = "<p>مشکلی در دریافت اطلاعات رخ داد: " + error.message + "</p>";
+        fetchContentTour.innerHTML =
+          "<p>مشکلی در دریافت اطلاعات رخ داد: " + error.message + "</p>";
       }
     }
   }
 
   firstContent();
+  reinitializeSwiper();
 
   tourLis.forEach((item) => {
     item.addEventListener("click", function () {
@@ -134,7 +135,6 @@ document.addEventListener("DOMContentLoaded", function () {
         li.style.color = "";
       });
 
-      // item.style.backgroundColor = "#445E87";
       item.style.color = "#008a8c";
 
       const cmsQuery = item.getAttribute("data-id");
@@ -143,30 +143,30 @@ document.addEventListener("DOMContentLoaded", function () {
         for (let i = 0; i < fetchContentTours.length; i++) {
           const fetchContentTour = fetchContentTours[i];
           try {
-            const secondResponse = await fetch(`/tour-load-items.bc?catid=${cmsQuery}`);
+            fetchContentTour.innerHTML =
+              '<div class="flex justify-center w-full"><span class="loader-fetch"></span></div>';
+
+            const secondResponse = await fetch(
+              `/tour-load-items.bc?catid=${cmsQuery}`
+            );
             if (!secondResponse.ok) {
               throw new Error(`HTTP error! Status: ${secondResponse.status}`);
             }
             const secondData = await secondResponse.text();
-            fetchContentTour.innerHTML = secondData;
+            fetchContentTour.innerHTML = secondData; // داده‌های جدید را بارگذاری کنید
           } catch (error) {
             console.error("Fetch failed:", error);
-            fetchContentTour.innerHTML = "<p>مشکلی در دریافت اطلاعات رخ داد: " + error.message + "</p>";
+            fetchContentTour.innerHTML =
+              "<p>مشکلی در دریافت اطلاعات رخ داد: " + error.message + "</p>";
           }
         }
       }
 
-      if (swiperLuxuryTours) {
-        swiperLuxuryTours.params.spaceBetween = 8; 
-        swiperLuxuryTours.update(); 
-      }
       secondContent();
-
-
+      reinitializeSwiper();
     });
   });
 });
-
 
 function loadContentHomePage() {
   loadSearchEngine("search-engine.bc", "searchbox");
@@ -311,6 +311,178 @@ async function loadSearchEngine(url, sectionload) {
   } catch (error) {}
 }
 
+function uploadDocumentVisa(args) {
+  document.querySelector("#visa-form-resize .Loading_Form").style.display =
+    "block";
+  const captcha = document
+    .querySelector("#visa-form-resize")
+    .querySelector("#captchaContainer input[name='captcha']").value;
+  const captchaid = document
+    .querySelector("#visa-form-resize")
+    .querySelector("#captchaContainer input[name='captchaid']").value;
+  const stringJson = JSON.stringify(args.source?.rows[0]);
+  $bc.setSource("cms.uploadVisa", {
+    value: stringJson,
+    captcha: captcha,
+    captchaid: captchaid,
+    run: true,
+  });
+}
+
+function refreshCaptchaVisa(e) {
+  $bc.setSource("captcha.refreshVisa", true);
+}
+
+async function OnProcessedEditObjectVisa(args) {
+  var response = args.response;
+  var json = await response.json();
+  var errorid = json.errorid;
+  if (errorid == "6") {
+    document.querySelector("#visa-form-resize .Loading_Form").style.display =
+      "none";
+    document.querySelector("#visa-form-resize .message-api").innerHTML =
+      "درخواست شما با موفقیت ثبت شد.";
+  } else {
+    refreshCaptchaVisa();
+    setTimeout(() => {
+      document.querySelector("#visa-form-resize .Loading_Form").style.display =
+        "none";
+      document.querySelector("#visa-form-resize .message-api").innerHTML =
+        "خطایی رخ داده, لطفا مجدد اقدام کنید.";
+    }, 2000);
+  }
+}
+
+async function RenderFormVisa() {
+  var inputElementVisa7 = document.querySelector(
+    ".name-form input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "نام *");
+
+  var inputElementVisa7 = document.querySelector(
+    " .family-form input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "نام خانوادگی*");
+
+  var inputElementVisa7 = document.querySelector(
+    ".previous-name-form input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute(
+    "placeholder",
+    "نام قبلی ( در صورت تغییر نام )"
+  );
+
+  var inputElementVisa7 = document.querySelector(
+    " .birth-form input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "تاریخ تولد*");
+
+  var inputElementVisa7 = document.querySelector(
+    ".birth-place-form input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "محل تولد*");
+
+  var inputElementVisa7 = document.querySelector(
+    " .nationality-form input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "ملیت*");
+
+  var inputElementVisa7 = document.querySelector(
+    ".previous-nationality-form input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "ملیت قبلی ( در صورت وجود)");
+
+  var inputElementVisa8 = document.querySelector(
+    ".address-form textarea[data-bc-text-input]"
+  );
+  inputElementVisa8.setAttribute("placeholder", "آدرس محل سکونت*");
+
+  var inputElementVisa7 = document.querySelector(
+    ".phone-number-form input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "شماره تماس*");
+
+  var inputElementVisa7 = document.querySelector(
+    " .fixed-number-form input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "شماره ثابت");
+
+  var inputElementVisa7 = document.querySelector(
+    ".email-form input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "ایمیل*");
+
+  var inputElementVisa7 = document.querySelector(
+    ".nationality-form-two input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "ملیت*");
+
+  var inputElementVisa7 = document.querySelector(
+    " .passport-number-form input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "شماره پاسپورت*");
+
+  var inputElementVisa7 = document.querySelector(
+    ".issue-date-form input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "تاریخ صدور*");
+
+  var inputElementVisa7 = document.querySelector(
+    " .expire-date-form input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "تاریخ انقضا*");
+  var inputElementVisa7 = document.querySelector(
+    " .country-passport-form input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "کشور صادرکننده پاسپورت*");
+  var inputElementVisa7 = document.querySelector(
+    " .destination-country-form input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "کشور مقصد*");
+  var inputElementVisa7 = document.querySelector(
+    " .date-in-form input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "تاریخ ورود مورد انتظار");
+
+  var inputElementVisa7 = document.querySelector(
+    " .date-out-form input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "تاریخ خروج مورد انتظار");
+
+  var inputElementVisa7 = document.querySelector(
+    " .sponsor-name-form input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "نام اسپانسر");
+
+  var inputElementVisa7 = document.querySelector(
+    " .componey-name-form input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "نام شرکت یا موسسه آموزشی");
+
+  var inputElementVisa7 = document.querySelector(
+    " .componey-address-form textarea[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute(
+    "placeholder",
+    "آدرس و شماره تماس کارفرما یا دانشگاه"
+  );
+
+  var inputElementVisa7 = document.querySelector(
+    " .wife-name-form input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "نام و اطلاعات همسر");
+
+  var inputElementVisa7 = document.querySelector(
+    " .number-child-form textarea[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "تعداد فرزندان و اطلاعات آنها");
+
+  var inputElementVisa7 = document.querySelector(
+    " .completion-date-form input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "تاریخ تکمیل فرم");
+}
+
 if (document.querySelector(".swiper-image-slider1")) {
   var swiperImageSlider1 = new Swiper(".swiper-image-slider1", {
     slidesPerView: 1,
@@ -365,24 +537,49 @@ if (document.querySelector(".swiper-popular-tours")) {
     },
   });
 }
-if (document.querySelector(".swiper-luxury-tours")) {
-  var swiperLuxuryTours = new Swiper(".swiper-luxury-tours", {
-    slidesPerView: 'auto',
-    speed: 400,
-    centeredSlides: false,
-    spaceBetween: 8,
-    grabCursor: true,
-    autoplay: {
-      delay: 500,
-      disableOnInteraction: false,
-    },
-    // loop: true,
-    pagination: {
-      el: ".swiper-pagination",
-      type: "progressbar",
-    },
-  });
+// if (document.querySelector(".swiper-luxury-tours")) {
+//   var swiperLuxuryTours = new Swiper(".swiper-luxury-tours", {
+//     slidesPerView: 'auto',
+//     speed: 400,
+//     centeredSlides: false,
+//     spaceBetween: 8,
+//     grabCursor: true,
+//     autoplay: {
+//       delay: 2500,
+//       disableOnInteraction: false,
+//     },
+//     // loop: true,
+//     pagination: {
+//       el: ".swiper-pagination",
+//       type: "progressbar",
+//     },
+//   });
+// }
+
+function reinitializeSwiper() {
+  if (swiperLuxuryTours) {
+    swiperLuxuryTours.destroy(true, true);
+  }
+
+  if (document.querySelector(".swiper-luxury-tours")) {
+    var swiperLuxuryTours = new Swiper(".swiper-luxury-tours", {
+      slidesPerView: "auto",
+      speed: 400,
+      centeredSlides: false,
+      spaceBetween: 8,
+      grabCursor: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        type: "progressbar",
+      },
+    });
+  }
 }
+
 if (document.querySelector(".swiper-end-tours")) {
   var swiperEndTours = new Swiper(".swiper-end-tours", {
     slidesPerView: 3,
@@ -445,8 +642,8 @@ if (document.querySelector(".swiper-visa")) {
     spaceBetween: 12,
     grabCursor: true,
     autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
+      delay: 2500,
+      disableOnInteraction: false,
     },
     loop: true,
     pagination: {
@@ -455,4 +652,21 @@ if (document.querySelector(".swiper-visa")) {
     },
   });
 }
-
+if (document.querySelector(".swiper-travel-visa")) {
+  var swiperTravelVisa = new Swiper(".swiper-travel-visa", {
+    slidesPerView: 9,
+    speed: 400,
+    centeredSlides: false,
+    spaceBetween: 12,
+    grabCursor: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      type: "progressbar",
+    },
+  });
+}

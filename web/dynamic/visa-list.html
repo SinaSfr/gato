@@ -1,0 +1,296 @@
+<basis core="dbsource" source="basiscore" lid="1" mid="20" name="db" catid="[##cms.query.catid##]">
+    <member name="visa-list" type="list" link="article.bc" propertyid="" perpage="12" size="311x116"
+        pageno="[##cms.query.pagenum|(1)##]" order="ord" />
+    <member name="paging" type="list" request="paging" count="3" parentname="visa-list" />
+</basis>
+<basis core="dbsource" source="basiscore" lid="1" mid="18" name="db" usedforid="[##cms.query.catid##]">
+    <member name="scalar" type="scalar" typeid="150" />
+</basis>
+<basis core="dbsource" source="basiscore" lid="1" mid="20" name="db" catid="[##cms.query.catid##]">
+    <member name="navigation" type="tree" request="navcatid" parentid="[##cms.query.catid##]" />
+</basis>
+
+<basis core="dbsource" source="basiscore" lid="1" mid="20" name="travel">
+    <member name="cat" type="tree" request="cat" parentid="213383" order="ord">
+    </member>
+</basis>
+
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover">
+        <!-- Title & Description -->
+        <title>[##cms.seo.title|(گردشگران خورشید سپاهان)##]
+        </title>
+        <meta name="description" content="[##cms.seo.description|(گردشگران خورشید سپاهان)##]">
+        <!-- Title & Description -->
+        <basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
+            <member type="list" name="list" request="taglist" preview=""></member>
+        </basis>
+        <basis core="print" datamembername="tag.list">
+            <face filter="key = 'canonical'">
+                <link rel="canonical" href="@value" />
+            </face>
+            <face>
+                <meta property="@key" content="@value" />
+            </face>
+        </basis>
+        <!-- pwa metatags -->
+        <basis core="call" file="pwa.inc" />
+        <!-- common styles for all page -->
+        <link rel="stylesheet" href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css">
+        <basis core="call" file="style.inc" />
+    </head>
+<body>
+    <basis core="call" file="header.inc" />
+    <main>
+        <section class="max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto mt-12">
+            <ul itemscope itemtype="https://schema.org/BreadcrumbList" class="flex items-center justify-center text-sm gap-1 mt-2">
+                <li class="inline-block font-normal" itemprop="itemListElement" itemscope
+                    itemtype="https://schema.org/ListItem">
+                    <a class="text-zinc-500 transition-all duration-300 hover:text-primary-600" itemprop="item" href="/" aria-label="home"><span
+                            itemprop="name">صفحه اصلی</span>
+                        <meta itemprop="position" content="1" />
+                    </a>
+                </li>
+                <span class="text-zinc-500"> > </span>
+                <basis core="print" datamembername="db.navigation">
+                    <face filter="RowNumber=max(RowNumber) and parentcatid<>212707">
+                        <li class="inline-block font-normal" itemprop="itemListElement" itemscope
+                            itemtype="https://schema.org/ListItem">
+                            <span itemprop="name">@title</span>
+                            <meta itemprop="position" content="@rownumber" />
+                        </li>
+                    </face>
+                    <face filter="link is null and parentcatid<>212707">
+                        <li class="flex gap-1 font-normal " itemprop="itemListElement" itemscope
+                            itemtype="https://schema.org/ListItem">
+                            <a class="text-zinc-500 transition-all duration-300 hover:text-primary-600" itemprop="item"
+                                href="/article-list.bc?catid=@parentcatid" aria-label="@title"><span
+                                    itemprop="name">@title</span>
+                                <meta itemprop="position" content="@rownumber" />
+                            </a>
+                            <span class="text-zinc-500"> > </span>
+                        </li>
+                    </face>
+                    <face filter="parentcatid<>212707">
+                        <li class="flex gap-1 font-normal " itemprop="itemListElement" itemscope
+                            itemtype="https://schema.org/ListItem">
+                            <a class="text-zinc-500 transition-all duration-300 hover:text-primary-600" itemprop="item" href="@link"
+                                aria-label="@title"><span class="text-zinc-500 transition-all duration-300 hover:text-primary-600"
+                                    itemprop="name">@title</span>
+                                <meta itemprop="position" content="@rownumber" />
+                            </a>
+                            <span class="text-zinc-500 "> > </span>
+                        </li>
+                    </face>
+                </basis>
+            </ul>
+
+            <div class="relative pt-3 mt-14">
+                <div class="w-full h-[6px] bg-zinc-200"></div>
+
+                <div class="absolute left-0 right-0 top-0 z-20 flex mr-16">
+                    <basis core="print" datamembername="db.scalar">
+                        <face>
+                            <h2 class=" text-2xl font-bold bg-white px-5 text-zinc-900">@column1</h2>
+                        </face>
+                    </basis>
+                    
+                </div>
+
+                <basis core="list" datamembername="db.visa-list">
+                    <layout>
+                        <div class="mt-14 grid grid-cols-4 gap-x-3 gap-y-6">
+                            @child
+                        </div>
+                    </layout>
+                    <face filter="link is null">
+                        <a href="/article.bc?id=@id" class="rounded-lg overflow-hidden border border-solid border-secondary-50 group">
+                            <div class="relative ">
+                                <div class="absolute inset-0 w-full h-full bg-gradient-to-b from-transparent to-black/80">
+                                </div>
+                                <img src="@00311X00116prp" class="h-[116px] object-cover"
+                                    alt="@title" width="100%" height="116">
+                            </div>
+                            <div class="relative text-center w-full pt-2 pb-6">
+                                <span
+                                    class="absolute bottom-0 left-0 w-full transition-all duration-300 ease-out translate-x-full translate-y-full h-full -z-10 bg-secondary-400 group-hover:translate-x-0 group-hover:translate-y-0"></span>
+                                <h2 class="text-xl font-bold text-zinc-900 mr-24 group-hover:text-white">@title</h2>
+                                <img src="@image" class="absolute -top-10 right-10 rounded-full" alt="@title"
+                                    width="77" height="77">
+                            </div>
+                        </a>
+                    </face>
+                    <face>
+                        <a href="@link" class="rounded-lg overflow-hidden border border-solid border-secondary-50 group">
+                            <div class="relative ">
+                                <div class="absolute inset-0 w-full h-full bg-gradient-to-b from-transparent to-black/80">
+                                </div>
+                                <img src="@00311X00116prp" class="h-[116px] object-cover"
+                                    alt="@title" width="100%" height="116">
+                            </div>
+                            <div class="relative text-center w-full pt-2 pb-6">
+                                <span
+                                    class="absolute bottom-0 left-0 w-full transition-all duration-300 ease-out translate-x-full translate-y-full h-full -z-10 bg-secondary-400 group-hover:translate-x-0 group-hover:translate-y-0"></span>
+                                <h2 class="text-xl font-bold text-zinc-900 mr-24 group-hover:text-white">@title</h2>
+                                <img src="@image" class="absolute -top-10 right-10 rounded-full" alt="@title"
+                                    width="77" height="77">
+                            </div>
+                        </a>
+                    </face>
+                </basis>
+
+                <div id="paging" class="flex justify-center mt-20">
+                    <ul class="flex items-center gap-1 cd-pagination no-space direction-ltr" id="wibpaging">
+                        <basis core="print" datamembername="db.paging">
+                            <face filter="(@sta='pre')and('[##cms.cms.pageurl##]'='')">
+                                <li
+                                    class="flex items-center justify-center w-12 h-12 p-2 rounded-lg bg-secondary-700 mr-3 transition-all duration-300 hover:bg-secondary-100 group page-no prev-page">
+                                    <a class="flex items-center justify-center w-full cursor-pointer text-zinc-900"
+                                        aria-label="angle-left" href="/[##cms.cms.link_page##]&pagenum=@page">
+                                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path class="transition-all duration-300 group-hover:fill-secondary-700"
+                                                d="M12.1602 16C12.1602 15.8789 12.1852 15.7578 12.2352 15.6367C12.2852 15.5156 12.3502 15.4248 12.4302 15.3643L16.9002 10.8232C17.0802 10.6416 17.3102 10.5508 17.5902 10.5508C17.8702 10.5508 18.1102 10.6416 18.3102 10.8232C18.4902 11.0251 18.5802 11.2673 18.5802 11.5498C18.5802 11.8324 18.4902 12.0645 18.3102 12.2461L14.4702 16.1211L18.3102 19.9961C18.4902 20.1979 18.5802 20.4401 18.5802 20.7227C18.5802 21.0052 18.4902 21.2373 18.3102 21.4189C18.1102 21.6208 17.8702 21.7217 17.5902 21.7217C17.3102 21.7217 17.0802 21.6208 16.9002 21.4189L12.4302 16.9082C12.3502 16.7064 12.2852 16.5348 12.2352 16.3936C12.1852 16.2523 12.1602 16.1211 12.1602 16Z"
+                                                fill="#516E8C" />
+                                        </svg>
+                                    </a>
+                                </li>
+                            </face>
+                            <face filter="(@sta='pre')and('[##cms.cms.pageurl##]'<>'')">
+                                <li
+                                    class="flex items-center justify-center w-12 h-12 p-2 rounded-lg bg-secondary-700 mr-3 transition-all duration-300 hover:bg-secondary-100 group page-no prev-page">
+                                    <a class="flex items-center justify-center w-full cursor-pointer text-zinc-900"
+                                        aria-label="angle-left" href="/[##cms.cms.pageurl##]?pagenum=@page"> <svg width="32"
+                                            height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="transition-all duration-300 group-hover:fill-secondary-700"
+                                                d="M12.1602 16C12.1602 15.8789 12.1852 15.7578 12.2352 15.6367C12.2852 15.5156 12.3502 15.4248 12.4302 15.3643L16.9002 10.8232C17.0802 10.6416 17.3102 10.5508 17.5902 10.5508C17.8702 10.5508 18.1102 10.6416 18.3102 10.8232C18.4902 11.0251 18.5802 11.2673 18.5802 11.5498C18.5802 11.8324 18.4902 12.0645 18.3102 12.2461L14.4702 16.1211L18.3102 19.9961C18.4902 20.1979 18.5802 20.4401 18.5802 20.7227C18.5802 21.0052 18.4902 21.2373 18.3102 21.4189C18.1102 21.6208 17.8702 21.7217 17.5902 21.7217C17.3102 21.7217 17.0802 21.6208 16.9002 21.4189L12.4302 16.9082C12.3502 16.7064 12.2852 16.5348 12.2352 16.3936C12.1852 16.2523 12.1602 16.1211 12.1602 16Z"
+                                                fill="#516E8C" />
+                                        </svg></a>
+                                </li>
+                            </face>
+                        </basis>
+                        <basis core="print" datamembername="db.paging">
+                            <face filter="(@page=[##cms.query.pagenum|(1)##])and('[##cms.cms.pageurl##]'='')">
+                                <li
+                                    class="flex items-center justify-center w-12 h-12 p-2 text-secondary-600 rounded-lg bg-secondary-100 page-no">
+                                    <a class="flex items-center justify-center w-full h-full text-white cursor-pointer page-number bg-secondary-100"
+                                        href="/[##cms.cms.link_page##]&pagenum=@page">@page</a>
+                                </li>
+                            </face>
+                            <face filter="(@page=[##cms.query.pagenum|(1)##])and('[##cms.cms.pageurl##]'<>'')">
+                                <li
+                                    class="flex items-center justify-center w-12 h-12 p-2 text-secondary-600 rounded-lg bg-secondary-100 page-no">
+                                    <a class="flex items-center justify-center w-full h-full text-white cursor-pointer page-number bg-secondary-100"
+                                        href="/[##cms.cms.pageurl##]?pagenum=@page">@page</a>
+                                </li>
+                            </face>
+                            <face
+                                filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no') and ('[##cms.cms.pageurl##]'='') ">
+                                <li
+                                    class="flex items-center justify-center w-12 h-12 p-2 text-secondary-600 rounded-lg bg-secondary-50 transition-all duration-300 hover:bg-secondary-100 page-no">
+                                    <a class="flex items-center justify-center w-full h-full cursor-pointer page-number"
+                                        href="/[##cms.cms.link_page##]&pagenum=@page">@page</a>
+                                </li>
+                            </face>
+                            <face
+                                filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no') and ('[##cms.cms.pageurl##]'<>'') ">
+                                <li
+                                    class="flex items-center justify-center w-12 h-12 p-2 text-secondary-600 rounded-lg bg-secondary-50 transition-all duration-300 hover:bg-secondary-100 page-no">
+                                    <a class="flex items-center justify-center w-full h-full cursor-pointer page-number"
+                                        href="/[##cms.cms.pageurl##]?pagenum=@page">@page</a>
+                                </li>
+                            </face>
+                        </basis>
+                        <basis core="print" datamembername="db.paging">
+                            <face filter="(@sta='nex') and ('[##cms.cms.pageurl##]'='')">
+                                <li
+                                    class="flex items-center justify-center w-12 h-12 p-2 rounded-lg bg-secondary-700 mr-3 transition-all duration-300 hover:bg-secondary-100 group page-no next-page">
+                                    <a class="flex items-center justify-center w-full h-full cursor-pointer text-zinc-900"
+                                        aria-label="angle-right" href="/[##cms.cms.link_page##]&pagenum=@page">
+                                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path class="transition-all duration-300 group-hover:fill-secondary-700"
+                                                d="M19.8398 16C19.8398 16.1211 19.8148 16.2422 19.7648 16.3633C19.7148 16.4844 19.6498 16.5752 19.5698 16.6357L15.0998 21.1768C14.9198 21.3584 14.6898 21.4492 14.4098 21.4492C14.1298 21.4492 13.8898 21.3584 13.6898 21.1768C13.5098 20.9749 13.4198 20.7328 13.4198 20.4502C13.4198 20.1676 13.5098 19.9356 13.6898 19.7539L17.5298 15.8789L13.6898 12.0039C13.5098 11.8021 13.4198 11.5599 13.4198 11.2773C13.4198 10.9948 13.5098 10.7627 13.6898 10.5811C13.8898 10.3792 14.1298 10.2783 14.4098 10.2783C14.6898 10.2783 14.9198 10.3792 15.0998 10.5811L19.5698 15.0918C19.6498 15.2936 19.7148 15.4652 19.7648 15.6064C19.8148 15.7477 19.8398 15.8789 19.8398 16Z"
+                                                fill="#516E8C" />
+                                        </svg>
+                                    </a>
+                                </li>
+                            </face>
+                            <face filter="(@sta='nex') and ('[##cms.cms.pageurl##]'<>'')">
+                                <li
+                                    class="flex items-center justify-center w-12 h-12 p-2 rounded-lg bg-secondary-700 mr-3 transition-all duration-300 hover:bg-secondary-100 group page-no next-page">
+                                    <a class="flex items-center justify-center w-full h-full cursor-pointer text-zinc-900"
+                                        aria-label="angle-right" href="/[##cms.cms.pageurl##]?pagenum=@page"> <svg
+                                            width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path class="transition-all duration-300 group-hover:fill-secondary-700"
+                                                d="M19.8398 16C19.8398 16.1211 19.8148 16.2422 19.7648 16.3633C19.7148 16.4844 19.6498 16.5752 19.5698 16.6357L15.0998 21.1768C14.9198 21.3584 14.6898 21.4492 14.4098 21.4492C14.1298 21.4492 13.8898 21.3584 13.6898 21.1768C13.5098 20.9749 13.4198 20.7328 13.4198 20.4502C13.4198 20.1676 13.5098 19.9356 13.6898 19.7539L17.5298 15.8789L13.6898 12.0039C13.5098 11.8021 13.4198 11.5599 13.4198 11.2773C13.4198 10.9948 13.5098 10.7627 13.6898 10.5811C13.8898 10.3792 14.1298 10.2783 14.4098 10.2783C14.6898 10.2783 14.9198 10.3792 15.0998 10.5811L19.5698 15.0918C19.6498 15.2936 19.7148 15.4652 19.7648 15.6064C19.8148 15.7477 19.8398 15.8789 19.8398 16Z"
+                                                fill="#516E8C" />
+                                        </svg></a>
+                                </li>
+                            </face>
+                        </basis>
+                    </ul>
+                </div>
+
+
+            </div>  
+        </section>
+
+        <section class="mt-16 bg-zinc-100 py-6">
+            <div class="max-lg:w-[90%] max-xl:w-[97%] mx-auto">
+                <div class="flex justify-center">
+                    <h2 class="absolute z-10 text-2xl text-zinc-900 font-bold bg-zinc-100 px-5">سبک سفر</h2>
+                </div>
+    
+    
+                <!-- Slider main container -->
+                <div class="pt-16 swiper swiper-travel-visa">
+                    <basis core="tree" datamembername="travel.cat" idcol="catid" parentidcol="parentid"
+                    nullvalue="213383">
+                        <layout>
+                            <div class="swiper-wrapper flex justify-center">
+                                @child
+                            </div>
+                        </layout>
+                            <face filter="link is null and RowNumber not in(1)">
+                                <a href="/tour-list.bc?catid=@catid"
+                                    class="relative swiper-slide rounded-lg overflow-hidden group">
+                                    <img src="@image"
+                                        class="h-[200px] object-cover transition-all duration-300 group-hover:brightness-50"
+                                        alt="@title" width="100%" height="200">
+                                    <div class="absolute bottom-0 w-full py-2 flex justify-center bg-primary-800 mb-6">
+                                        <h2 class="text-sm text-white">@title</h2>
+                                    </div>
+                                </a>
+                            </face>
+                            <face filter="RowNumber not in(1)">
+                                <a href="@link"
+                                    class="relative swiper-slide rounded-lg overflow-hidden group">
+                                    <img src="@image"
+                                        class="h-[200px] object-cover transition-all duration-300 group-hover:brightness-50"
+                                        alt="@title" width="100%" height="200">
+                                    <div class="absolute bottom-0 w-full py-2 flex justify-center bg-primary-800 mb-6">
+                                        <h2 class="text-sm text-white">@title</h2>
+                                    </div>
+                                </a>
+                            </face>
+                    </basis>
+                    <!-- Additional required wrapper -->
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination !h-[6px] flex items-center justify-center !top-3 bg-secondary-50">
+                    </div>
+    
+    
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
+    <basis core="call" file="footer.inc" />
+</body>
+</html>
