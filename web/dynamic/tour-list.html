@@ -1,0 +1,263 @@
+<basis core="dbsource" source="basiscore" lid="1" mid="20" name="db" catid="[##cms.query.catid##]">
+    <member name="tour-list" type="list" link="tour.bc" propertyid="8181,8077,8076,10000504" perpage="12" size="401x311"
+        pageno="[##cms.query.pagenum|(1)##]" order="ord" />
+    <member name="paging" type="list" request="paging" count="3" parentname="tour-list" />
+</basis>
+<basis core="dbsource" source="basiscore" lid="1" mid="18" name="db" usedforid="[##cms.query.catid##]">
+    <member name="scalar" type="scalar" typeid="150" />
+</basis>
+<basis core="dbsource" source="basiscore" lid="1" mid="20" name="db" catid="[##cms.query.catid##]">
+    <member name="navigation" type="tree" request="navcatid" parentid="[##cms.query.catid##]" />
+</basis>
+
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover">
+    <!-- Title & Description -->
+    <title>[##cms.seo.title|(گردشگران خورشید سپاهان)##]
+    </title>
+    <meta name="description" content="[##cms.seo.description|(گردشگران خورشید سپاهان)##]">
+    <!-- Title & Description -->
+    <basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
+        <member type="list" name="list" request="taglist" preview=""></member>
+    </basis>
+    <basis core="print" datamembername="tag.list">
+        <face filter="key = 'canonical'">
+            <link rel="canonical" href="@value" />
+        </face>
+        <face>
+            <meta property="@key" content="@value" />
+        </face>
+    </basis>
+    <!-- pwa metatags -->
+    <basis core="call" file="pwa.inc" />
+    <!-- common styles for all page -->
+    <basis core="call" file="style.inc" />
+</head>
+
+<body>
+    <basis core="call" file="header.inc" />
+    <main>
+        <section class="bg-center bg-cover bg-tourListBg flex items-center justify-center h-[355px]">
+            <basis core="print" datamembername="db.scalar">
+                <face>
+                    <h1 class="text-white text-2xl font-bold">@column1</h1>
+                </face>
+            </basis>
+        </section>
+
+        <section class="max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto mt-20">
+
+                <ul itemscope itemtype="https://schema.org/BreadcrumbList" class="flex items-center justify-center text-sm gap-1 mt-2">
+                    <li class="inline-block font-normal" itemprop="itemListElement" itemscope
+                        itemtype="https://schema.org/ListItem">
+                        <a class="text-zinc-500 transition-all duration-300 hover:text-primary-600" itemprop="item" href="/" aria-label="home"><span
+                                itemprop="name">صفحه اصلی</span>
+                            <meta itemprop="position" content="1" />
+                        </a>
+                    </li>
+                    <span class="text-zinc-500"> > </span>
+                    <basis core="print" datamembername="db.navigation">
+                        <face filter="RowNumber=max(RowNumber) and parentcatid<>212707">
+                            <li class="inline-block font-normal" itemprop="itemListElement" itemscope
+                                itemtype="https://schema.org/ListItem">
+                                <span itemprop="name">@title</span>
+                                <meta itemprop="position" content="@rownumber" />
+                            </li>
+                        </face>
+                        <face filter="link is null and parentcatid<>212707">
+                            <li class="flex gap-1 font-normal " itemprop="itemListElement" itemscope
+                                itemtype="https://schema.org/ListItem">
+                                <a class="text-zinc-500 transition-all duration-300 hover:text-primary-600" itemprop="item"
+                                    href="/article-list.bc?catid=@parentcatid" aria-label="@title"><span
+                                        itemprop="name">@title</span>
+                                    <meta itemprop="position" content="@rownumber" />
+                                </a>
+                                <span class="text-zinc-500"> > </span>
+                            </li>
+                        </face>
+                        <face filter="parentcatid<>212707">
+                            <li class="flex gap-1 font-normal " itemprop="itemListElement" itemscope
+                                itemtype="https://schema.org/ListItem">
+                                <a class="text-zinc-500 transition-all duration-300 hover:text-primary-600" itemprop="item" href="@link"
+                                    aria-label="@title"><span class="text-zinc-500 transition-all duration-300 hover:text-primary-600"
+                                        itemprop="name">@title</span>
+                                    <meta itemprop="position" content="@rownumber" />
+                                </a>
+                                <span class="text-zinc-500 "> > </span>
+                            </li>
+                        </face>
+                    </basis>
+                </ul>
+            <div class="relative pt-3 mt-6">
+                <div class="w-full h-[6px] bg-secondary-50"></div>
+
+                <div class="absolute left-0 right-0 top-0 z-20 flex mr-16">
+                    <h2 class=" text-2xl font-bold bg-white px-5 text-zinc-900">تور‌های
+                        پوکت</h2>
+                </div>
+
+                <basis core="list" datamembername="db.tour-list">
+                    <layout>
+                        <div class="mt-14 grid grid-cols-3 gap-x-2 gap-y-3">
+                            <!-- items -->
+                            @child
+                        </div>
+                    </layout>
+
+                    <face filter="link is null">
+                        <div class="rounded-lg bg-zinc-100 p-2 transition-all duration-300 hover:bg-primary-700">
+                            <div class="relative overflow-hidden rounded-xl">
+                                <img src="../assets/images/card-luxury-tour.jpg" class="h-[311px] object-cover mb-24"
+                                    alt="@title" width="100%" height="311">
+                                <div
+                                    class="absolute bottom-0 w-full p-6 bg-white rounded-b-[20px] rounded-tl-[56px] mt-7">
+                                    <h2 class="text-xl font-medium mb-3 text-zinc-900">@title</h2>
+                                    <span class="text-zinc-700 text-sm">14 فروردین 1403</span>
+                                    <div class="font-medium mb-2 mt-3">از:
+                                        <span class="text-zinc-900 font-normal">160/000/000 ریال</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-zinc-800 flex items-center gap-1">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M12 21C16.9709 21 21 16.9699 21 12C21 7.02908 16.9709 3 12 3C7.02908 3 3 7.02908 3 12C3 16.9699 7.02908 21 12 21Z"
+                                                    stroke="#008A8C" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M14.8467 14.5716L11.6719 12.6743V8.57617" stroke="#008A8C"
+                                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                            11 روز
+                                        </span>
+                                        <a href="/tour.bc?id=@id"
+                                            class="text-zinc-800 font-bold flex items-center gap-1 group transition-all duration-300 hover:text-primary-600">
+                                            مشاهده تور
+                                            <svg width="48" height="48"
+                                                class="transition-all duration-300 group-hover:-translate-x-4"
+                                                viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M27.5 31L20.5 24L27.5 17"
+                                                    class="transition-all duration-300 group-hover:stroke-primary-600"
+                                                    stroke="#27272A" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </face>
+                    <face>
+                        <div class="rounded-lg bg-zinc-100 p-2 transition-all duration-300 hover:bg-primary-700">
+                            <div class="relative overflow-hidden rounded-xl">
+                                <img src="../assets/images/card-luxury-tour.jpg" class="h-[311px] object-cover mb-24"
+                                    alt="@title" width="100%" height="311">
+                                <div
+                                    class="absolute bottom-0 w-full p-6 bg-white rounded-b-[20px] rounded-tl-[56px] mt-7">
+                                    <h2 class="text-xl font-medium mb-3 text-zinc-900">@title</h2>
+                                    <span class="text-zinc-700 text-sm">14 فروردین 1403</span>
+                                    <div class="font-medium mb-2 mt-3">از:
+                                        <span class="text-zinc-900 font-normal">160/000/000 ریال</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-zinc-800 flex items-center gap-1">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M12 21C16.9709 21 21 16.9699 21 12C21 7.02908 16.9709 3 12 3C7.02908 3 3 7.02908 3 12C3 16.9699 7.02908 21 12 21Z"
+                                                    stroke="#008A8C" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M14.8467 14.5716L11.6719 12.6743V8.57617" stroke="#008A8C"
+                                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                            11 روز
+                                        </span>
+                                        <a href="@link"
+                                            class="text-zinc-800 font-bold flex items-center gap-1 group transition-all duration-300 hover:text-primary-600">
+                                            مشاهده تور
+                                            <svg width="48" height="48"
+                                                class="transition-all duration-300 group-hover:-translate-x-4"
+                                                viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M27.5 31L20.5 24L27.5 17"
+                                                    class="transition-all duration-300 group-hover:stroke-primary-600"
+                                                    stroke="#27272A" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </face>
+                </basis>
+
+
+
+                <ul class="flex items-center justify-center gap-1 mt-20">
+                    <li class="flex items-center justify-center w-12 h-12 p-2 rounded-lg bg-secondary-700 ml-3">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M8.2501 3.58606L16.6641 12.0001L8.2501 20.4141L6.8361 19.0001L13.8361 12.0001L6.8361 5.00006L8.2501 3.58606Z"
+                                fill="white" />
+                        </svg>
+
+                    </li>
+                    <li
+                        class="flex items-center justify-center w-12 h-12 p-2 text-secondary-600 rounded-lg bg-secondary-50">
+                        1
+                    </li>
+                    <li
+                        class="flex items-center justify-center w-12 h-12 p-2 text-secondary-600 rounded-lg bg-secondary-100">
+                        1
+                    </li>
+                    <li
+                        class="flex items-center justify-center w-12 h-12 p-2 text-secondary-600 rounded-lg bg-secondary-50">
+                        1
+                    </li>
+                    <li class="flex items-center justify-center w-12 h-12 p-2 rounded-lg bg-secondary-700 mr-3">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M15.7499 20.4139L7.33594 11.9999L15.7499 3.58594L17.1639 4.99994L10.1639 11.9999L17.1639 18.9999L15.7499 20.4139Z"
+                                fill="white" />
+                        </svg>
+
+                    </li>
+                </ul>
+
+
+            </div>
+
+        </section>
+
+        <section class="max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto mt-24 mb-20">
+            <h2 class="text-zinc-900 text-2xl font-bold mb-3">سفر به پوکت</h2>
+            <div class="text-justify text-sm text-zinc-900">
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و
+                متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و
+                کاربردهای متنوع لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک
+                است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد
+                نیاز، و کاربردهای متنوعلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان
+                گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی لورم
+                ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون
+                بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای
+                متنوع لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است،
+                چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد
+                نیاز، و کاربردهای متنوعلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان
+                گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی لورم
+                ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون
+                بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای
+                متنوع لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است،
+                چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد
+                نیاز، و کاربردهای متنوعلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان
+                گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی
+            </div>
+        </section>
+    </main>
+
+    <basis core="call" file="footer.inc" />
+</body>
+
+</html>

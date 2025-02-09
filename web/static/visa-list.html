@@ -21,7 +21,7 @@
                 </div>
 
                 <div class="mt-14 grid grid-cols-4 gap-x-3 gap-y-6">
-                    <div class="swiper-slide rounded-lg overflow-hidden border border-solid border-secondary-50">
+                    <div class="group swiper-slide rounded-lg overflow-hidden border border-solid border-secondary-50">
                         <div class="relative ">
                             <div class="absolute inset-0 w-full h-full bg-gradient-to-b from-transparent to-black/80">
                             </div>
@@ -29,7 +29,8 @@
                                 alt="card-tour-popular" width="100%" height="116">
                         </div>
                         <div class="relative text-center w-full pt-1 pb-6">
-                            <h2 class="text-xl font-bold text-zinc-900 mr-16">ویزای روسیه</h2>
+                            <span class="absolute bottom-0 left-0 w-full transition-all duration-300 ease-out translate-x-full translate-y-full h-14 -z-10 bg-secondary-400 group-hover:translate-x-0 group-hover:translate-y-0"></span>
+                            <h2 class="text-xl font-bold text-zinc-900 mr-16 transition-all duration-300 group-hover:text-white">ویزای روسیه</h2>
                             <img src="../assets/images/flag.svg" class="absolute -top-10 right-10" alt="flag" width="77"
                                 height="77">
                         </div>
@@ -56,18 +57,18 @@
                             </svg>
     
                     </li>
-                    <li class="flex items-center justify-center w-12 h-12 p-2 text-secondary-600 rounded-lg bg-secondary-50">
+                    <li class="flex items-center justify-center w-12 h-12 p-2 text-secondary-600 rounded-lg bg-secondary-50 transition-all duration-300 hover:bg-secondary-100">
                         1
                     </li>
                     <li class="flex items-center justify-center w-12 h-12 p-2 text-secondary-600 rounded-lg bg-secondary-100">
                         1
                     </li>
-                    <li class="flex items-center justify-center w-12 h-12 p-2 text-secondary-600 rounded-lg bg-secondary-50">
+                    <li class="flex items-center justify-center w-12 h-12 p-2 text-secondary-600 rounded-lg bg-secondary-50 transition-all duration-300 hover:bg-secondary-100">
                         1
                     </li>
-                    <li class="flex items-center justify-center w-12 h-12 p-2 rounded-lg bg-secondary-700 mr-3">
+                    <li class="flex items-center justify-center w-12 h-12 p-2 rounded-lg bg-secondary-700 mr-3 transition-all duration-300 hover:bg-secondary-100 group">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M15.7499 20.4139L7.33594 11.9999L15.7499 3.58594L17.1639 4.99994L10.1639 11.9999L17.1639 18.9999L15.7499 20.4139Z" fill="white"/>
+                            <path fill-rule="evenodd" class="transition-all duration-300 group-hover:fill-secondary-700" clip-rule="evenodd" d="M15.7499 20.4139L7.33594 11.9999L15.7499 3.58594L17.1639 4.99994L10.1639 11.9999L17.1639 18.9999L15.7499 20.4139Z" fill="white"/>
                             </svg>                                                              
     
                     </li>
@@ -89,8 +90,8 @@
                     <!-- Additional required wrapper -->
                     <div class="swiper-wrapper">
                         <!-- Slides -->
-                        <div class="relative swiper-slide rounded-lg overflow-hidden">
-                            <img src="../assets/images/travel-card.jpg" class="h-[200px] object-cover"
+                        <div class="relative swiper-slide rounded-lg overflow-hidden group">
+                            <img src="../assets/images/travel-card.jpg" class="h-[200px] object-cover transition-all duration-300 group-hover:brightness-50"
                                 alt="card-tour-popular" width="100%" height="200">
                             <div class="absolute bottom-0 w-full py-2 flex justify-center bg-primary-800 mb-6">
                                 <h2 class="text-sm text-white">تور گروهی</h2>

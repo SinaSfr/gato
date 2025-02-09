@@ -18,14 +18,14 @@
                 <input type="text" class="w-[553px] h-14 pr-3 rounded-lg text-zinc-500 placeholder-zinc-500" name="" id=""
                     placeholder="جستجوی مقاله">
                 <button
-                    class="flex items-center text-sm justify-center w-32 h-14 text-white rounded-lg bg-primary-800">جستحو</button>
+                    class="flex items-center text-sm justify-center w-32 h-14 text-white rounded-lg bg-primary-800 transition-all duration-300 hover:bg-secondary-600">جستحو</button>
             </div>
         </section>
 
         <section class="mt-20 max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto">
             <div class="text-zinc-500 text-sm text-center">صفحه اصلی> تورها> تور های پوکت</div>
 
-            <div class="relative w-full h-[6px] bg-primary-600 mt-6">
+            <div class="relative w-full h-[6px] bg-secondary-50 mt-6">
                 <div class="absolute left-0 right-0 -top-5 z-20 flex mr-16">
                     <h2 class=" text-2xl font-bold bg-white px-5 text-zinc-900 mt-2">آخرین مقالات</h2>
                 </div>
@@ -38,8 +38,8 @@
     
                     <div class="grid grid-cols-2 gap-x-3 gap-y-12">
                         <!-- items -->
-                        <article>
-                            <img src="../assets/images/article-list-card.jpg" alt="" class="rounded-lg h-[271px] object-cover" width="100%"
+                        <article class="group">
+                            <img src="../assets/images/article-list-card.jpg" alt="" class="rounded-lg h-[271px] object-cover transition-all duration-300 group-hover:sepia" width="100%"
                                 height="271" loading="lazy">
                             <div class="flex flex-col gap-2 mt-7">
                                 <h2 class="text-zinc-900 font-medium">جاهای دیدنی استانبول</h2>
@@ -47,7 +47,11 @@
                                     گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای
                                     شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،
                                     کتابهای زیادی...</div>
-                                <a href="" class="text-primary-800 text-sm">بیشتر بخوانید</a>
+                                    <div>
+                                        <a href="" class="relative group/level-one text-primary-800 text-sm">بیشتر بخوانید
+                                            <span class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-px bg-primary-600 group-hover/level-one:w-full"></span>
+                                        </a>
+                                    </div>
                             </div>
                         </article>
 
@@ -106,7 +110,7 @@
     
                     <div class="flex flex-col gap-3">
                         <div class="relative rounded-lg overflow-hidden">
-                            <img src="../assets/images/travel-card.jpg" class="h-[200px] object-cover"
+                            <img src="../assets/images/travel-card.jpg" class="h-[200px] object-cover transition-all duration-300 hover:brightness-50"
                                 alt="card-tour-popular" width="100%" height="200">
                             <div class="absolute bottom-0 w-full py-2 flex justify-center bg-primary-800 mb-6">
                                 <h2 class="text-sm text-white">تور گروهی</h2>

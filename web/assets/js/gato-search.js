@@ -113,7 +113,7 @@ $(document).ready(function () {
       });
       sessionStorage.setItem("pageName", "insurance");
       LoadInsurane();
-      LoadSelection();
+      // LoadSelection();
     });
   
     // $("#Train").click(function () {
