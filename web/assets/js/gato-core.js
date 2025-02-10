@@ -483,6 +483,63 @@ async function RenderFormVisa() {
   inputElementVisa7.setAttribute("placeholder", "تاریخ تکمیل فرم");
 }
 
+//form contact 
+function uploadDocumentContact(args) {
+  document.querySelector("#contact-form-resize .Loading_Form").style.display =
+    "block";
+  const captcha = document
+    .querySelector("#contact-form-resize")
+    .querySelector("#captchaContainer input[name='captcha']").value;
+  const captchaid = document
+    .querySelector("#contact-form-resize")
+    .querySelector("#captchaContainer input[name='captchaid']").value;
+  const stringJson = JSON.stringify(args.source?.rows[0]);
+  $bc.setSource("cms.uploadContact", {
+    value: stringJson,
+    captcha: captcha,
+    captchaid: captchaid,
+    run: true,
+  });
+}
+
+function refreshCaptchaContact(e) {
+  $bc.setSource("captcha.refreshContact", true);
+}
+
+async function OnProcessedEditObjectContact(args) {
+  var response = args.response;
+  var json = await response.json();
+  var errorid = json.errorid;
+  if (errorid == "6") {
+    document.querySelector("#contact-form-resize .Loading_Form").style.display =
+      "none";
+    document.querySelector("#contact-form-resize .message-api").innerHTML =
+      "درخواست شما با موفقیت ثبت شد.";
+  } else {
+    refreshCaptchaContact();
+    setTimeout(() => {
+      document.querySelector(
+        "#contact-form-resize .Loading_Form"
+      ).style.display = "none";
+      document.querySelector("#contact-form-resize .message-api").innerHTML =
+        "خطایی رخ داده, لطفا مجدد اقدام کنید.";
+    }, 2000);
+  }
+}
+
+async function RenderFormContact() {
+  var inputElementVisa7 = document.querySelector(
+    " .email-question-form input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "ایمیل");
+
+  var inputElementVisa7 = document.querySelector(
+    " .message-question-form textarea[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "متن");
+}
+
+// swiper
 if (document.querySelector(".swiper-image-slider1")) {
   var swiperImageSlider1 = new Swiper(".swiper-image-slider1", {
     slidesPerView: 1,
