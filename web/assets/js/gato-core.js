@@ -539,6 +539,79 @@ async function RenderFormContact() {
   inputElementVisa7.setAttribute("placeholder", "متن");
 }
 
+
+// header form
+
+function uploadDocumentHeader(args) {
+  document.querySelector("#header-form-resize .Loading_Form").style.display =
+    "block";
+  const captcha = document
+    .querySelector("#header-form-resize")
+    .querySelector("#captchaContainer input[name='captcha']").value;
+  const captchaid = document
+    .querySelector("#header-form-resize")
+    .querySelector("#captchaContainer input[name='captchaid']").value;
+  const stringJson = JSON.stringify(args.source?.rows[0]);
+  $bc.setSource("cms.uploadHeader", {
+    value: stringJson,
+    captcha: captcha,
+    captchaid: captchaid,
+    run: true,
+  });
+}
+
+function refreshCaptchaHeader(e) {
+  $bc.setSource("captcha.refreshHeader", true);
+}
+
+async function OnProcessedEditObjectHeader(args) {
+  var response = args.response;
+  var json = await response.json();
+  var errorid = json.errorid;
+  if (errorid == "6") {
+    document.querySelector("#header-form-resize .Loading_Form").style.display =
+      "none";
+    document.querySelector("#header-form-resize .message-api").innerHTML =
+      "درخواست شما با موفقیت ثبت شد.";
+  } else {
+    refreshCaptchaHeader();
+    setTimeout(() => {
+      document.querySelector(
+        "#header-form-resize .Loading_Form"
+      ).style.display = "none";
+      document.querySelector("#header-form-resize .message-api").innerHTML =
+        "خطایی رخ داده, لطفا مجدد اقدام کنید.";
+    }, 2000);
+  }
+}
+
+async function RenderFormHeader() {
+  var inputElementVisa7 = document.querySelector(
+    " .name-header-form input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "نام");
+
+  var inputElementVisa7 = document.querySelector(
+    " .family-header-form input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "نام خانوادگی");
+  var inputElementVisa7 = document.querySelector(
+    " .email-header-form input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "ایمیل");
+
+  var inputElementVisa7 = document.querySelector(
+    " .phone-header-form input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "شماره تماس");
+
+  var inputElementVisa7 = document.querySelector(
+    " .message-header-form textarea[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "متن");
+
+}
+
 // swiper
 if (document.querySelector(".swiper-image-slider1")) {
   var swiperImageSlider1 = new Swiper(".swiper-image-slider1", {
