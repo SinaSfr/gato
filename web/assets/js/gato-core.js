@@ -708,44 +708,56 @@ function reinitializeSwiper() {
       },
     });
   }
+
+  if (swiperEndTours) {
+    swiperEndTours.destroy(true, true);
+  }
+
+  if (document.querySelector(".swiper-end-tours")) {
+    var swiperEndTours = new Swiper(".swiper-end-tours", {
+      slidesPerView: "auto",
+      speed: 400,
+      centeredSlides: false,
+      spaceBetween: 8,
+      grabCursor: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        type: "progressbar",
+      },
+    });
+  }
+
+
+  if (swiperExhibitionTours) {
+    swiperExhibitionTours.destroy(true, true);
+  }
+  if (document.querySelector(".swiper-exhibition-tours")) {
+    var swiperExhibitionTours = new Swiper(".swiper-exhibition-tours", {
+      slidesPerView: "auto",
+      speed: 400,
+      centeredSlides: false,
+      spaceBetween: 8,
+      grabCursor: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        type: "progressbar",
+      },
+    });
+  }
 }
 
-if (document.querySelector(".swiper-end-tours")) {
-  var swiperEndTours = new Swiper(".swiper-end-tours", {
-    slidesPerView: 3,
-    speed: 400,
-    centeredSlides: false,
-    spaceBetween: 8,
-    grabCursor: true,
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-    },
-    loop: true,
-    pagination: {
-      el: ".swiper-pagination",
-      type: "progressbar",
-    },
-  });
-}
-if (document.querySelector(".swiper-exhibition-tours")) {
-  var swiperExhibitionTours = new Swiper(".swiper-exhibition-tours", {
-    slidesPerView: 3,
-    speed: 400,
-    centeredSlides: false,
-    spaceBetween: 8,
-    grabCursor: true,
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-    },
-    loop: true,
-    pagination: {
-      el: ".swiper-pagination",
-      type: "progressbar",
-    },
-  });
-}
+
+
 if (document.querySelector(".swiper-travel")) {
   var swiperTravel = new Swiper(".swiper-travel", {
     slidesPerView: 9,
