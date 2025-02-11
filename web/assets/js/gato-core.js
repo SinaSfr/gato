@@ -311,6 +311,58 @@ async function loadSearchEngine(url, sectionload) {
   } catch (error) {}
 }
 
+function uploadDocumentFooter(args) {
+  document.querySelector("#footer-form-resize .Loading_Form").style.display =
+    "block";
+  const captcha = document
+    .querySelector("#footer-form-resize")
+    .querySelector("#captchaContainer input[name='captcha']").value;
+  const captchaid = document
+    .querySelector("#footer-form-resize")
+    .querySelector("#captchaContainer input[name='captchaid']").value;
+  const stringJson = JSON.stringify(args.source?.rows[0]);
+  $bc.setSource("cms.uploadFooter", {
+    value: stringJson,
+    captcha: captcha,
+    captchaid: captchaid,
+    run: true,
+  });
+}
+
+function refreshCaptchaFooter(e) {
+  $bc.setSource("captcha.refreshFooter", true);
+}
+
+async function OnProcessedEditObjectFooter(args) {
+  var response = args.response;
+  var json = await response.json();
+  var errorid = json.errorid;
+  if (errorid == "6") {
+    document.querySelector("#footer-form-resize .Loading_Form").style.display =
+      "none";
+    document.querySelector("#footer-form-resize .message-api").innerHTML =
+      "درخواست شما با موفقیت ثبت شد.";
+  } else {
+    refreshCaptchaFooter();
+    setTimeout(() => {
+      document.querySelector(
+        "#footer-form-resize .Loading_Form"
+      ).style.display = "none";
+      document.querySelector("#footer-form-resize .message-api").innerHTML =
+        "خطایی رخ داده, لطفا مجدد اقدام کنید.";
+    }, 2000);
+  }
+}
+
+async function RenderFormFooter() {
+  var inputElementVisa7 = document.querySelector(
+    " .email-footer-form input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "Email");
+}
+
+
+// visa form
 function uploadDocumentVisa(args) {
   document.querySelector("#visa-form-resize .Loading_Form").style.display =
     "block";
