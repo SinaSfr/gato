@@ -19,12 +19,16 @@
 <basis core="dbsource" source="basiscore" lid="1" mid="1" name="tourism-magazine">
     <member name="cat" type="tree" request="cat" parentid="212956" order="ord"></member>
 </basis>
+<basis core="dbsource" source="basiscore" name="db" mid="10" lid="1">
+    <member name="offices" type="list" propertyid="" />
+</basis>
+
 
 <header class="border-b-8 border-solid border-primary-800">
     <section class="bg-secondary-900 h-16 lg:h-[72px] flex items-center">
         <div class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:w-[1280px]">
             <div class=" lg:flex lg:items-center lg:justify-between">
-                <div class="relative items-center hidden lg:flex">
+                <!-- <div class="relative items-center hidden lg:flex">
                     <input type="text"
                         class="bg-zinc-100 placeholder-zinc-600 pr-3 py-3 rounded-lg outline-none text-zinc-600 h-14 w-64"
                         name="" id="" placeholder="جستجو کنید">
@@ -39,11 +43,29 @@
                                 fill="white"></path>
                         </svg>
                     </button>
-                </div>
+                </div> -->
+                <form method="get" action="/search-content.bc" class="relative items-center hidden lg:flex">
+                    <input
+                        class="bg-zinc-100 placeholder-zinc-600 pr-3 py-3 rounded-lg outline-none text-zinc-600 h-14 w-64"
+                        placeholder="جستجو کنید" type="text" autocomplete="off" required name="search-content-name" />
+                    <input type="hidden" name="t" value="1">
+                    <button
+                        class="absolute left-1 bg-primary-800 rounded-lg w-12 h-12 flex items-center justify-center transition-all duration-300 hover:bg-secondary-600"
+                        type="submit">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M11.2485 3.50024C7.22315 3.50024 3.95996 6.76343 3.95996 10.7888C3.95996 14.8141 7.22315 18.0773 11.2485 18.0773C15.2738 18.0773 18.537 14.8141 18.537 10.7888C18.537 6.76343 15.2738 3.50024 11.2485 3.50024ZM2.45996 10.7888C2.45996 5.93501 6.39472 2.00024 11.2485 2.00024C16.1023 2.00024 20.037 5.93501 20.037 10.7888C20.037 15.6426 16.1023 19.5773 11.2485 19.5773C6.39472 19.5773 2.45996 15.6426 2.45996 10.7888Z"
+                                fill="white"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M16.7361 15.6477L22.3516 21.2486L21.2923 22.3106L15.6768 16.7097L16.7361 15.6477Z"
+                                fill="white"></path>
+                        </svg>
+                    </button>
+                </form>
                 <div class="flex items-center justify-between gap-2">
 
                     <div
-                        class="Login_Information flex items-center gap-2 text-white text-sm text-center transition-all hover:bg-primary-200 cursor-pointer duration-300 lg:pl-6 lg:pr-1 lg:py-1 rounded-l-xl rounded-r-[50px] lg:bg-primary-800">
+                        class="Login_Information flex items-center gap-2 text-white text-sm text-center transition-all hover:bg-secondary-900 cursor-pointer duration-300 lg:pl-6 lg:pr-1 lg:py-1 rounded-l-xl rounded-r-[50px] lg:bg-primary-800">
                         <basis core="call" file="authentication/modal" lid="1"></basis>
                         <!-- <div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary-100 ">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -61,18 +83,19 @@
                         <basis core="print" datamembername="db.info">
                             <face filter="TypeID in(240)">
                                 <a href="tel:@text"
-                                class="hidden group lg:flex w-full items-center justify-end gap-2 bg-primary-800 text-white text-sm pr-6 pl-1 py-1 rounded-r-xl rounded-l-[50px] text-center transition-all hover:bg-secondary-900 cursor-pointer duration-300">
-                                <span class="flex-1 group-hover:text-primary-100">@text</span>
-                                <div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary-100 ">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M16.8854 14.3568L13.9404 15.984C13.4204 15.8112 11.9254 15.2324 10.5584 13.92C9.27541 12.6884 8.73941 11.328 8.58241 10.8528L10.2814 8.01987L6.58441 3.14307L6.19441 3.36387C4.61241 4.25475 3.45041 5.36835 2.54141 6.86979L2.48341 7.02243C1.96941 9.65571 3.53841 13.538 6.38741 16.6829C9.47841 20.0948 13.4894 22.0167 17.4734 22.0167C17.6534 22.0167 17.8334 22.0138 18.0134 22.0052L18.1324 22.0004L18.2354 21.9447C19.8374 21.0826 21.0014 19.9652 21.8984 18.4272L22.1134 18.0576L16.8854 14.3568Z"
-                                            fill="#008A8C"></path>
-                                    </svg>
-                                </div>
-    
-                            </a>
+                                    class="hidden group lg:flex w-full items-center justify-end gap-2 bg-primary-800 text-white text-sm pr-6 pl-1 py-1 rounded-r-xl rounded-l-[50px] text-center transition-all hover:bg-secondary-900 cursor-pointer duration-300">
+                                    <span class="flex-1 group-hover:text-primary-100">@text</span>
+                                    <div
+                                        class="w-12 h-12 flex items-center justify-center rounded-full bg-primary-100 ">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M16.8854 14.3568L13.9404 15.984C13.4204 15.8112 11.9254 15.2324 10.5584 13.92C9.27541 12.6884 8.73941 11.328 8.58241 10.8528L10.2814 8.01987L6.58441 3.14307L6.19441 3.36387C4.61241 4.25475 3.45041 5.36835 2.54141 6.86979L2.48341 7.02243C1.96941 9.65571 3.53841 13.538 6.38741 16.6829C9.47841 20.0948 13.4894 22.0167 17.4734 22.0167C17.6534 22.0167 17.8334 22.0138 18.0134 22.0052L18.1324 22.0004L18.2354 21.9447C19.8374 21.0826 21.0014 19.9652 21.8984 18.4272L22.1134 18.0576L16.8854 14.3568Z"
+                                                fill="#008A8C"></path>
+                                        </svg>
+                                    </div>
+
+                                </a>
                             </face>
                         </basis>
 
@@ -180,27 +203,35 @@
                             </div>
                         </div>
                     </div>
-                    <div
-                        class="relative group hidden lg:flex items-center gap-2 text-white text-sm text-center transition-all cursor-pointer duration-300">
-                        <a href="Hotels"
-                            class="flex text-white items-center gap-2 transition-all duration-300 group text-secondary-800 hover:text-primary-600">
-                            دیگر مجموعه های ما
-                            <svg width="48" height="48" class="transition-all duration-300 group-hover:rotate-180"
-                                viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M31 20.5L24 27.5L17 20.5" class="group-hover:stroke-primary-600" stroke="#fff"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                </path>
-                            </svg>
-                        </a>
-                        <ul
-                            class="absolute z-40 flex flex-col items-start invisible w-full gap-2 p-4 font-medium transition-all duration-100 bg-white shadow-md opacity-0 rounded-xl top-full group-hover:visible group-hover:opacity-100">
-                            <li class="py-1 rounded-sm"><a href=""
-                                    class="transition-all duration-300 text-secondary-800 hover:bg-secondary-200">تور
-                                    شینگن</a></li>
-                            <li class="py-1"><a href="">ویزای شینگن</a></li>
-                            <li class="py-1"><a href="">ویزای شینگن</a></li>
-                        </ul>
-                    </div>
+                    <basis core="print" datamembername="db.offices">
+                        <layout>
+                            <div
+                                class="relative group hidden lg:flex items-center gap-2 text-white text-sm text-center transition-all cursor-pointer duration-300">
+                                <div
+                                    class="flex text-white items-center gap-2 transition-all duration-300 group text-secondary-800 hover:text-primary-600">
+                                    دیگر مجموعه های ما
+                                    <svg width="48" height="48"
+                                        class="transition-all duration-300 group-hover:rotate-180" viewBox="0 0 48 48"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M31 20.5L24 27.5L17 20.5" class="group-hover:stroke-primary-600"
+                                            stroke="#fff" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <ul
+                                    class="absolute z-40 flex flex-col items-start invisible w-full gap-2 p-4 font-medium transition-all duration-100 bg-white shadow-md opacity-0 rounded-xl top-full group-hover:visible group-hover:opacity-100">
+                                    @child
+                                </ul>
+                            </div>
+                        </layout>
+                        <face>
+                            <li
+                                class="w-full py-1 text-start transition-all duration-300 text-secondary-800 hover:text-white hover:bg-primary-800 rounded-md">
+                                <span>@title</span></li>
+                        </face>
+                    </basis>
+
                 </div>
             </div>
         </div>
@@ -222,8 +253,8 @@
                         fill="#008A8C" />
                 </svg>
                 <div class="flex items-center h-full">
-                    <a href="/"><img src="[##cms.cms.cdn##]/images/logo-header-desktop.png" alt="logo-header"
-                            width="116" height="42" loading="lazy"
+                    <a href="/"><img src="[##cms.cms.cdn##]/images/main-logo.png" alt="logo-header" width="116"
+                            height="42" loading="lazy"
                             class="hidden transition-transform duration-300 lg:block hover:scale-90" /></a>
                     <nav class="hidden h-full lg:flex">
                         <ul class="flex items-center text-sm">
@@ -554,84 +585,85 @@
                                 submenu end
                             </li> -->
                             <basis core="tree" datamembername="visa-services.cat" idcol="catid" parentidcol="parentid"
-                            nullvalue="213298">
-                            <layout>
-                                <li class="relative flex items-center h-full group">
-                                    <a href="/Visa-services"
-                                        class="flex border-r border-solid border-primary-800 px-3 h-12 items-center gap-2 transition-all duration-300 group text-secondary-800 hover:text-primary-600 xl:flex-shrink-0">خدمات ویزا
-                                        <svg width="48" height="48"
-                                            class="transition-all duration-300 group-hover:rotate-180"
-                                            viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M31 20.5L24 27.5L17 20.5"
-                                                class="group-hover:stroke-primary-600" stroke="#181C47"
-                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                    </a>
-                                    <!-- submenu -->
-                                    <ul
-                                        class="absolute z-30 flex flex-col invisible w-64 gap-2 p-4 font-medium transition-all duration-100 bg-white shadow-md opacity-0 rounded-xl top-full group-hover:visible group-hover:opacity-100">
-                                        @child
-                                    </ul>
-                                    <!-- submenu end -->
-                                </li>
-                            </layout>
-                            <face level="end" filter="link is null">
-                                <li
-                                    class="py-1 transition-all duration-300 rounded-md hover:bg-primary-800 group/levelthree">
-                                    <a href="/article-list.bc?catid=@catid"
-                                        class="block w-full transition-all duration-300 text-zinc-900 group-hover/levelthree:text-white">@title</a>
-                                </li>
-                            </face>
-                            <face level="end">
-                                <li
-                                    class="py-1 transition-all duration-300 rounded-md hover:bg-primary-800 group/levelthree">
-                                    <a href="@link"
-                                        class="block w-full transition-all duration-300 text-zinc-900 group-hover/levelthree:text-white">@title</a>
-                                </li>
-                            </face>
-                            <face level="1" filter="link is null">
-                                <li
-                                    class="relative py-1 transition-all duration-300 rounded-md group/leveltwo hover:bg-primary-800">
-                                    <div
-                                        class="flex justify-between cursor-pointer text-zinc-900 group-hover/leveltwo:text-white">
+                                nullvalue="213298">
+                                <layout>
+                                    <li class="relative flex items-center h-full group">
+                                        <a href="/Visa-services"
+                                            class="flex border-r border-solid border-primary-800 px-3 h-12 items-center gap-2 transition-all duration-300 group text-secondary-800 hover:text-primary-600 xl:flex-shrink-0">خدمات
+                                            ویزا
+                                            <svg width="48" height="48"
+                                                class="transition-all duration-300 group-hover:rotate-180"
+                                                viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M31 20.5L24 27.5L17 20.5"
+                                                    class="group-hover:stroke-primary-600" stroke="#181C47"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </a>
+                                        <!-- submenu -->
+                                        <ul
+                                            class="absolute z-30 flex flex-col invisible w-64 gap-2 p-4 font-medium transition-all duration-100 bg-white shadow-md opacity-0 rounded-xl top-full group-hover:visible group-hover:opacity-100">
+                                            @child
+                                        </ul>
+                                        <!-- submenu end -->
+                                    </li>
+                                </layout>
+                                <face level="end" filter="link is null">
+                                    <li
+                                        class="py-1 transition-all duration-300 rounded-md hover:bg-primary-800 group/levelthree">
                                         <a href="/article-list.bc?catid=@catid"
-                                            class="transition-all duration-300 text-zinc-900 group-hover/leveltwo:text-white">@title</a>
-                                        <svg width="48" height="48"
-                                            class="transition-all duration-300 group-hover/leveltwo:rotate-90"
-                                            viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M31 20.5L24 27.5L17 20.5"
-                                                class="group-hover/leveltwo:stroke-white" stroke="#181C47"
-                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                    </div>
-                                    <ul
-                                        class="absolute top-0 z-30 flex flex-col invisible w-64 gap-2 p-4 font-medium transition-all duration-300 bg-white shadow-md opacity-0 right-60 rounded-xl group-hover/leveltwo:visible group-hover/leveltwo:opacity-100">
-                                        @child
-                                    </ul>
-                                </li>
-                            </face>
-                            <face level="1">
-                                <li
-                                    class="relative py-1 transition-all duration-300 rounded-md group/leveltwo hover:bg-primary-800">
-                                    <div class="flex justify-between cursor-pointer">
+                                            class="block w-full transition-all duration-300 text-zinc-900 group-hover/levelthree:text-white">@title</a>
+                                    </li>
+                                </face>
+                                <face level="end">
+                                    <li
+                                        class="py-1 transition-all duration-300 rounded-md hover:bg-primary-800 group/levelthree">
                                         <a href="@link"
-                                            class="transition-all duration-300 text-zinc-900 group-hover/leveltwo:text-white">@title</a>
-                                        <svg width="48" height="48"
-                                            class="transition-all duration-300 group-hover/leveltwo:rotate-90"
-                                            viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M31 20.5L24 27.5L17 20.5"
-                                                class="group-hover/leveltwo:stroke-white" stroke="#181C47"
-                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                    </div>
-                                    <ul
-                                        class="absolute top-0 z-30 flex flex-col invisible w-64 gap-2 p-4 font-medium transition-all duration-300 bg-white shadow-md opacity-0 right-60 rounded-xl group-hover/leveltwo:visible group-hover/leveltwo:opacity-100">
-                                        @child
-                                    </ul>
-                                </li>
-                            </face>
+                                            class="block w-full transition-all duration-300 text-zinc-900 group-hover/levelthree:text-white">@title</a>
+                                    </li>
+                                </face>
+                                <face level="1" filter="link is null">
+                                    <li
+                                        class="relative py-1 transition-all duration-300 rounded-md group/leveltwo hover:bg-primary-800">
+                                        <div
+                                            class="flex justify-between cursor-pointer text-zinc-900 group-hover/leveltwo:text-white">
+                                            <a href="/article-list.bc?catid=@catid"
+                                                class="transition-all duration-300 text-zinc-900 group-hover/leveltwo:text-white">@title</a>
+                                            <svg width="48" height="48"
+                                                class="transition-all duration-300 group-hover/leveltwo:rotate-90"
+                                                viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M31 20.5L24 27.5L17 20.5"
+                                                    class="group-hover/leveltwo:stroke-white" stroke="#181C47"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <ul
+                                            class="absolute top-0 z-30 flex flex-col invisible w-64 gap-2 p-4 font-medium transition-all duration-300 bg-white shadow-md opacity-0 right-60 rounded-xl group-hover/leveltwo:visible group-hover/leveltwo:opacity-100">
+                                            @child
+                                        </ul>
+                                    </li>
+                                </face>
+                                <face level="1">
+                                    <li
+                                        class="relative py-1 transition-all duration-300 rounded-md group/leveltwo hover:bg-primary-800">
+                                        <div class="flex justify-between cursor-pointer">
+                                            <a href="@link"
+                                                class="transition-all duration-300 text-zinc-900 group-hover/leveltwo:text-white">@title</a>
+                                            <svg width="48" height="48"
+                                                class="transition-all duration-300 group-hover/leveltwo:rotate-90"
+                                                viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M31 20.5L24 27.5L17 20.5"
+                                                    class="group-hover/leveltwo:stroke-white" stroke="#181C47"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <ul
+                                            class="absolute top-0 z-30 flex flex-col invisible w-64 gap-2 p-4 font-medium transition-all duration-300 bg-white shadow-md opacity-0 right-60 rounded-xl group-hover/leveltwo:visible group-hover/leveltwo:opacity-100">
+                                            @child
+                                        </ul>
+                                    </li>
+                                </face>
 
-                        </basis>
+                            </basis>
                             <!-- <li class="flex items-center h-full">
                                 <a href=""
                                     class="flex items-center transition-all duration-300 px-3 border-r border-solid border-primary-800 h-12 text-secondary-800 hover:text-primary-600 xl:flex-shrink-0">خدمات

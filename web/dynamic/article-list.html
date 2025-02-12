@@ -3,10 +3,13 @@
         pageno="[##cms.query.pagenum|(1)##]" order="ord" />
     <member name="paging" type="list" request="paging" count="3" parentname="article-list" />
 </basis>
+<basis core="dbsource" source="basiscore" lid="1" mid="20" name="db" catid="[##cms.query.tid##]">
+    <member name="tour-list" type="list" link="tour.bc" propertyid="" perpage="9" size="200x200" order="ord" />
+</basis>
 <basis core="dbsource" source="basiscore" lid="1" mid="18" name="db" usedforid="[##cms.query.catid##]">
     <member name="scalar" type="scalar" typeid="150" />
 </basis>
-<basis core="dbsource" source="basiscore" lid="1" mid="20" name="db" catid="[##cms.query.catid##]">
+<basis core="dbsource" source="basiscore" lid="1" mid="1" name="db" catid="[##cms.query.catid##]">
     <member name="navigation" type="tree" request="navcatid" parentid="[##cms.query.catid##]" />
 </basis>
 <basis core="dbsource" source="basiscore" lid="1" mid="1" name="db" usedforid="[##cms.query.aid##]">
@@ -50,33 +53,44 @@
                     <h1 class="text-white font-bold text-2xl mb-6">@column1</h1>
                 </face>
             </basis>
-            <div class="flex items-center justify-center gap-2">
-                <input type="text" class="w-[553px] h-14 pr-3 rounded-lg text-zinc-500 placeholder-zinc-500" name="" id=""
-                    placeholder="جستجوی مقاله">
+            <!-- <div class="flex items-center justify-center gap-2">
+                <input type="text" class="w-[553px] h-14 pr-3 rounded-lg text-zinc-500 placeholder-zinc-500" name=""
+                    id="" placeholder="جستجوی مقاله">
                 <button
                     class="flex items-center text-sm justify-center w-32 h-14 text-white rounded-lg bg-primary-800 transition-all duration-300 hover:bg-secondary-600">جستحو</button>
-            </div>
+            </div> -->
+            <form method="get" action="/search-content.bc" class="flex items-center justify-center gap-2">
+                    <input
+                        class="w-[553px] h-14 pr-3 rounded-lg text-zinc-500 placeholder-zinc-500"
+                        placeholder="جستجوی مقاله" type="text" autocomplete="off" required name="search-content-name" />
+                    <button
+                        class="flex items-center text-sm justify-center w-32 h-14 text-white rounded-lg bg-primary-800 transition-all duration-300 hover:bg-secondary-600"
+                        type="submit">
+                        جستجو
+                    </button>
+            </form>
         </section>
 
         <section class="mt-20 max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto">
-            <ul itemscope itemtype="https://schema.org/BreadcrumbList" class="flex items-center justify-center text-sm gap-1">
+            <ul itemscope itemtype="https://schema.org/BreadcrumbList"
+                class="flex items-center justify-center text-sm gap-1">
                 <li class="inline-block font-normal" itemprop="itemListElement" itemscope
                     itemtype="https://schema.org/ListItem">
-                    <a class="text-zinc-500 transition-all duration-300 hover:text-primary-600" itemprop="item" href="/" aria-label="home"><span
-                            itemprop="name">صفحه اصلی</span>
+                    <a class="text-zinc-500 transition-all duration-300 hover:text-primary-600" itemprop="item" href="/"
+                        aria-label="home"><span itemprop="name">صفحه اصلی</span>
                         <meta itemprop="position" content="1" />
                     </a>
                 </li>
                 <span class="text-zinc-500"> > </span>
                 <basis core="print" datamembername="db.navigation">
-                    <face filter="RowNumber=max(RowNumber) and parentcatid<>212707">
+                    <face filter="RowNumber=max(RowNumber) and parentcatid<>212708">
                         <li class="inline-block font-normal" itemprop="itemListElement" itemscope
                             itemtype="https://schema.org/ListItem">
                             <span itemprop="name">@title</span>
                             <meta itemprop="position" content="@rownumber" />
                         </li>
                     </face>
-                    <face filter="link is null and parentcatid<>212707">
+                    <face filter="link is null and parentcatid<>212708">
                         <li class="flex gap-1 font-normal " itemprop="itemListElement" itemscope
                             itemtype="https://schema.org/ListItem">
                             <a class="text-zinc-500 transition-all duration-300 hover:text-primary-600" itemprop="item"
@@ -87,11 +101,12 @@
                             <span class="text-zinc-500"> > </span>
                         </li>
                     </face>
-                    <face filter="parentcatid<>212707">
+                    <face filter="parentcatid<>212708">
                         <li class="flex gap-1 font-normal " itemprop="itemListElement" itemscope
                             itemtype="https://schema.org/ListItem">
-                            <a class="text-zinc-500 transition-all duration-300 hover:text-primary-600" itemprop="item" href="@link"
-                                aria-label="@title"><span class="text-zinc-500 transition-all duration-300 hover:text-primary-600"
+                            <a class="text-zinc-500 transition-all duration-300 hover:text-primary-600" itemprop="item"
+                                href="@link" aria-label="@title"><span
+                                    class="text-zinc-500 transition-all duration-300 hover:text-primary-600"
                                     itemprop="name">@title</span>
                                 <meta itemprop="position" content="@rownumber" />
                             </a>
@@ -106,12 +121,12 @@
                     <h2 class=" text-2xl font-bold bg-white px-5 text-zinc-900 mt-2">آخرین مقالات</h2>
                 </div>
             </div>
-    
+
 
             <div class="flex mt-14 gap-7">
                 <div class="flex-1">
 
-    
+
                     <basis core="list" datamembername="db.article-list">
                         <layout>
                             <div class="grid grid-cols-2 gap-x-3 gap-y-12">
@@ -121,37 +136,43 @@
                         </layout>
                         <face filter="link is null">
                             <article class="group">
-                                <img src="@00520X00271prp" alt="@title" class="rounded-lg h-[271px] object-cover transition-all duration-300 group-hover:sepia" width="100%"
-                                    height="271" loading="lazy">
+                                <img src="@00520X00271prp" alt="@title"
+                                    class="rounded-lg h-[271px] object-cover transition-all duration-300 group-hover:sepia"
+                                    width="100%" height="271" loading="lazy">
                                 <div class="flex flex-col gap-2 mt-7">
                                     <h2 class="text-zinc-900 font-medium">@title</h2>
                                     <div class="text-zinc-800 text-sm text-justify line-clamp-4">@prp_7244</div>
-                                        <div>
-                                            <a href="/article.bc?id=@id" class="relative group/level-one text-primary-800 text-sm">بیشتر بخوانید
-                                                <span class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-px bg-primary-600 group-hover/level-one:w-full"></span>
-                                            </a>
-                                        </div>
+                                    <div>
+                                        <a href="/article.bc?id=@id"
+                                            class="relative group/level-one text-primary-800 text-sm">بیشتر بخوانید
+                                            <span
+                                                class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-px bg-primary-600 group-hover/level-one:w-full"></span>
+                                        </a>
+                                    </div>
                                 </div>
                             </article>
                         </face>
                         <face>
                             <article class="group">
-                                <img src="@00520X00271prp" alt="@title" class="rounded-lg h-[271px] object-cover transition-all duration-300 group-hover:sepia" width="100%"
-                                    height="271" loading="lazy">
+                                <img src="@00520X00271prp" alt="@title"
+                                    class="rounded-lg h-[271px] object-cover transition-all duration-300 group-hover:sepia"
+                                    width="100%" height="271" loading="lazy">
                                 <div class="flex flex-col gap-2 mt-7">
                                     <h2 class="text-zinc-900 font-medium">@title</h2>
                                     <div class="text-zinc-800 text-sm text-justify line-clamp-4">@prp_7244</div>
-                                        <div>
-                                            <a href="@link" class="relative group/level-one text-primary-800 text-sm">بیشتر بخوانید
-                                                <span class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-px bg-primary-600 group-hover/level-one:w-full"></span>
-                                            </a>
-                                        </div>
+                                    <div>
+                                        <a href="@link" class="relative group/level-one text-primary-800 text-sm">بیشتر
+                                            بخوانید
+                                            <span
+                                                class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-px bg-primary-600 group-hover/level-one:w-full"></span>
+                                        </a>
+                                    </div>
                                 </div>
                             </article>
                         </face>
                     </basis>
 
-    
+
                     <div id="paging" class="flex justify-center mt-12">
                         <ul class="flex items-center gap-1 cd-pagination no-space direction-ltr" id="wibpaging">
                             <basis core="print" datamembername="db.paging">
@@ -173,8 +194,9 @@
                                     <li
                                         class="flex items-center justify-center w-12 h-12 p-2 rounded-lg bg-secondary-700 mr-3 transition-all duration-300 hover:bg-secondary-100 group page-no prev-page">
                                         <a class="flex items-center justify-center w-full cursor-pointer text-zinc-900"
-                                            aria-label="angle-left" href="/[##cms.cms.pageurl##]?pagenum=@page"> <svg width="32"
-                                                height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            aria-label="angle-left" href="/[##cms.cms.pageurl##]?pagenum=@page"> <svg
+                                                width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
                                                 <path class="transition-all duration-300 group-hover:fill-secondary-700"
                                                     d="M12.1602 16C12.1602 15.8789 12.1852 15.7578 12.2352 15.6367C12.2852 15.5156 12.3502 15.4248 12.4302 15.3643L16.9002 10.8232C17.0802 10.6416 17.3102 10.5508 17.5902 10.5508C17.8702 10.5508 18.1102 10.6416 18.3102 10.8232C18.4902 11.0251 18.5802 11.2673 18.5802 11.5498C18.5802 11.8324 18.4902 12.0645 18.3102 12.2461L14.4702 16.1211L18.3102 19.9961C18.4902 20.1979 18.5802 20.4401 18.5802 20.7227C18.5802 21.0052 18.4902 21.2373 18.3102 21.4189C18.1102 21.6208 17.8702 21.7217 17.5902 21.7217C17.3102 21.7217 17.0802 21.6208 16.9002 21.4189L12.4302 16.9082C12.3502 16.7064 12.2852 16.5348 12.2352 16.3936C12.1852 16.2523 12.1602 16.1211 12.1602 16Z"
                                                     fill="#516E8C" />
@@ -248,41 +270,50 @@
                 </div>
 
                 <aside class="max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto w-[200px]">
-    
-                    <div class="flex flex-col gap-3">
-                        <div class="relative rounded-lg overflow-hidden">
-                            <img src="../assets/images/travel-card.jpg" class="h-[200px] object-cover transition-all duration-300 hover:brightness-50"
-                                alt="card-tour-popular" width="100%" height="200">
-                            <div class="absolute bottom-0 w-full py-2 flex justify-center bg-primary-800 mb-6">
-                                <h2 class="text-sm text-white">تور گروهی</h2>
+
+                    <basis core="list" datamembername="db.tour-list">
+                        <layout>
+                            <div class="flex flex-col gap-3">
+                                @child
                             </div>
-                        </div>
-                        <div class="relative rounded-lg overflow-hidden">
-                            <img src="../assets/images/travel-card.jpg" class="h-[200px] object-cover"
-                                alt="card-tour-popular" width="100%" height="200">
-                            <div class="absolute bottom-0 w-full py-2 flex justify-center bg-primary-800 mb-6">
-                                <h2 class="text-sm text-white">تور گروهی</h2>
-                            </div>
-                        </div>
-                        <div class="relative rounded-lg overflow-hidden">
-                            <img src="../assets/images/travel-card.jpg" class="h-[200px] object-cover"
-                                alt="card-tour-popular" width="100%" height="200">
-                            <div class="absolute bottom-0 w-full py-2 flex justify-center bg-primary-800 mb-6">
-                                <h2 class="text-sm text-white">تور گروهی</h2>
-                            </div>
-                        </div>
-    
-                    </div>
-            </aside>
+                        </layout>
+                        <face filter="link is null">
+                            <a href="/tour.bc?id=@id" class="relative rounded-lg overflow-hidden">
+                                <img src="@00200X00200prp"
+                                    class="h-[200px] object-cover transition-all duration-300 hover:brightness-50"
+                                    alt="card-tour-popular" width="100%" height="200">
+                                <div class="absolute bottom-0 w-full py-2 flex justify-center bg-primary-800 mb-6">
+                                    <h2 class="text-sm text-white">@title</h2>
+                                </div>
+                            </a>
+                        </face>
+                        <face>
+                            <a href="@link" class="relative rounded-lg overflow-hidden">
+                                <img src="@00200X00200prp"
+                                    class="h-[200px] object-cover transition-all duration-300 hover:brightness-50"
+                                    alt="card-tour-popular" width="100%" height="200">
+                                <div class="absolute bottom-0 w-full py-2 flex justify-center bg-primary-800 mb-6">
+                                    <h2 class="text-sm text-white">@title</h2>
+                                </div>
+                            </a>
+                        </face>
+                    </basis>
+                </aside>
             </div>
         </section>
 
 
         <section class="max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto mt-24 mb-20">
-            <h2 class="text-zinc-900 text-2xl font-bold mb-3">دنیای گردشگری</h2>
-            <div class="text-justify text-sm text-zinc-900">
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوعلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوعلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوعلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی 
-            </div>
+            <basis core="print" datamembername="db.p-under">
+                <face filter="TypeID in(150)">
+                    <h2 class="text-zinc-900 text-2xl font-bold mb-3">@text</h2>
+                </face>
+                <face filter="TypeID not in('150') and TypeID not in('159')">
+                    <div class="text-justify text-sm text-zinc-900">
+                        @largetext
+                    </div>
+                </face>
+            </basis>
         </section>
     </main>
 

@@ -139,26 +139,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const cmsQuery = item.getAttribute("data-id");
 
-      async function secondContent() {
-        for (let i = 0; i < fetchContentTours.length; i++) {
-          const fetchContentTour = fetchContentTours[i];
-          try {
-            fetchContentTour.innerHTML =
-              '<div class="flex justify-center w-full"><span class="loader-fetch"></span></div>';
+      // 🔥 پیدا کردن `.fetch-content-tour` مخصوص این `li`
+      const parentContainer = item.closest(".tour-container"); // پیدا کردن نزدیک‌ترین container
+      if (!parentContainer) return;
+      const fetchContentTour = parentContainer.querySelector(".fetch-content-tour");
 
-            const secondResponse = await fetch(
-              `/tour-load-items.bc?catid=${cmsQuery}`
-            );
-            if (!secondResponse.ok) {
-              throw new Error(`HTTP error! Status: ${secondResponse.status}`);
-            }
-            const secondData = await secondResponse.text();
-            fetchContentTour.innerHTML = secondData; // داده‌های جدید را بارگذاری کنید
-          } catch (error) {
-            console.error("Fetch failed:", error);
-            fetchContentTour.innerHTML =
-              "<p>مشکلی در دریافت اطلاعات رخ داد: " + error.message + "</p>";
+      if (!fetchContentTour) return;
+
+      async function secondContent() {
+        try {
+          fetchContentTour.innerHTML =
+            '<div class="flex justify-center w-full"><span class="loader-fetch"></span></div>';
+
+          const secondResponse = await fetch(
+            `/tour-load-items.bc?catid=${cmsQuery}`
+          );
+          if (!secondResponse.ok) {
+            throw new Error(`HTTP error! Status: ${secondResponse.status}`);
           }
+          const secondData = await secondResponse.text();
+          fetchContentTour.innerHTML = secondData; // فقط همون محتوای خاص رو تغییر بده
+        } catch (error) {
+          console.error("Fetch failed:", error);
+          fetchContentTour.innerHTML =
+            "<p>مشکلی در دریافت اطلاعات رخ داد: " + error.message + "</p>";
         }
       }
 
@@ -167,6 +171,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+
 
 function loadContentHomePage() {
   loadSearchEngine("search-engine.bc", "searchbox");
@@ -358,9 +364,8 @@ async function RenderFormFooter() {
   var inputElementVisa7 = document.querySelector(
     " .email-footer-form input[data-bc-text-input]"
   );
-  inputElementVisa7.setAttribute("placeholder", "Email");
+  inputElementVisa7.setAttribute("placeholder", "ایمیل");
 }
-
 
 // visa form
 function uploadDocumentVisa(args) {
@@ -535,7 +540,7 @@ async function RenderFormVisa() {
   inputElementVisa7.setAttribute("placeholder", "تاریخ تکمیل فرم");
 }
 
-//form contact 
+//form contact
 function uploadDocumentContact(args) {
   document.querySelector("#contact-form-resize .Loading_Form").style.display =
     "block";
@@ -590,7 +595,6 @@ async function RenderFormContact() {
   );
   inputElementVisa7.setAttribute("placeholder", "متن");
 }
-
 
 // header form
 
@@ -661,7 +665,6 @@ async function RenderFormHeader() {
     " .message-header-form textarea[data-bc-text-input]"
   );
   inputElementVisa7.setAttribute("placeholder", "متن");
-
 }
 
 // swiper
@@ -691,7 +694,7 @@ if (document.querySelector(".swiper-image-slider2")) {
     spaceBetween: 30,
     grabCursor: true,
     autoplay: {
-      delay: 3500,
+      delay: 3000,
       disableOnInteraction: false,
     },
     loop: true,
@@ -709,7 +712,7 @@ if (document.querySelector(".swiper-popular-tours")) {
     spaceBetween: 12,
     grabCursor: true,
     autoplay: {
-      delay: 2500,
+      delay: 3500,
       disableOnInteraction: false,
     },
     loop: true,
@@ -751,7 +754,7 @@ function reinitializeSwiper() {
       spaceBetween: 8,
       grabCursor: true,
       autoplay: {
-        delay: 2500,
+        delay: 4000,
         disableOnInteraction: false,
       },
       pagination: {
@@ -773,7 +776,7 @@ function reinitializeSwiper() {
       spaceBetween: 8,
       grabCursor: true,
       autoplay: {
-        delay: 2500,
+        delay: 4500,
         disableOnInteraction: false,
       },
       loop: true,
@@ -783,7 +786,6 @@ function reinitializeSwiper() {
       },
     });
   }
-
 
   if (swiperExhibitionTours) {
     swiperExhibitionTours.destroy(true, true);
@@ -796,7 +798,7 @@ function reinitializeSwiper() {
       spaceBetween: 8,
       grabCursor: true,
       autoplay: {
-        delay: 2500,
+        delay: 5000,
         disableOnInteraction: false,
       },
       loop: true,
@@ -808,8 +810,6 @@ function reinitializeSwiper() {
   }
 }
 
-
-
 if (document.querySelector(".swiper-travel")) {
   var swiperTravel = new Swiper(".swiper-travel", {
     slidesPerView: 9,
@@ -818,7 +818,7 @@ if (document.querySelector(".swiper-travel")) {
     spaceBetween: 12,
     grabCursor: true,
     autoplay: {
-      delay: 2500,
+      delay: 5500,
       disableOnInteraction: false,
     },
     loop: true,
@@ -826,6 +826,20 @@ if (document.querySelector(".swiper-travel")) {
       el: ".swiper-pagination",
       type: "progressbar",
     },
+  });
+}
+if (document.querySelector(".swiper-special-tour")) {
+  var swiperSpecialTour = new Swiper(".swiper-special-tour", {
+    slidesPerView: 1,
+    speed: 400,
+    centeredSlides: false,
+    spaceBetween: 8,
+    grabCursor: true,
+    autoplay: {
+      delay: 6000,
+      disableOnInteraction: false,
+    },
+    loop: true,
   });
 }
 if (document.querySelector(".swiper-visa")) {
@@ -836,7 +850,7 @@ if (document.querySelector(".swiper-visa")) {
     spaceBetween: 12,
     grabCursor: true,
     autoplay: {
-      delay: 2500,
+      delay: 6500,
       disableOnInteraction: false,
     },
     loop: true,
@@ -849,6 +863,97 @@ if (document.querySelector(".swiper-visa")) {
 if (document.querySelector(".swiper-travel-visa")) {
   var swiperTravelVisa = new Swiper(".swiper-travel-visa", {
     slidesPerView: 9,
+    speed: 400,
+    centeredSlides: false,
+    spaceBetween: 12,
+    grabCursor: true,
+    autoplay: {
+      delay: 7000,
+      disableOnInteraction: false,
+    },
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      type: "progressbar",
+    },
+  });
+}
+
+if (document.querySelector(".swiper-image-slider1-mobile")) {
+  var swiperImageSlider1Mobile = new Swiper(".swiper-image-slider1-mobile", {
+    slidesPerView: 1,
+    speed: 400,
+    centeredSlides: false,
+    spaceBetween: 30,
+    grabCursor: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-button-next-custom",
+      prevEl: ".swiper-button-prev-custom",
+    },
+  });
+}
+if (document.querySelector(".swiper-image-slider2-mobile")) {
+  var swiperImageSlider2Mobile = new Swiper(".swiper-image-slider2-mobile", {
+    slidesPerView: 1,
+    speed: 400,
+    centeredSlides: false,
+    spaceBetween: 30,
+    grabCursor: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-button-next-custom",
+      prevEl: ".swiper-button-prev-custom",
+    },
+  });
+}
+if (document.querySelector(".swiper-popular-tours-mobile")) {
+  var swiperPopularToursMobile = new Swiper(".swiper-popular-tours-mobile", {
+    slidesPerView: 1.3,
+    speed: 400,
+    centeredSlides: false,
+    spaceBetween: 12,
+    grabCursor: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      type: "progressbar",
+    },
+  });
+}
+if (document.querySelector(".swiper-travel-mobile")) {
+  var swiperTravelMobile = new Swiper(".swiper-travel-mobile", {
+    slidesPerView: 1.3,
+    speed: 400,
+    centeredSlides: false,
+    spaceBetween: 12,
+    grabCursor: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      type: "progressbar",
+    },
+  });
+}
+if (document.querySelector(".swiper-visa-mobile")) {
+  var swiperVisaMobile = new Swiper(".swiper-visa-mobile", {
+    slidesPerView: 1.3,
     speed: 400,
     centeredSlides: false,
     spaceBetween: 12,

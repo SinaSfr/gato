@@ -676,6 +676,10 @@ body {
   margin-top: 1.25rem;
 }
 
+.mt-7 {
+  margin-top: 1.75rem;
+}
+
 .mt-6 {
   margin-top: 1.5rem;
 }
@@ -1103,6 +1107,10 @@ body {
   padding-top: 2rem;
 }
 
+.text-start {
+  text-align: start;
+}
+
 .text-center {
   text-align: center;
 }
@@ -1309,6 +1317,14 @@ body {
     scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-secondary {
+  background-color: var(--secondary);
+}
+
 .hover\:border-primary-900:hover {
   border-color: var(--primary-900);
 }
@@ -1512,6 +1528,10 @@ body {
     transform: translate(var(--tw-translate-x), var(--tw-translate-y))
       rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
       scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+
+  .lg\:flex-row {
+    flex-direction: row;
   }
 
   .lg\:flex-row-reverse {
@@ -1762,4 +1782,27 @@ body {
 }
 .footer-form [data-bc-question] {
   margin-bottom: 0 !important;
+}
+
+.btnstyle, .user-profile-btn{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.hasNot-login-icon, .user-icon{
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+  background-color: #b3eeed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hasNot-login-icon svg{
+  stroke: #008A8C;
+  fill: #008A8C;
+}
+
+.itemInput, .login-btn {
+  font-family: "DanaFaNum" !important;
 }

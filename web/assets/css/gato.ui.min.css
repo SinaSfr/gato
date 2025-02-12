@@ -285,10 +285,6 @@ body {
   margin-top: 1.25rem;
 }
 
-.mt-7 {
-  margin-top: 1.75rem;
-}
-
 .mt-9 {
   margin-top: 2.25rem;
 }
@@ -1866,4 +1862,11 @@ body {
 }
 .contact-form [data-bc-schema-column] > div:nth-child(2) {
   flex: 3; 
+}
+
+.mask-image {
+  -webkit-mask-image: url(../images/mask-shape.svg);
+  mask-image: url(../images/mask-shape.svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
 }
