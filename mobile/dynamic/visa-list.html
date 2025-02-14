@@ -1,5 +1,5 @@
 <basis core="dbsource" source="basiscore" lid="1" mid="20" name="db" catid="[##cms.query.catid##]">
-    <member name="visa-list" type="list" link="article.bc" propertyid="" perpage="12" size="311x116"
+    <member name="visa-list" type="list" link="article.bc" propertyid="" perpage="8" size="311x116"
         pageno="[##cms.query.pagenum|(1)##]" order="ord" />
     <member name="paging" type="list" request="paging" count="3" parentname="visa-list" />
 </basis>
@@ -37,15 +37,15 @@
             </face>
         </basis>
         <!-- pwa metatags -->
-        <basis core="call" file="pwa.inc" />
+        <basis core="call" file="pwa.inc" pageindex="[##cms.cms.pageindex##]"/>
         <!-- common styles for all page -->
         <link rel="stylesheet" href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css">
-        <basis core="call" file="style.inc" />
+        <basis core="call" file="style.inc" pageindex="[##cms.cms.pageindex##]" />
     </head>
 <body>
-    <basis core="call" file="header.inc" />
+    <basis core="call" file="header.inc" pageindex="[##cms.cms.pageindex##]" />
     <main>
-        <section class="max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto mt-12">
+        <section class="max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto mt-5">
             <ul itemscope itemtype="https://schema.org/BreadcrumbList" class="flex items-center justify-center text-sm gap-1 mt-2">
                 <li class="inline-block font-normal" itemprop="itemListElement" itemscope
                     itemtype="https://schema.org/ListItem">
@@ -88,66 +88,58 @@
                 </basis>
             </ul>
 
-            <div class="relative pt-3 mt-14">
+            <div class="relative pt-3 mt-8">
                 <div class="w-full h-[6px] bg-zinc-200"></div>
 
-                <div class="absolute left-0 right-0 top-0 z-20 flex mr-16">
+                <div class="absolute left-0 right-0 top-0 z-20 flex justify-center">
                     <basis core="print" datamembername="db.scalar">
                         <face>
-                            <h1 class=" text-2xl font-bold bg-white px-5 text-zinc-900">@column1</h1>
+                            <h2 class="text-lg font-bold bg-white px-5 text-zinc-900">@column1</h2>
                         </face>
                     </basis>
-                    
                 </div>
 
                 <basis core="list" datamembername="db.visa-list">
                     <layout>
-                        <div class="mt-14 grid grid-cols-4 gap-x-3 gap-y-6">
+                        <div class="mt-8 flex flex-col gap-3">
+                            <!-- items -->
                             @child
                         </div>
                     </layout>
                     <face filter="link is null">
-                        <a href="/article.bc?id=@id" class="rounded-lg overflow-hidden border border-solid border-secondary-50 group">
+                        <a href="/article.bc?id=@id" class="rounded-lg overflow-hidden border border-solid border-secondary-50">
                             <div class="relative ">
-                                <div class="absolute inset-0 w-full h-full bg-gradient-to-b from-transparent to-black/80">
-                                </div>
+                                <div class="absolute inset-0 w-full h-full bg-gradient-to-b from-transparent to-black/80"></div>
                                 <img src="@00311X00116prp" class="h-[116px] object-cover"
                                     alt="@title" width="100%" height="116">
                             </div>
-                            <div class="relative text-center w-full h-full pt-2 pb-6">
-                                <span
-                                    class="absolute bottom-0 left-0 w-full transition-all duration-300 ease-out translate-x-full translate-y-full h-full -z-10 bg-secondary-400 group-hover:translate-x-0 group-hover:translate-y-0"></span>
-                                <h2 class="text-xl font-bold text-zinc-900 mr-24 group-hover:text-white">@title</h2>
-                                <img src="@image" class="absolute -top-10 right-10 rounded-full border-3 border-solid border-white" alt="@title"
-                                    width="77" height="77">
+                            <div class="relative text-center w-full pt-1 pb-6">
+                                <h2 class="text-xl font-bold text-zinc-900 mr-20">@title</h2>
+                                <img src="@image" class="absolute -top-10 right-4 rounded-full border-3 border-solid border-white" alt="@title" width="77" height="77">
                             </div>
                         </a>
                     </face>
                     <face>
-                        <a href="@link" class="rounded-lg overflow-hidden border border-solid border-secondary-50 group">
+                        <a href="@link" class="rounded-lg overflow-hidden border border-solid border-secondary-50">
                             <div class="relative ">
-                                <div class="absolute inset-0 w-full h-full bg-gradient-to-b from-transparent to-black/80">
-                                </div>
+                                <div class="absolute inset-0 w-full h-full bg-gradient-to-b from-transparent to-black/80"></div>
                                 <img src="@00311X00116prp" class="h-[116px] object-cover"
                                     alt="@title" width="100%" height="116">
                             </div>
-                            <div class="relative text-center w-full h-full pt-2 pb-6">
-                                <span
-                                    class="absolute bottom-0 left-0 w-full transition-all duration-300 ease-out translate-x-full translate-y-full h-full -z-10 bg-secondary-400 group-hover:translate-x-0 group-hover:translate-y-0"></span>
-                                <h2 class="text-xl font-bold text-zinc-900 mr-24 group-hover:text-white">@title</h2>
-                                <img src="@image" class="absolute -top-10 right-10 rounded-full border-3 border-solid border-white" alt="@title"
-                                    width="77" height="77">
+                            <div class="relative text-center w-full pt-1 pb-6">
+                                <h2 class="text-xl font-bold text-zinc-900 mr-20">@title</h2>
+                                <img src="@image" class="absolute -top-10 right-4 rounded-full border-3 border-solid border-white" alt="@title" width="77" height="77">
                             </div>
                         </a>
                     </face>
                 </basis>
 
-                <div id="paging" class="flex justify-center mt-20">
+                <div id="paging" class="flex justify-center mt-12">
                     <ul class="flex items-center gap-1 cd-pagination no-space direction-ltr" id="wibpaging">
                         <basis core="print" datamembername="db.paging">
                             <face filter="(@sta='pre')and('[##cms.cms.pageurl##]'='')">
                                 <li
-                                    class="flex items-center justify-center w-12 h-12 p-2 rounded-lg bg-secondary-700 mr-3 transition-all duration-300 hover:bg-secondary-100 group page-no prev-page">
+                                    class="flex items-center justify-center w-12 h-12 p-2 rounded-lg bg-secondary-700 mr-3 group page-no prev-page">
                                     <a class="flex items-center justify-center w-full cursor-pointer text-zinc-900"
                                         aria-label="angle-left" href="/[##cms.cms.link_page##]&pagenum=@page">
                                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
@@ -161,7 +153,7 @@
                             </face>
                             <face filter="(@sta='pre')and('[##cms.cms.pageurl##]'<>'')">
                                 <li
-                                    class="flex items-center justify-center w-12 h-12 p-2 rounded-lg bg-secondary-700 mr-3 transition-all duration-300 hover:bg-secondary-100 group page-no prev-page">
+                                    class="flex items-center justify-center w-12 h-12 p-2 rounded-lg bg-secondary-700 mr-3 group page-no prev-page">
                                     <a class="flex items-center justify-center w-full cursor-pointer text-zinc-900"
                                         aria-label="angle-left" href="/[##cms.cms.pageurl##]?pagenum=@page"> <svg width="32"
                                             height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -190,7 +182,7 @@
                             <face
                                 filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no') and ('[##cms.cms.pageurl##]'='') ">
                                 <li
-                                    class="flex items-center justify-center w-12 h-12 p-2 text-secondary-600 rounded-lg bg-secondary-50 transition-all duration-300 hover:bg-secondary-100 page-no">
+                                    class="flex items-center justify-center w-12 h-12 p-2 text-secondary-600 rounded-lg bg-secondary-50 page-no">
                                     <a class="flex items-center justify-center w-full h-full cursor-pointer page-number"
                                         href="/[##cms.cms.link_page##]&pagenum=@page">@page</a>
                                 </li>
@@ -198,7 +190,7 @@
                             <face
                                 filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no') and ('[##cms.cms.pageurl##]'<>'') ">
                                 <li
-                                    class="flex items-center justify-center w-12 h-12 p-2 text-secondary-600 rounded-lg bg-secondary-50 transition-all duration-300 hover:bg-secondary-100 page-no">
+                                    class="flex items-center justify-center w-12 h-12 p-2 text-secondary-600 rounded-lg bg-secondary-50 page-no">
                                     <a class="flex items-center justify-center w-full h-full cursor-pointer page-number"
                                         href="/[##cms.cms.pageurl##]?pagenum=@page">@page</a>
                                 </li>
@@ -207,7 +199,7 @@
                         <basis core="print" datamembername="db.paging">
                             <face filter="(@sta='nex') and ('[##cms.cms.pageurl##]'='')">
                                 <li
-                                    class="flex items-center justify-center w-12 h-12 p-2 rounded-lg bg-secondary-700 mr-3 transition-all duration-300 hover:bg-secondary-100 group page-no next-page">
+                                    class="flex items-center justify-center w-12 h-12 p-2 rounded-lg bg-secondary-700 mr-3 group page-no next-page">
                                     <a class="flex items-center justify-center w-full h-full cursor-pointer text-zinc-900"
                                         aria-label="angle-right" href="/[##cms.cms.link_page##]&pagenum=@page">
                                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
@@ -221,7 +213,7 @@
                             </face>
                             <face filter="(@sta='nex') and ('[##cms.cms.pageurl##]'<>'')">
                                 <li
-                                    class="flex items-center justify-center w-12 h-12 p-2 rounded-lg bg-secondary-700 mr-3 transition-all duration-300 hover:bg-secondary-100 group page-no next-page">
+                                    class="flex items-center justify-center w-12 h-12 p-2 rounded-lg bg-secondary-700 mr-3 group page-no next-page">
                                     <a class="flex items-center justify-center w-full h-full cursor-pointer text-zinc-900"
                                         aria-label="angle-right" href="/[##cms.cms.pageurl##]?pagenum=@page"> <svg
                                             width="32" height="32" viewBox="0 0 32 32" fill="none"
@@ -236,50 +228,47 @@
                     </ul>
                 </div>
 
-
             </div>  
         </section>
 
-        <section class="mt-16 bg-zinc-100 py-6">
-            <div class="max-lg:w-[90%] max-xl:w-[97%] mx-auto">
+        <section class="mt-10 bg-zinc-100 pt-6 pb-5 mb-5">
+            <div class="relative max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto">
                 <div class="flex justify-center">
-                    <h2 class="absolute z-10 text-2xl text-zinc-900 font-bold bg-zinc-100 px-5">سبک سفر</h2>
+                    <h2 class="absolute z-10 text-lg font-bold bg-zinc-100 px-5 text-zinc-900">سبک سفر</h2>
                 </div>
     
     
                 <!-- Slider main container -->
-                <div class="pt-16 swiper swiper-travel-visa">
+                <div class="pt-16 swiper swiper-travel-visa-mobile">
                     <basis core="tree" datamembername="travel.cat" idcol="catid" parentidcol="parentid"
                     nullvalue="213383">
                         <layout>
-                            <!-- Additional required wrapper -->
-                            <div class="swiper-wrapper flex justify-center">
-                                @child
-                            </div>
+                                                <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        @child
+                    </div>
                         </layout>
-                            <face filter="link is null and RowNumber not in(1)">
-                                <a href="/tour-list.bc?catid=@catid"
-                                    class="relative swiper-slide rounded-lg overflow-hidden group">
-                                    <img src="@image"
-                                        class="h-[200px] object-cover transition-all duration-300 group-hover:brightness-50"
-                                        alt="@title" width="100%" height="200">
-                                    <div class="absolute bottom-0 w-full py-2 flex justify-center bg-primary-800 mb-6">
-                                        <h2 class="text-sm text-white">@title</h2>
-                                    </div>
-                                </a>
-                            </face>
-                            <face filter="RowNumber not in(1)">
-                                <a href="@link"
-                                    class="relative swiper-slide rounded-lg overflow-hidden group">
-                                    <img src="@image"
-                                        class="h-[200px] object-cover transition-all duration-300 group-hover:brightness-50"
-                                        alt="@title" width="100%" height="200">
-                                    <div class="absolute bottom-0 w-full py-2 flex justify-center bg-primary-800 mb-6">
-                                        <h2 class="text-sm text-white">@title</h2>
-                                    </div>
-                                </a>
-                            </face>
+                        <face filter="link is null and RowNumber not in(1)">
+                            <a href="/tour-list.bc?catid=@catid" class="relative swiper-slide rounded-lg overflow-hidden">
+                                <img src="@image" class="h-[200px] object-cover"
+                                    alt="@title" width="100%" height="200">
+                                <div class="absolute bottom-0 w-full py-2 flex justify-center bg-primary-800 mb-6">
+                                    <h2 class="text-sm text-white">@title</h2>
+                                </div>
+                            </a>
+                        </face>
+                        <face filter="RowNumber not in(1)">
+                            <a href="@link" class="relative swiper-slide rounded-lg overflow-hidden">
+                                <img src="@image" class="h-[200px] object-cover"
+                                    alt="@title" width="100%" height="200">
+                                <div class="absolute bottom-0 w-full py-2 flex justify-center bg-primary-800 mb-6">
+                                    <h2 class="text-sm text-white">@title</h2>
+                                </div>
+                            </a>
+                        </face>
                     </basis>
+
                     <!-- If we need pagination -->
                     <div class="swiper-pagination !h-[6px] flex items-center justify-center !top-3 bg-secondary-50">
                     </div>
@@ -291,6 +280,8 @@
     </main>
 
     <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
-    <basis core="call" file="footer.inc" />
+    <basis core="call" file="footer.inc" pageindex="[##cms.cms.pageindex##]" />
+
+
 </body>
 </html>

@@ -273,10 +273,6 @@ body {
   margin-top: 6rem;
 }
 
-.mt-3 {
-  margin-top: 0.75rem;
-}
-
 .mt-4 {
   margin-top: 1rem;
 }
@@ -384,10 +380,6 @@ body {
   height: 6px;
 }
 
-.h-full {
-  height: 100%;
-}
-
 .h-px {
   height: 1px;
 }
@@ -418,10 +410,6 @@ body {
 
 .w-12 {
   width: 3rem;
-}
-
-.w-16 {
-  width: 4rem;
 }
 
 .w-28 {
@@ -536,10 +524,6 @@ body {
   gap: 0.25rem;
 }
 
-.gap-10 {
-  gap: 2.5rem;
-}
-
 .gap-2 {
   gap: 0.5rem;
 }
@@ -552,12 +536,12 @@ body {
   gap: 1.25rem;
 }
 
-.gap-6 {
-  gap: 1.5rem;
-}
-
 .gap-7 {
   gap: 1.75rem;
+}
+
+.gap-10 {
+  gap: 2.5rem;
 }
 
 .gap-x-2 {
@@ -1530,6 +1514,10 @@ body {
     100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
 }
 
+.direction-ltr{
+  direction: ltr;
+}
+
 .tour-cat-li:not(:last-child)::before {
   content: "";
   position: absolute;
@@ -1796,6 +1784,10 @@ body {
   display: none;
 }
 
+.visa-form [data-bc-part-related-cell] [data-bc-part-checkbox]{
+  border: none !important;
+}
+
 
 .contact-form [data-bc-schema-direction="rtl"] [data-bc-title-container] {
   display: none !important;
@@ -1809,7 +1801,7 @@ body {
 .contact-form [data-bc-answer-container] input[type="text"] {
   background-color: white !important;
   color: #71717A !important;
-  height: 55px !important;
+  height: 56px !important;
   padding: 16px 12px 16px 12px;
   font-weight: 400 !important;
   outline: none !important;
@@ -1820,7 +1812,7 @@ body {
 .contact-form [data-bc-answer-container] textarea {
   background-color: white !important;
   color: #71717A !important;
-  height: 55px;
+  height: 56px;
   padding: 16px 12px 16px 12px;
   font-weight: 400 !important;
   outline: none !important;

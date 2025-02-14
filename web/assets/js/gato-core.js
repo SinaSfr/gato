@@ -139,10 +139,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const cmsQuery = item.getAttribute("data-id");
 
-      // 🔥 پیدا کردن `.fetch-content-tour` مخصوص این `li`
-      const parentContainer = item.closest(".tour-container"); // پیدا کردن نزدیک‌ترین container
+      const parentContainer = item.closest(".tour-container");
       if (!parentContainer) return;
-      const fetchContentTour = parentContainer.querySelector(".fetch-content-tour");
+      const fetchContentTour = parentContainer.querySelector(
+        ".fetch-content-tour"
+      );
 
       if (!fetchContentTour) return;
 
@@ -158,7 +159,7 @@ document.addEventListener("DOMContentLoaded", function () {
             throw new Error(`HTTP error! Status: ${secondResponse.status}`);
           }
           const secondData = await secondResponse.text();
-          fetchContentTour.innerHTML = secondData; // فقط همون محتوای خاص رو تغییر بده
+          fetchContentTour.innerHTML = secondData;
         } catch (error) {
           console.error("Fetch failed:", error);
           fetchContentTour.innerHTML =
@@ -171,8 +172,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-
-
 
 function loadContentHomePage() {
   loadSearchEngine("search-engine.bc", "searchbox");
@@ -205,113 +204,113 @@ async function loadSearchEngine(url, sectionload) {
         }
 
         const pathnamehome = window.location.pathname;
-        if (pathnamehome) {
-          if (pathnamehome == "/hotel") {
-            sessionStorage.setItem("pageName", "hotel");
-            $("#flight-type-items").hide();
-            $("#Hotel").addClass("active-module");
-            $("#Hotel").siblings("li").removeClass("active-module");
-            $("#item-Hotel").show();
-            $(
-              "#item-Flight,#item-Tour,#item-FlightHotel,#item-Insurance,#item-Train"
-            ).hide();
-            $(".bg-background-banner").children().addClass("hidden");
-            $(".bg-background-banner")
-              .find("#hotel-title")
-              .removeClass("hidden");
-            // changeParentBackground("hotelmodule-bg");
-            $("#Hotel").click(function () {
-              $("#flight-type-items").hide();
-              $(".nav-module").each(function () {
-                var checknav = $(this).attr("data-nav");
-                if (checknav == "hotel") {
-                  $(this).addClass("nav-module-selected");
-                } else {
-                  $(this).removeClass("nav-module-selected");
-                }
-              });
-              LoadHotel();
-            });
-          } else if (pathnamehome == "/flight") {
-            sessionStorage.setItem("pageName", "flight");
-            $("#flight-type-items").show();
-            $("#Flight").addClass("active-module");
-            $("#Flight").siblings("li").removeClass("active-module");
-            $("#item-Flight").show();
-            $(
-              "#item-Hotel,#item-Tour,#item-FlightHotel,#item-Insurance,#item-Train"
-            ).hide();
-            $(".bg-background-banner").children().addClass("hidden");
-            $(".bg-background-banner")
-              .find("#flight-title")
-              .removeClass("hidden");
-            // changeParentBackground("flightmodule-bg");
-            $("#Flight").click(function () {
-              $("#flight-type-items").show();
-              $(".nav-module").each(function () {
-                var checknav = $(this).attr("data-nav");
-                if (checknav == "flight") {
-                  $(this).addClass("nav-module-selected");
-                } else {
-                  $(this).removeClass("nav-module-selected");
-                }
-              });
-              LoadFlight();
-            });
-          } else if (pathnamehome == "/flighthotel") {
-            sessionStorage.setItem("pageName", "flighthotel");
-            $("#flight-type-items").hide();
-            $("#FlightHotel").addClass("active-module");
-            $("#FlightHotel").siblings("li").removeClass("active-module");
-            $("#item-FlightHotel").show();
-            $(
-              "#item-Flight,#item-Hotel,#item-Tour,#item-Insurance,#item-Train"
-            ).hide();
-            $(".bg-background-banner").children().addClass("hidden");
-            $(".bg-background-banner")
-              .find("#flighthotel-title")
-              .removeClass("hidden");
-            // changeParentBackground("flighthotelmodule-bg");
-          } else if (pathnamehome == "/tour") {
-            sessionStorage.setItem("pageName", "tour");
-            $("#flight-type-items").hide();
-            $("#Tour").addClass("active-module");
-            $("#Tour").siblings("li").removeClass("active-module");
-            $("#item-Tour").show();
-            $(
-              "#item-Flight,#item-Hotel,#item-FlightHotel,#item-Insurance,#item-Train"
-            ).hide();
-            $(".bg-background-banner").children().addClass("hidden");
-            $(".bg-background-banner")
-              .find("#tour-title")
-              .removeClass("hidden");
-            // changeParentBackground("tourmodule-bg");
-          } else {
-            sessionStorage.setItem("pageName", "home");
-            $("#flight-type-items").show();
-            $("#Flight").siblings("li").removeClass("active-module");
-            if (innerWidth > 1024) {
-              $("#Flight").addClass("active-module");
-            }
-            $("#item-Flight").show();
-            $(
-              "#item-Hotel,#item-Tour,#item-FlightHotel,#item-Insurance,#item-Train"
-            ).hide();
-            // changeParentBackground("flightmodule-bg");
-            $("#Tour").click(function () {
-              $("#flight-type-items").hide();
-              $(".nav-module").each(function () {
-                var checknav = $(this).attr("data-nav");
-                if (checknav == "tour") {
-                  $(this).addClass("nav-module-selected");
-                } else {
-                  $(this).removeClass("nav-module-selected");
-                }
-              });
-              LoadTour();
-            });
-          }
-        }
+        // if (pathnamehome) {
+        //   if (pathnamehome == "/hotel") {
+        //     sessionStorage.setItem("pageName", "hotel");
+        //     $("#flight-type-items").hide();
+        //     $("#Hotel").addClass("active-module");
+        //     $("#Hotel").siblings("li").removeClass("active-module");
+        //     $("#item-Hotel").show();
+        //     $(
+        //       "#item-Flight,#item-Tour,#item-FlightHotel,#item-Insurance,#item-Train"
+        //     ).hide();
+        //     $(".bg-background-banner").children().addClass("hidden");
+        //     $(".bg-background-banner")
+        //       .find("#hotel-title")
+        //       .removeClass("hidden");
+        //     // changeParentBackground("hotelmodule-bg");
+        //     $("#Hotel").click(function () {
+        //       $("#flight-type-items").hide();
+        //       $(".nav-module").each(function () {
+        //         var checknav = $(this).attr("data-nav");
+        //         if (checknav == "hotel") {
+        //           $(this).addClass("nav-module-selected");
+        //         } else {
+        //           $(this).removeClass("nav-module-selected");
+        //         }
+        //       });
+        //       LoadHotel();
+        //     });
+        //   } else if (pathnamehome == "/flight") {
+        //     sessionStorage.setItem("pageName", "flight");
+        //     $("#flight-type-items").show();
+        //     $("#Flight").addClass("active-module");
+        //     $("#Flight").siblings("li").removeClass("active-module");
+        //     $("#item-Flight").show();
+        //     $(
+        //       "#item-Hotel,#item-Tour,#item-FlightHotel,#item-Insurance,#item-Train"
+        //     ).hide();
+        //     $(".bg-background-banner").children().addClass("hidden");
+        //     $(".bg-background-banner")
+        //       .find("#flight-title")
+        //       .removeClass("hidden");
+        //     // changeParentBackground("flightmodule-bg");
+        //     $("#Flight").click(function () {
+        //       $("#flight-type-items").show();
+        //       $(".nav-module").each(function () {
+        //         var checknav = $(this).attr("data-nav");
+        //         if (checknav == "flight") {
+        //           $(this).addClass("nav-module-selected");
+        //         } else {
+        //           $(this).removeClass("nav-module-selected");
+        //         }
+        //       });
+        //       LoadFlight();
+        //     });
+        //   } else if (pathnamehome == "/flighthotel") {
+        //     sessionStorage.setItem("pageName", "flighthotel");
+        //     $("#flight-type-items").hide();
+        //     $("#FlightHotel").addClass("active-module");
+        //     $("#FlightHotel").siblings("li").removeClass("active-module");
+        //     $("#item-FlightHotel").show();
+        //     $(
+        //       "#item-Flight,#item-Hotel,#item-Tour,#item-Insurance,#item-Train"
+        //     ).hide();
+        //     $(".bg-background-banner").children().addClass("hidden");
+        //     $(".bg-background-banner")
+        //       .find("#flighthotel-title")
+        //       .removeClass("hidden");
+        //     // changeParentBackground("flighthotelmodule-bg");
+        //   } else if (pathnamehome == "/tour") {
+        //     sessionStorage.setItem("pageName", "tour");
+        //     $("#flight-type-items").hide();
+        //     $("#Tour").addClass("active-module");
+        //     $("#Tour").siblings("li").removeClass("active-module");
+        //     $("#item-Tour").show();
+        //     $(
+        //       "#item-Flight,#item-Hotel,#item-FlightHotel,#item-Insurance,#item-Train"
+        //     ).hide();
+        //     $(".bg-background-banner").children().addClass("hidden");
+        //     $(".bg-background-banner")
+        //       .find("#tour-title")
+        //       .removeClass("hidden");
+        //     // changeParentBackground("tourmodule-bg");
+        //   } else {
+        //     sessionStorage.setItem("pageName", "home");
+        //     $("#flight-type-items").show();
+        //     $("#Flight").siblings("li").removeClass("active-module");
+        //     if (innerWidth > 1024) {
+        //       $("#Flight").addClass("active-module");
+        //     }
+        //     $("#item-Flight").show();
+        //     $(
+        //       "#item-Hotel,#item-Tour,#item-FlightHotel,#item-Insurance,#item-Train"
+        //     ).hide();
+        //     // changeParentBackground("flightmodule-bg");
+        //     $("#Tour").click(function () {
+        //       $("#flight-type-items").hide();
+        //       $(".nav-module").each(function () {
+        //         var checknav = $(this).attr("data-nav");
+        //         if (checknav == "tour") {
+        //           $(this).addClass("nav-module-selected");
+        //         } else {
+        //           $(this).removeClass("nav-module-selected");
+        //         }
+        //       });
+        //       LoadTour();
+        //     });
+        //   }
+        // }
       }
     };
   } catch (error) {}
@@ -842,6 +841,20 @@ if (document.querySelector(".swiper-special-tour")) {
     loop: true,
   });
 }
+if (document.querySelector(".swiper-special-tour-mobile")) {
+  var swiperSpecialTourMobile = new Swiper(".swiper-special-tour-mobile", {
+    slidesPerView: 1,
+    speed: 400,
+    centeredSlides: false,
+    spaceBetween: 8,
+    grabCursor: true,
+    autoplay: {
+      delay: 6000,
+      disableOnInteraction: false,
+    },
+    loop: true,
+  });
+}
 if (document.querySelector(".swiper-visa")) {
   var swiperVisa = new Swiper(".swiper-visa", {
     slidesPerView: 4,
@@ -967,5 +980,39 @@ if (document.querySelector(".swiper-visa-mobile")) {
       el: ".swiper-pagination",
       type: "progressbar",
     },
+  });
+}
+
+if (document.querySelector(".swiper-travel-visa-mobile")) {
+  var swiperTravelVisaMobile = new Swiper(".swiper-travel-visa-mobile", {
+    slidesPerView: 1.3,
+    speed: 400,
+    centeredSlides: false,
+    spaceBetween: 12,
+    grabCursor: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      type: "progressbar",
+    },
+  });
+}
+
+if (document.querySelector(".swiper-article-travel-mobile")) {
+  var swiperTravelMobile = new Swiper(".swiper-article-travel-mobile", {
+    slidesPerView: 1.3,
+    speed: 400,
+    centeredSlides: false,
+    spaceBetween: 12,
+    grabCursor: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    loop: true,
   });
 }

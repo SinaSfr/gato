@@ -1,5 +1,5 @@
 <basis core="dbsource" source="basiscore" lid="1" mid="20" name="db" catid="213324">
-    <member name="visa-list" type="list" link="article.bc" propertyid="" perpage="5" size="311x116" order="ord" />
+    <member name="visa-list" type="list" link="article.bc" propertyid="" perpage="5" size="267x116" order="ord" />
 </basis>
 
 <basis core="dbsource" source="basiscore" lid="1" mid="1" name="db" usedforid="2374014">
@@ -43,7 +43,7 @@
 </basis>
 
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="fa" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
@@ -269,7 +269,7 @@
                         </face>
                     </basis>
 
-                    <div class="fetch-content-tour swiper-wrapper" data-catid="213316">
+                    <div class="fetch-content-tour" data-catid="213316">
 
                     </div>
                 </div>
@@ -286,59 +286,70 @@
                 <h2 class="text-center text-primary-800 font-bold text-2xl mt-6">چرا سفر با گردشگران!؟</h2>
             </div>
 
-            <div class="flex flex-col mt-12 gap-5">
-                <div class="flex gap-3 divide-x-4 divide-x-reverse divide-primary-800">
-                    <img src="[##cms.cms.cdn##]/images/plane-earth.svg" alt="plane-earth" width="32" height="32"
-                        loading="lazy">
-                    <div class="pr-2">
-                        <h2 class="text-zinc-900 font-bold mb-2">بیش از ربع قرن تجربه در ارائه خدمات صادقانه</h2>
-                        <div class="text-sm text-zinc-900 text-justify">
-                            سالها تجربه ما در ارائه خدمات تور و بلیط پرواز، ضامن آسایش سفر شماست.
+            <basis core="print" datamembername="db.travel-with-gato">
+                <layout>
+                    <div class="flex flex-col mt-12 gap-5">
+                        @child
+                    </div>
+                </layout>
+                <face filter="RowNumber in(3)">
+                    <div class="flex gap-3 divide-x-4 divide-x-reverse divide-primary-800">
+                        <img src="[##cms.cms.cdn##]/images/plane-earth.svg" alt="plane-earth" width="32" height="32"
+                            loading="lazy">
+                        <div class="pr-2">
+                            <h2 class="text-zinc-900 font-bold mb-2">@text</h2>
+                            <div class="text-sm text-zinc-900 text-justify">
+                                @largetext
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="flex gap-3 divide-x-4 divide-x-reverse divide-primary-800">
-                    <img src="[##cms.cms.cdn##]/images/plane.svg" alt="plane" width="32" height="32" loading="lazy">
-                    <div class="pr-2">
-                        <h2 class="text-zinc-900 font-bold mb-2">چارتر کننده پرواز و مجری مستقیم</h2>
-                        <div class="text-sm text-zinc-900 text-justify">
-                            دست اول خرید کنید!گردشگران با سالها تجربه در چارتر کردن پرواز های داخلی و خارجی اکثر تور ها
-                            را به صورت مستقیم و بدون واسطه برگزار مینمایید
+                </face>
+                <face filter="RowNumber in(4)">
+                    <div class="flex gap-3 divide-x-4 divide-x-reverse divide-primary-800">
+                        <img src="[##cms.cms.cdn##]/images/plane.svg" alt="plane" width="32" height="32" loading="lazy">
+                        <div class="pr-2">
+                            <h2 class="text-zinc-900 font-bold mb-2">@text</h2>
+                            <div class="text-sm text-zinc-900 text-justify">
+                                @largetext
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="flex gap-3 divide-x-4 divide-x-reverse divide-primary-800">
-                    <img src="[##cms.cms.cdn##]/images/hand.svg" alt="hand" width="32" height="32" loading="lazy">
-                    <div class="pr-2">
-                        <h2 class="text-zinc-900 font-bold mb-2">ضمانت تطبیق قیمت خدمات تور</h2>
-                        <div class="text-sm text-zinc-900 text-justify">
-                            با خیال راحت خرید کنید، تا 24 ساعت پس از خرید اگر ریفرنس کتبی معتبری برای خدمات مشابه با
-                            قیمت پایین تر پیدا کردید، ما قیمت را برای شما اصلاح میکنیم
+                </face>
+                <face filter="RowNumber in(5)">
+                    <div class="flex gap-3 divide-x-4 divide-x-reverse divide-primary-800">
+                        <img src="[##cms.cms.cdn##]/images/hand.svg" alt="hand" width="32" height="32" loading="lazy">
+                        <div class="pr-2">
+                            <h2 class="text-zinc-900 font-bold mb-2">@text</h2>
+                            <div class="text-sm text-zinc-900 text-justify">
+                                @largetext
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="flex gap-3 divide-x-4 divide-x-reverse divide-primary-800">
-                    <img src="[##cms.cms.cdn##]/images/dollar.svg" alt="dollar" width="32" height="32" loading="lazy">
-                    <div class="pr-2">
-                        <h2 class="text-zinc-900 font-bold mb-2">ضمانت استرداد هزینه کسر خدمات</h2>
-                        <div class="text-sm text-zinc-900 text-justify">
-                            اگر خدمات ارائه شده با تعهدات قرارداد مغایرتی داشت ما متعهد به استرداد هزینه کسر خدمات به
-                            شما میباشیم
+                </face>
+                <face filter="RowNumber in(6)">
+                    <div class="flex gap-3 divide-x-4 divide-x-reverse divide-primary-800">
+                        <img src="[##cms.cms.cdn##]/images/dollar.svg" alt="dollar" width="32" height="32" loading="lazy">
+                        <div class="pr-2">
+                            <h2 class="text-zinc-900 font-bold mb-2">@text</h2>
+                            <div class="text-sm text-zinc-900 text-justify">
+                                @largetext
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="flex gap-3 divide-x-4 divide-x-reverse divide-primary-800">
-                    <img src="[##cms.cms.cdn##]/images/buy-with-card.svg" alt="buy-with-card" width="32" height="32"
-                        loading="lazy">
-                    <div class="pr-2">
-                        <h2 class="text-zinc-900 font-bold mb-2">تسهیلات فروش اقساطی بدون ضامن</h2>
-                        <div class="text-sm text-zinc-900 text-justify">
-                            امروز برو سفر تا شش ماه دیگر پرداخت کن با تسهیلات فروش اقساطی تور های گردشگران با شرایط
-                            اقساطی بدون ضامن سفر کنید
+                </face>
+                <face filter="RowNumber in(7)">
+                    <div class="flex gap-3 divide-x-4 divide-x-reverse divide-primary-800">
+                        <img src="[##cms.cms.cdn##]/images/buy-with-card.svg" alt="buy-with-card" width="32" height="32"
+                            loading="lazy">
+                        <div class="pr-2">
+                            <h2 class="text-zinc-900 font-bold mb-2">@text</h2>
+                            <div class="text-sm text-zinc-900 text-justify">
+                                @largetext
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </face>
+            </basis>
         </section>
 
         <section class=" mt-10 max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto">
@@ -348,100 +359,73 @@
                 <div class="absolute left-0 right-0 top-0 z-20 flex justify-center">
                     <h2 class=" text-lg text-primary-700 font-bold bg-white px-5 text-zinc-900">تور‌های لحظه آخری</h2>
                 </div>
-                <ul class="flex gap-6 overflow-x-auto whitespace-nowrap scrollbar-thin">
-                    <li class="relative tour-cat-li text-zinc-500 font-medium">تورهای آسیایی</li>
-                    <li class="relative tour-cat-li text-zinc-500 font-medium">تورهای اروپایی</li>
-                </ul>
+               <div class="tour-container">
+                <basis core="tree" datamembername="end-tour.cat" idcol="catid" parentidcol="parentid"
+                nullvalue="213321">
+                <layout>
+                    <ul class="flex gap-6 overflow-x-auto whitespace-nowrap scrollbar-thin">
+                        @child
+                    </ul>
+                </layout>
+                <face filter="RowNumber not in(1)">
+                    <li class="tour-li relative tour-cat-li text-zinc-500 font-medium"
+                        data-id="@catid">@title</li>
+                </face>
+            </basis>
 
+            <div class="fetch-content-tour" data-catid="213321">
 
-                <div class="mt-5 flex flex-col gap-2">
-                    <div class="rounded-lg bg-zinc-100 p-2">
-                        <div class="relative overflow-hidden rounded-xl">
-                            <img src="[##cms.cms.cdn##]/images/card-luxury-tour.jpg"
-                                class="h-[311px] object-cover mb-24" alt="card-tour-popular" width="100%" height="311">
-                            <div class="absolute bottom-0 w-full p-6 bg-white rounded-b-[20px] rounded-tl-[56px] mt-7">
-                                <h2 class="text-xl font-medium mb-3 text-zinc-900">تور 10 روزه استانبول</h2>
-                                <span class="text-zinc-700 text-sm">14 فروردین 1403</span>
-                                <div class="font-medium mb-2 mt-3">از:
-                                    <span class="text-zinc-900 font-normal">160/000/000 ریال</span>
-                                </div>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-zinc-800 flex items-center gap-1">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M12 21C16.9709 21 21 16.9699 21 12C21 7.02908 16.9709 3 12 3C7.02908 3 3 7.02908 3 12C3 16.9699 7.02908 21 12 21Z"
-                                                stroke="#008A8C" stroke-width="1.5" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                            <path d="M14.8467 14.5716L11.6719 12.6743V8.57617" stroke="#008A8C"
-                                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                        11 روز
-                                    </span>
-                                    <a href="" class="text-zinc-800 font-bold flex items-center gap-1">
-                                        مشاهده تور
-                                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M27.5 31L20.5 24L27.5 17" stroke="#27272A" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rounded-lg bg-zinc-100 p-2">
-                        <div class="relative overflow-hidden rounded-xl">
-                            <img src="[##cms.cms.cdn##]/images/card-luxury-tour.jpg"
-                                class="h-[311px] object-cover mb-24" alt="card-tour-popular" width="100%" height="311">
-                            <div class="absolute bottom-0 w-full p-6 bg-white rounded-b-[20px] rounded-tl-[56px] mt-7">
-                                <h2 class="text-xl font-medium mb-3 text-zinc-900">تور 10 روزه استانبول</h2>
-                                <span class="text-zinc-700 text-sm">14 فروردین 1403</span>
-                                <div class="font-medium mb-2 mt-3">از:
-                                    <span class="text-zinc-900 font-normal">160/000/000 ریال</span>
-                                </div>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-zinc-800 flex items-center gap-1">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M12 21C16.9709 21 21 16.9699 21 12C21 7.02908 16.9709 3 12 3C7.02908 3 3 7.02908 3 12C3 16.9699 7.02908 21 12 21Z"
-                                                stroke="#008A8C" stroke-width="1.5" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                            <path d="M14.8467 14.5716L11.6719 12.6743V8.57617" stroke="#008A8C"
-                                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                        11 روز
-                                    </span>
-                                    <a href="" class="text-zinc-800 font-bold flex items-center gap-1">
-                                        مشاهده تور
-                                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M27.5 31L20.5 24L27.5 17" stroke="#27272A" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            </div>
+               </div>
             </div>
         </section>
 
         <section class="mt-10 max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto">
-            <div class="rounded-3xl overflow-hidden border border-solid border-secondary-800">
-                <img src="[##cms.cms.cdn##]/images/ship-sea.jpg" alt="tour" width="100%" class="h-44" height="178"
-                    loading="lazy">
-                <div class="flex flex-col items-center bg-secondary-700 py-6">
-                    <h2 class="font-bold text-2xl mb-1 text-white">تور های تابستانه آنتالیا</h2>
-                    <div class="text-white text-sm mb-5">
-                        بهترین تورهای تابستانه آنتالیا با بهترین قیمت
-                    </div>
-                    <a href=""
-                        class="bg-primary-800 flex items-center justify-center w-28 py-2 rounded-lg text-white text-sm">مشاهده</a>
-                </div>
-            </div>
+                        <!-- Slider main container -->
+                        <div class="swiper swiper-special-tour-mobile">
+                            <!-- Additional required wrapper -->
+                            <basis core="tree" datamembername="special-tours.cat" idcol="catid" parentidcol="parentid"
+                                nullvalue="213381">
+                                <layout>
+                                    <div class="swiper-wrapper">
+                                        <!-- Slides -->
+                                        @child
+                                    </div>
+                                </layout>
+                                <face filter="link is null">
+                                    <div class="swiper-slide">
+                                        <div class="rounded-3xl overflow-hidden border border-solid border-secondary-800">
+                                            <img src="@image" alt="@title" width="100%" class="object-cover h-44" height="178"
+                                                loading="lazy">
+                                            <div class="flex flex-col items-center bg-secondary-700 py-6 min-h-40">
+                                                <h2 class="font-bold text-2xl mb-1 text-white">@title</h2>
+                                                <div class="text-white text-sm mb-5">
+                                                    @urldescription
+                                                </div>
+                                                <a href=""
+                                                    class="bg-primary-800 flex items-center justify-center w-28 py-2 rounded-lg text-white text-sm">مشاهده</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </face>
+                                <face>
+                                    <div class="swiper-slide">
+                                        <div class="rounded-3xl overflow-hidden border border-solid border-secondary-800">
+                                            <img src="@image" alt="@title" width="100%" class="object-cover h-44" height="178"
+                                                loading="lazy">
+                                            <div class="flex flex-col items-center bg-secondary-700 py-6 min-h-40">
+                                                <h2 class="font-bold text-2xl mb-1 text-white">@title</h2>
+                                                <div class="text-white text-sm mb-5">
+                                                    @urldescription
+                                                </div>
+                                                <a href=""
+                                                    class="bg-primary-800 flex items-center justify-center w-28 py-2 rounded-lg text-white text-sm">مشاهده</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </face>
+                            </basis>
+                        </div>
         </section>
 
         <section class="bg-zinc-100 py-6 mt-10">
@@ -453,32 +437,35 @@
 
                 <!-- Slider main container -->
                 <div class="pt-16 swiper swiper-travel-mobile">
-                    <!-- Additional required wrapper -->
+                    <basis core="tree" datamembername="travel.cat" idcol="catid" parentidcol="parentid"
+                    nullvalue="213383">
+                        <layout>
+                                                <!-- Additional required wrapper -->
                     <div class="swiper-wrapper">
                         <!-- Slides -->
-                        <div class="relative swiper-slide rounded-lg overflow-hidden">
-                            <img src="[##cms.cms.cdn##]/images/travel-card.jpg" class="h-[200px] object-cover"
-                                alt="card-tour-popular" width="100%" height="200">
-                            <div class="absolute bottom-0 w-full py-2 flex justify-center bg-primary-800 mb-6">
-                                <h2 class="text-sm text-white">تور گروهی</h2>
-                            </div>
-                        </div>
-                        <div class="relative swiper-slide rounded-lg overflow-hidden">
-                            <img src="[##cms.cms.cdn##]/images/travel-card.jpg" class="h-[200px] object-cover"
-                                alt="card-tour-popular" width="100%" height="200">
-                            <div class="absolute bottom-0 w-full py-2 flex justify-center bg-primary-800 mb-6">
-                                <h2 class="text-sm text-white">تور گروهی</h2>
-                            </div>
-                        </div>
-                        <div class="relative swiper-slide rounded-lg overflow-hidden">
-                            <img src="[##cms.cms.cdn##]/images/travel-card.jpg" class="h-[200px] object-cover"
-                                alt="card-tour-popular" width="100%" height="200">
-                            <div class="absolute bottom-0 w-full py-2 flex justify-center bg-primary-800 mb-6">
-                                <h2 class="text-sm text-white">تور گروهی</h2>
-                            </div>
-                        </div>
-
+                        @child
                     </div>
+                        </layout>
+                        <face filter="link is null and RowNumber not in(1)">
+                            <a href="/tour-list.bc?catid=@catid" class="relative swiper-slide rounded-lg overflow-hidden">
+                                <img src="@image" class="h-[200px] object-cover"
+                                    alt="@title" width="100%" height="200">
+                                <div class="absolute bottom-0 w-full py-2 flex justify-center bg-primary-800 mb-6">
+                                    <h2 class="text-sm text-white">@title</h2>
+                                </div>
+                            </a>
+                        </face>
+                        <face filter="RowNumber not in(1)">
+                            <a href="@link" class="relative swiper-slide rounded-lg overflow-hidden">
+                                <img src="@image" class="h-[200px] object-cover"
+                                    alt="@title" width="100%" height="200">
+                                <div class="absolute bottom-0 w-full py-2 flex justify-center bg-primary-800 mb-6">
+                                    <h2 class="text-sm text-white">@title</h2>
+                                </div>
+                            </a>
+                        </face>
+                    </basis>
+
                     <!-- If we need pagination -->
                     <div class="swiper-pagination !h-[6px] flex items-center justify-center !top-3 bg-secondary-50">
                     </div>
@@ -495,85 +482,26 @@
                 <div class="absolute left-0 right-0 top-0 z-20 flex justify-center">
                     <h2 class=" text-lg text-primary-700 font-bold bg-white px-5 text-zinc-900">تور‌های نمایشگاهی</h2>
                 </div>
-                <ul class="flex gap-6 overflow-x-auto whitespace-nowrap scrollbar-thin">
-                    <li class="relative tour-cat-li text-zinc-500 font-medium">تور چین</li>
-                    <li class="relative tour-cat-li text-zinc-500 font-medium">تور امارات</li>
-                    <li class="relative tour-cat-li text-zinc-500 font-medium">تور آلمان</li>
-                </ul>
 
-
-                <div class="mt-5 flex flex-col gap-2">
-                    <div class="rounded-lg bg-zinc-100 p-2">
-                        <div class="relative overflow-hidden rounded-xl">
-                            <img src="[##cms.cms.cdn##]/images/card-luxury-tour.jpg"
-                                class="h-[311px] object-cover mb-24" alt="card-tour-popular" width="100%" height="311">
-                            <div class="absolute bottom-0 w-full p-6 bg-white rounded-b-[20px] rounded-tl-[56px] mt-7">
-                                <h2 class="text-xl font-medium mb-3 text-zinc-900">تور 10 روزه استانبول</h2>
-                                <span class="text-zinc-700 text-sm">14 فروردین 1403</span>
-                                <div class="font-medium mb-2 mt-3">از:
-                                    <span class="text-zinc-900 font-normal">160/000/000 ریال</span>
-                                </div>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-zinc-800 flex items-center gap-1">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M12 21C16.9709 21 21 16.9699 21 12C21 7.02908 16.9709 3 12 3C7.02908 3 3 7.02908 3 12C3 16.9699 7.02908 21 12 21Z"
-                                                stroke="#008A8C" stroke-width="1.5" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                            <path d="M14.8467 14.5716L11.6719 12.6743V8.57617" stroke="#008A8C"
-                                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                        11 روز
-                                    </span>
-                                    <a href="" class="text-zinc-800 font-bold flex items-center gap-1">
-                                        مشاهده تور
-                                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M27.5 31L20.5 24L27.5 17" stroke="#27272A" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rounded-lg bg-zinc-100 p-2">
-                        <div class="relative overflow-hidden rounded-xl">
-                            <img src="[##cms.cms.cdn##]/images/card-luxury-tour.jpg"
-                                class="h-[311px] object-cover mb-24" alt="card-tour-popular" width="100%" height="311">
-                            <div class="absolute bottom-0 w-full p-6 bg-white rounded-b-[20px] rounded-tl-[56px] mt-7">
-                                <h2 class="text-xl font-medium mb-3 text-zinc-900">تور 10 روزه استانبول</h2>
-                                <span class="text-zinc-700 text-sm">14 فروردین 1403</span>
-                                <div class="font-medium mb-2 mt-3">از:
-                                    <span class="text-zinc-900 font-normal">160/000/000 ریال</span>
-                                </div>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-zinc-800 flex items-center gap-1">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M12 21C16.9709 21 21 16.9699 21 12C21 7.02908 16.9709 3 12 3C7.02908 3 3 7.02908 3 12C3 16.9699 7.02908 21 12 21Z"
-                                                stroke="#008A8C" stroke-width="1.5" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                            <path d="M14.8467 14.5716L11.6719 12.6743V8.57617" stroke="#008A8C"
-                                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                        11 روز
-                                    </span>
-                                    <a href="" class="text-zinc-800 font-bold flex items-center gap-1">
-                                        مشاهده تور
-                                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M27.5 31L20.5 24L27.5 17" stroke="#27272A" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="tour-container">
+                    <basis core="tree" datamembername="exhibition-tour.cat" idcol="catid" parentidcol="parentid"
+                    nullvalue="213297">
+                    <layout>
+                        <ul class="flex gap-6 overflow-x-auto whitespace-nowrap scrollbar-thin">
+                            @child
+                        </ul>
+                    </layout>
+                    <face filter="RowNumber not in(1)">
+                        <li class="tour-li relative tour-cat-li text-zinc-500 font-medium"
+                            data-id="@catid">@title</li>
+                    </face>
+                </basis>
+    
+                <div class="fetch-content-tour" data-catid="213297">
+    
                 </div>
+                </div>
+
             </div>
         </section>
 
@@ -586,37 +514,46 @@
 
             <!-- Slider main container -->
             <div class="pt-16 swiper swiper-visa-mobile">
-                <!-- Additional required wrapper -->
+                <basis core="list" datamembername="db.visa-list">
+                    <layout>
+                                        <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
                     <!-- Slides -->
-                    <div class="swiper-slide rounded-lg overflow-hidden border border-solid border-secondary-50">
-                        <div class="relative ">
-                            <div class="absolute inset-0 w-full h-full bg-gradient-to-b from-transparent to-black/80">
-                            </div>
-                            <img src="[##cms.cms.cdn##]/images/visa-card.png" class="h-[116px] object-cover"
-                                alt="card-tour-popular" width="100%" height="116">
-                        </div>
-                        <div class="relative text-center w-full pt-1 pb-6">
-                            <h2 class="text-xl font-bold text-zinc-900 mr-20">ویزای روسیه</h2>
-                            <img src="[##cms.cms.cdn##]/images/flag.svg" class="absolute -top-10 right-4" alt="flag"
-                                width="77" height="77">
-                        </div>
-                    </div>
-                    <div class="swiper-slide rounded-lg overflow-hidden border border-solid border-secondary-50">
-                        <div class="relative ">
-                            <div class="absolute inset-0 w-full h-full bg-gradient-to-b from-transparent to-black/80">
-                            </div>
-                            <img src="[##cms.cms.cdn##]/images/visa-card.png" class="h-[116px] object-cover"
-                                alt="card-tour-popular" width="100%" height="116">
-                        </div>
-                        <div class="relative text-center w-full pt-1 pb-6">
-                            <h2 class="text-xl font-bold text-zinc-900 mr-20">ویزای روسیه</h2>
-                            <img src="[##cms.cms.cdn##]/images/flag.svg" class="absolute -top-10 right-4" alt="flag"
-                                width="77" height="77">
-                        </div>
-                    </div>
-
+                    @child
                 </div>
+                    </layout>
+                    <face filter="link is null">
+                        <a href="/article.bc?id=@id" class="swiper-slide rounded-lg overflow-hidden border border-solid border-secondary-50">
+                            <div class="relative ">
+                                <div class="absolute inset-0 w-full h-full bg-gradient-to-b from-transparent to-black/80">
+                                </div>
+                                <img src="@00267X00116prp" class="h-[116px] object-cover"
+                                    alt="card-tour-popular" width="100%" height="116">
+                            </div>
+                            <div class="relative text-center w-full pt-1 pb-6">
+                                <h2 class="text-xl font-bold text-zinc-900 mr-20">@title</h2>
+                                <img src="@image" class="absolute -top-10 right-4 rounded-full border-3 border-solid border-white" alt="flag"
+                                    width="77" height="77">
+                            </div>
+                        </a>
+                    </face>
+                    <face>
+                        <a href="@link" class="swiper-slide rounded-lg overflow-hidden border border-solid border-secondary-50">
+                            <div class="relative ">
+                                <div class="absolute inset-0 w-full h-full bg-gradient-to-b from-transparent to-black/80">
+                                </div>
+                                <img src="@00267X00116prp" class="h-[116px] object-cover"
+                                    alt="card-tour-popular" width="100%" height="116">
+                            </div>
+                            <div class="relative text-center w-full pt-1 pb-6">
+                                <h2 class="text-xl font-bold text-zinc-900 mr-20">@title</h2>
+                                <img src="@image" class="absolute -top-10 right-4 rounded-full border-3 border-solid border-white" alt="flag"
+                                    width="77" height="77">
+                            </div>
+                        </a>
+                    </face>
+                </basis>
+
                 <!-- If we need pagination -->
                 <div class="swiper-pagination !h-[6px] flex items-center justify-center !top-3 bg-secondary-50">
                 </div>

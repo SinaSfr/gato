@@ -1,0 +1,565 @@
+@charset "utf-8";
+@import url(./customized.ui.min.css);
+/*<!--------------------------init CSS------------------------------->*/
+@font-face {
+  font-family: "IRANSansWeb";
+  src: url("../fonts/IRANSansWeb(FaNum).ttf") format("truetype"),
+    url("../fonts/IRANSansWeb(FaNum).eot") format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IRANSansWebEnNum";
+  font-style: normal;
+  font-weight: lighter;
+  src: url("../fonts/IRANSansWeb_Medium.eot");
+  src: url("../fonts/IRANSansWeb_Medium.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/IRANSansWeb_Medium.woff") format("woff"),
+    url("../fonts/IRANSansWeb_Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "fontawesome";
+  src: url("../fonts/fontAwesome.eot") format("embedded-opentype"),
+    url("../fonts/fontAwesome.woff") format("woff"),
+    url("../fonts/fontAwesome.ttf") format("truetype"),
+    url("../fonts/fontAwesome.svg") format("svg"),
+    url("../fonts/fontAwesome-brands.eot") format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "fontawesome";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("../fonts/fontAwesome-brands.eot");
+  src: url("../fonts/fontAwesome-brands.eot") format("embedded-opentype"),
+    url("../fonts/fontAwesome-brands.woff") format("woff"),
+    url("../fonts/fontAwesome-brands.ttf") format("truetype"),
+    url("../fonts/fontAwesome-brands.svg") format("svg");
+}
+@font-face {
+  font-family: "fontawesome";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("../fonts/fontAwesome-regular.eot");
+  src: url("../fonts/fontAwesome-regular.eot") format("embedded-opentype"),
+    url("../fonts/fontAwesome-regular.woff") format("woff"),
+    url("../fonts/fontAwesome-regular.ttf") format("truetype"),
+    url("../fonts/fontAwesome-regular.svg") format("svg");
+}
+@font-face {
+  font-family: "fontawesome";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url("../fonts/fontAwesome-solid.eot");
+  src: url("../fonts/fontAwesome-solid.eot") format("embedded-opentype"),
+    url("../fonts/fontAwesome-solid.woff") format("woff"),
+    url("../fonts/fontAwesome-solid.ttf") format("truetype"),
+    url("../fonts/fontAwesome-solid.svg") format("svg");
+}
+@font-face {
+  font-family: "fontIcon";
+  src: url("../fonts/fontIcon.eot?n1z373");
+  src: url("../fonts/fontIcon.eot?#iefixn1z373") format("embedded-opentype"),
+    url("../fonts/fontIcon.woff?n1z373") format("woff"),
+    url("../fonts/fontIcon.ttf?n1z373") format("truetype"),
+    url("../fonts/fontIcon.svg?n1z373#lg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*,
+::after,
+::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.fa,
+.fas {
+  font-family: "fontawesome";
+  font-weight: 900;
+}
+.fab {
+  font-family: "fontawesome";
+  font-weight: 400;
+}
+.far {
+  font-family: "fontawesome";
+  font-weight: 400;
+}
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+/*<!--------------------------init CSS------------------------------->*/
+/*<!--------------------------------START CSS LIST TEMPLATE 3-------------------------------*/
+.btn_1 {
+  background-color: #748faa;
+  color: #fff;
+}
+.btn_1:hover {
+  background-color: #000;
+}
+.login_module_prev:hover {
+  color: #000;
+  border-color: #000;
+}
+#Login_box .shine-hover {
+  background-color: #3f2f12;
+  border: 1px solid #3f2f12;
+  color: #fff;
+}
+#Login_box .shine-hover:hover {
+  background-color: #3f2f12;
+}
+.login_info i {
+  color: #3f2f12 !important;
+}
+.radioButton:checked + label span::after {
+  color: #3f2f12;
+  border: 2px solid #3f2f12;
+}
+.airport_filter,
+.airport_filter_des {
+  border-bottom: 1px dashed #3f2f12;
+}
+.details-btn:hover {
+  background-color: #3f2f12;
+  color: #fff;
+}
+.btn-item button {
+  background-color: #3f2f12;
+  border: 1px solid #3f2f12;
+}
+.details-btn {
+  border: 1px solid #3f2f12;
+}
+.flight-duration-stop:before {
+  background-color: #3f2f12;
+  border: 1px solid #3f2f12;
+}
+.details-row-middle_1 {
+  border-left: 2px dashed #3f2f12;
+}
+.details-circle::before,
+.details-circle::after {
+  border: 2px solid#3f2f12;
+}
+.section-input_list input[type="checkbox"]:checked + label span.checkbox::after,
+.section-input_list input[type="radio"]:checked + label span.checkbox::after {
+  color: #3f2f12;
+}
+.section-input_list
+  input[type="checkbox"]:checked
+  + label
+  span.checkbox::before,
+.section-input_list input[type="radio"]:checked + label span.checkbox::before {
+  border-color: #3f2f12;
+}
+fieldset hr {
+  background-color: #748faa;
+}
+.rangevalFirst,
+.rangevalSecond,
+.rangevalFirst_2,
+.rangevalSecond_2,
+.rangevalSecond_2 span,
+.rangevalFirst_2 span {
+  color: #748faa;
+}
+.filter-container:not(:last-child) {
+  border-bottom: 1px dashed #3f2f12;
+}
+.sort-items li.active,
+.sort-items li:hover {
+  color: #3f2f12;
+}
+.confirm {
+  border: 1px solid #3f2f12;
+}
+.confirm:hover {
+  background-color: #fff;
+  color: #3f2f12;
+}
+.minus-btn {
+  background-color: rgb(153, 0, 0);
+  box-shadow: rgb(209, 188, 220) 0px -3px 0px 0px inset;
+}
+.plus-btn {
+  background-image: linear-gradient(rgb(154, 202, 15), rgb(115, 184, 40));
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px,
+    rgb(10, 147, 70) 0px -3px 0px 0px inset;
+}
+.after-btn:hover,
+.before-btn:hover {
+  background-color: #3f2f12;
+  color: #fff;
+  border: 1px solid #3f2f12;
+}
+.flight-summary-info .dash i {
+  color: #3f2f12;
+}
+.close-research {
+  border: 1px solid #3f2f12;
+  color: #3f2f12;
+}
+.flight_type .active,
+.flight_type li:hover {
+  color: #3f2f12;
+}
+.btn-item button:hover {
+  background-color: #fff !important;
+  color: #748faa !important;
+  box-shadow: 0 10px 13px -10px #0c2d33;
+}
+.searched-item button:hover {
+  background-color: #748faa;
+  box-shadow: 0 10px 13px -10px #0c2d33;
+}
+.exchange-icon:hover {
+  background-color: #748faa;
+  color: #fff;
+}
+.exchange-icon {
+  border: 1px solid #748faa;
+  color: #748faa;
+}
+.searched-flight {
+  border-bottom: 1px dashed #3f2f12;
+}
+.progress-bar {
+  background-color: #3f2f12 !important;
+}
+.angle-content .three {
+  color: #748faa;
+}
+.loading-container:hover .loading {
+  border-color: transparent #748faa transparent #748faa;
+}
+.loading {
+  border-color: transparent #3f2f12 transparent #3f2f12;
+}
+.section-container .dash {
+  color: #748faa;
+}
+.close-content .fa-times::before {
+  color: #748faa !important;
+}
+.Basis_Calendar .month_day_list table td:hover,
+.Basis_Calendar .selected_date {
+  background-color: #748faa;
+}
+.Basis_Calendar .month_change i:hover {
+  color: #3f2f12;
+}
+.Basis_Calendar .current_day {
+  background-color: #3f2f12 !important;
+}
+.Basis_Calendar .selected_day {
+  background-color: #3f2f12;
+}
+.ui-datepicker-today .ui-state-highlight,
+.ui-datepicker table thead th,
+.ui-datepicker .ui-datepicker-buttonpane button,
+.ui-datepicker-buttonpane .ui-datepicker-current:focus {
+  background-color: #3f2f12;
+}
+.ui-datepicker th,
+.ui-datepicker .ui-datepicker-prev span,
+.ui-datepicker .ui-datepicker-next span {
+  color: #3f2f12;
+}
+.ui-datepicker-buttonpane .ui-state-default:hover,
+.ui-datepicker-buttonpane .ui-state-default:focus,
+.ui-datepicker-buttonpane .ui-datepicker-current:hover,
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active {
+  border: 1px solid#748faa;
+  background-color: #748faa !important;
+}
+.name-tour {
+  color: #3f2f12;
+}
+.item-tour:hover {
+  background-color: #3f2f12;
+  color: #fff;
+}
+.tour-info-tlt {
+  background-color: #748faa;
+}
+.tour-completion-info i {
+  color: #748faa;
+}
+.side-tour i {
+  color: #faa944;
+}
+.row-other-inf {
+  border-right: 3px solid #748faa;
+}
+.tlt-table {
+  background-color: #748faa;
+}
+.loading-img img {
+  width: 82px;
+  margin: 0 auto;
+}
+.loading-img {
+  margin-top: 4em;
+}
+/*<!--------------------------------END CSS LIST TEMPLATE 3-------------------------------*/
+/*<!--------------------------------START CSS VIEW TEMPLATE 3-------------------------------*/
+.flight-duration-stop::before {
+  background-color: #3f2f12;
+  border: 1px solid #3f2f12;
+}
+.next-btn {
+  background-color: #3f2f12;
+}
+.next-btn:hover {
+  background-color: #387066;
+}
+.prev-passengers {
+  border-bottom: 2px solid #3f2f12;
+  color: #3f2f12;
+}
+.prev-passengers svg {
+  fill: #3f2f12;
+}
+.prev-passengers:hover {
+  border-color: #387066 !important;
+  color: #387066 !important;
+}
+.prev-passengers:hover svg {
+  fill: #387066;
+}
+.passengers-prev-title svg {
+  fill: #3f2f12;
+}
+.passenger-title {
+  color: #3f2f12;
+}
+.details-item-title {
+  color: #3f2f12;
+}
+.nav-details li:hover,
+.nav-details li.active {
+  color: #3f2f12;
+}
+.nav-details li::before {
+  border-top: 3px solid #3f2f12;
+}
+.brief-container .head-items .title {
+  background-color: #3f2f12;
+  color: #fff;
+}
+.buyer-type ul li.active,
+.buyer-type ul li:hover {
+  background-color: #3f2f12;
+  color: #fff;
+}
+.buyer-type ul li {
+  border: 1px solid #3f2f12;
+  color: #748faa;
+}
+.login-btn {
+  background-color: #3f2f12;
+}
+.login-link {
+  border: 1px solid #3f2f12;
+  color: #748faa;
+}
+.login-link:hover {
+  background-color: #748faa;
+  color: #fff !important;
+}
+.login-btn:hover {
+  background-color: #387066;
+}
+.login-btn:hover {
+  box-shadow: 0 10px 13px -10px #0c2d33;
+}
+.login-title i {
+  color: #3f2f12;
+}
+.bottom-content .action-loading {
+  background-color: #3f2f12;
+}
+.select-passnger {
+  background-color: #3f2f12;
+}
+.inside-title {
+  border-right: 3px solid #3f2f12;
+}
+.duration-details {
+  border-bottom: 2px dashed #748faa;
+}
+.duration-details::after,
+.duration-details::before {
+  background-color: #748faa;
+}
+/*<!--------------------------------END CSS VIEW TEMPLATE 3-------------------------------*/
+/*<!--------------------------MAIN COLORS------------------------------->*/
+.background-color_1 {
+  background-color: #748faa;
+}
+.background-color_2 {
+  background-color: #3f2f12;
+}
+.background-color_3 {
+  background-color: #252563;
+}
+.background-color_white {
+  background-color: #ffffff;
+}
+.background-color_body {
+  background-color: #f3f4f5;
+}
+.color_1 {
+  color: #748faa;
+}
+.color_2 {
+  color: #3f2f12;
+}
+.color_3 {
+  color: #252563;
+}
+.color_font {
+  color: #5c5c5c;
+}
+.color_white {
+  color: #ffffff;
+}
+.color_grey {
+  color: #040a10;
+}
+.color_grey_ {
+  color: #4d4d4d;
+} /*<!--------------------------MAIN COLORS------------------------------->*/
+.inline-block.w-12.h-12.rounded-full.border-2.border-secondary-800.group.hover\:border-white {
+  border-style: solid;
+}
+
+@font-face {
+  font-family: flaticon;
+  src: url("../fonts/fontFlaticon.ttf") format("truetype"),
+    url("../fonts/fontFlaticon.woff") format("woff"),
+    url("../fonts/fontFlaticon.eot#iefix") format("embedded-opentype"),
+    url("../fonts/fontFlaticon.svg#flaticon") format("svg");
+}
+i[class*=" flaticon-"]:before,
+i[class^="flaticon-"]:before {
+  font-family: flaticon !important;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
