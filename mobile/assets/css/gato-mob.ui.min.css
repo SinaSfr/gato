@@ -907,6 +907,10 @@ body {
   padding-bottom: 0.5rem;
 }
 
+.pb-3 {
+  padding-bottom: 0.75rem;
+}
+
 .pb-4 {
   padding-bottom: 1rem;
 }
@@ -1374,6 +1378,9 @@ body {
     100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
 }
 
+.Noactive-date{
+  opacity: 30%;
+}
 .direction-ltr{
   direction: ltr;
 }

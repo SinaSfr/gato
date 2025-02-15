@@ -896,7 +896,6 @@ $(document).ready(function () {
     $(element).closest(".city").find(".co-id").val(idSelected);
     $(element).closest(".city").find(".searchList").fadeOut();
     if (
-      element.closest("#flightHotel-form") ||
       element.closest("#flight-form") ||
       element.closest("#train-form")
     ) {
@@ -904,6 +903,24 @@ $(document).ready(function () {
         $(element)
           .closest("form")
           .find(".Basis_Date_Box")
+          .find(".start_date")
+          .trigger("onclick");
+      } else {
+        $(element)
+          .closest(".city")
+          .next()
+          .next(".city")
+          .find(".country")
+          .trigger("onclick");
+      }
+    } 
+    else if (
+      element.closest("#flightHotel-form") 
+    ) {
+      if ($(element).closest(".city").find(".FCD2").val()) {
+        $(element)
+          .closest("form")
+          .find("#flight-hotel-boxes .Basis_Date_Box")
           .find(".start_date")
           .trigger("onclick");
       } else {
@@ -1630,7 +1647,3 @@ $(".plus-minus-ins").on("click", function (event) {
       $(element).closest(".route-content").find(".FCDid2").val(depid);
   }
   ////////<!----- JS  MULTICITY ---->////////
-  
-  
-  
-  

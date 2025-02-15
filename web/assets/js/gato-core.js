@@ -85,7 +85,8 @@ document.addEventListener("DOMContentLoaded", function () {
           emailPopup.style.position = "fixed";
           emailPopup.style.top = "50%";
           emailPopup.style.left = "50%";
-          emailPopup.style.transform = "translate(-40%, -50%)";
+          emailPopup.style.right = "auto";
+          emailPopup.style.transform = "translate(-50%, -50%)";
           emailPopup.style.opacity = "1";
           emailPopup.style.pointerEvents = "auto";
         }

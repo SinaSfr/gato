@@ -1853,3 +1853,9 @@ body {
 .login-btn {
   font-family: "DanaFaNum" !important;
 }
+
+.footer-link-li {
+  width: 1px;
+  height: 24px;
+  background-color: #00B3BD;
+}

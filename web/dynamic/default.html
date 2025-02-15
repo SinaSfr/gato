@@ -105,22 +105,69 @@
 
         <section class="max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto flex justify-between mt-20">
             <div class="flex flex-col items-center">
-                <img src="[##cms.cms.cdn##]/images/laptop.svg" alt="camera" width="96" height="96" loading="lazy">
+                <!-- <img src="[##cms.cms.cdn##]/images/laptop.svg" alt="camera" width="96" height="96" loading="lazy"> -->
+                <svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <rect width="96" height="96" fill="url(#pattern0_660_1952)" />
+                    <defs>
+                        <pattern id="pattern0_660_1952" patternContentUnits="objectBoundingBox" width="1" height="1">
+                            <use xlink:href="#image0_660_1952" transform="scale(0.0104167)" />
+                        </pattern>
+                        <image id="image0_660_1952" width="96" height="96"
+                            xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAsTAAALEwEAmpwYAAAFfklEQVR4nO2cW2gcVRjHv1zalNSU0DRtNu5+3+y4ZWtrLyiJFRWjCVab6kvrtULFViwiKBVNK0lsbdLsXBJMaUVEIooPUsQHwQfpg4gg4oP6JPhgg1pFWw1qI1QwPXLGjY6bmexu93Jmdr4ffBB2ZzMz/9+ec+ZyZgEYhmEYhmEYhmEYhmEYhmGYHFKp1AoiOoqInxPRLBGJkNYsIn4m90XX9dWhEI2IvYj4TQDCE+UsRPwNEXdB0MMnokuqw6LK1SW5jxDUbqcWv/m0sL4jolYIGrKfDEA4okp1BIIGIn4RgGBENUoeXEDQIKILXhuradr1EFKIaKuPgN8haPh9WyDkUFj2KzQbWqv7JZtlKJpqDQuY8hAwBSGHwiIgnU63ENEpIvorW6fka3k/ODnZBJnxbjDNviAW+QmQ2yy3PWjEYrFmWQUtnLF2gWGdB9MWQS3yE+C8b50Dc3wnhBLTvBFMe051wFCSAKfmwBi/BUKHYX+oOlwojwABhv0BhA6n+YZAgKYtFKBpuQJ+CsLFuCZEPJk9I74g/5av+X7AtGdUhwsFVOfmzQsEyNdylpsB1RDRcY+mejzsApof2y8omfxvn5JJ57UgCpjxEDATdgFg2qLpwNNi5fZ+p+TfHsvMhO+EJUQCIH+xAGAB3AKUUpNdkGGJ5v2Pi/bePhHfsEGgezC+/Js5FxFxmoheR8TbWIDpHX7j4LDo6Oouyx20PELeS6VS7dwCTFf4zw2KeHpdxcN3SfgqFout4i7ItAVkTNF57XVVC9/dEliAaYsrHtlb9fBd1RP5QXjNTTerFPBK5AXE113tGc6KBx4UdRlTrOrtKyXgjLxXQkSTPt3QJ5EXQF5XP507YKYzQC85eMh3mTw1Oz/BFxF1n2XOsADNR4Bh/XuU1Hb7tssRcNh1zqT5tIBpFqDlF1B3LONcmEusXVtI8OcRcQQAGliAWR4BpV6M4xZgsoDaagGG/SsY1stgWD8Uso76kWOe64l1dcv3vwfDegksq7gnciLeBc0Vux6vw9mWPQ+7lrGmwTQ7WAAVJKDoqhsdEyv7d4j4+vXiyk2bRMvuh7yWmyp5erqc4h2BFiAqUnLSmkfQdxLRG4j4bQlnhOoqmRQdW28QS589GHwBstwkEokniWhOeYhUesnLzfVHR8MjABH7VYdGZa7l+x4NlYB3VAdGURZARH+oDoxqrAta+syAaL3nXudKa8PzR/IK+Fp1aFRDg/Dyvfv+t65EOi2WDBxaVMBprw3LPpxd/IPLUT4MzZhO4LnraO/p8RegadqeRb5ZHxX0NAwLEDLUxuHDnjnKEzJfAQDQuFg3hIhfxuPxLhZg520BjUPD3gKu2biogEJ+jEOeI7yradp9uq5jGKenU5AFSIjIUj6QUvUrMAIAoJ6I3lQdCEVYwPx4cEJ1KBRhAfNjwm5EPKc6HIqqgOyY0IqIY/Lms+qQKIoCch7S25l9VuxT1PVfUNeVB0dREeBJxnqiXBsNVarAH4YWjWXdD4Y9qzpYiKwAydiEDob1dih+mkCrRQFuEaY9BIZ9Ojv94qLqwCFSAkIA+VxqAYA6zw+wgPLCAhRDPpMO3JNrS24Bg0PeXdBG7oIAEX/0CgcRB4hoWakC6uWErB13eQro6HamJkZ7DEDE91Wd7LVt72cB2uJ3/ipay546wAIAoEHFzzCv9rofHMUuSJJIJK7yGwsqUZ1btoj6F0ZYgBtN0wgRP678N/9W//Cj2gJc1CUSibsR8S05/QYR/yw1cHmFWM5+aNt2h3efzwKKxLR/rur0dCYHw3qtcgLsV3NXx+QyMRH753Gisod/BkZfXLNgfYwHo5PtYNonwbDOlqHbOQuGdcL5nwzDMAzDMAzDMAwDUeVvnpqDsotFwisAAAAASUVORK5CYII=" />
+                    </defs>
+                </svg>
+
                 <h2 class="font-bold text-primary-800 mb-2 mt-3">جامع ترین سامانه</h2>
                 <div class="text-sm text-zinc-800">ارائه خدمات گردشگری،ویزا و صدور بلیط هواپیما</div>
             </div>
             <div class="flex flex-col items-center">
-                <img src="[##cms.cms.cdn##]/images/support.svg" alt="camera" width="96" height="96" loading="lazy">
+                <!-- <img src="[##cms.cms.cdn##]/images/support.svg" alt="camera" width="96" height="96" loading="lazy"> -->
+                <svg width="97" height="96" viewBox="0 0 97 96" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <rect x="0.833252" width="96" height="96" fill="url(#pattern0_660_3010)" />
+                    <defs>
+                        <pattern id="pattern0_660_3010" patternContentUnits="objectBoundingBox" width="1" height="1">
+                            <use xlink:href="#image0_660_3010" transform="scale(0.0104167)" />
+                        </pattern>
+                        <image id="image0_660_3010" width="96" height="96"
+                            xlink:href="data:image/png;base64,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" />
+                    </defs>
+                </svg>
+
                 <h2 class="font-bold text-primary-800 mb-2 mt-3">پشتیبانی 24 ساعته</h2>
                 <div class="text-sm text-zinc-800">سرعت عمل در پاسخگویی و پیگری و ارائه خدمات</div>
             </div>
             <div class="flex flex-col items-center">
-                <img src="[##cms.cms.cdn##]/images/hand.svg" alt="camera" width="96" height="96" loading="lazy">
+                <!-- <img src="[##cms.cms.cdn##]/images/hand.svg" alt="camera" width="96" height="96" loading="lazy"> -->
+                <svg width="97" height="96" viewBox="0 0 97 96" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <rect x="0.166748" width="96" height="96" fill="url(#pattern0_660_7)" />
+                    <defs>
+                        <pattern id="pattern0_660_7" patternContentUnits="objectBoundingBox" width="1" height="1">
+                            <use xlink:href="#image0_660_7" transform="scale(0.0104167)" />
+                        </pattern>
+                        <image id="image0_660_7" width="96" height="96"
+                            xlink:href="data:image/png;base64,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" />
+                    </defs>
+                </svg>
+
                 <h2 class="font-bold text-primary-800 mb-2 mt-3">ضمانت تطبیق قیمت</h2>
                 <div class="text-sm text-zinc-800">با قیمت سایر خدمات مشابه در سایتهای گردشگری</div>
             </div>
             <div class="flex flex-col items-center">
-                <img src="[##cms.cms.cdn##]/images/camera.svg" alt="camera" width="96" height="96" loading="lazy">
+                <!-- <img src="[##cms.cms.cdn##]/images/camera.svg" alt="camera" width="96" height="96" loading="lazy"> -->
+                <svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <rect width="96" height="96" fill="url(#pattern0_660_1526)" />
+                    <defs>
+                        <pattern id="pattern0_660_1526" patternContentUnits="objectBoundingBox" width="1" height="1">
+                            <use xlink:href="#image0_660_1526" transform="scale(0.0104167)" />
+                        </pattern>
+                        <image id="image0_660_1526" width="96" height="96"
+                            xlink:href="data:image/png;base64,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" />
+                    </defs>
+                </svg>
                 <h2 class="font-bold text-primary-800 mb-2 mt-3">ضمانت استرداد هزینه</h2>
                 <div class="text-sm text-zinc-800">کسر خدمات تورها بدون تاخیر با ارائه مستندات</div>
             </div>
@@ -430,8 +477,8 @@
                                             class="bg-primary-800 flex items-center justify-center w-28 py-2 rounded-lg text-white text-sm transition-all duration-300 hover:bg-secondary-400">مشاهده</a>
                                     </div>
                                     <div class="mask-image">
-                                        <img src="@image" alt="@title" class="h-44 object-cover" width="100%" height="174"
-                                            loading="lazy">
+                                        <img src="@image" alt="@title" class="h-44 object-cover" width="100%"
+                                            height="174" loading="lazy">
                                     </div>
                                 </div>
                             </div>
@@ -451,8 +498,8 @@
                                             class="bg-primary-800 flex items-center justify-center w-28 py-2 rounded-lg text-white text-sm transition-all duration-300 hover:bg-secondary-400">مشاهده</a>
                                     </div>
                                     <div class="mask-image">
-                                        <img src="@image" alt="@title" class="h-44 object-cover" width="100%" height="174"
-                                            loading="lazy">
+                                        <img src="@image" alt="@title" class="h-44 object-cover" width="100%"
+                                            height="174" loading="lazy">
                                     </div>
                                 </div>
                             </div>
@@ -581,8 +628,9 @@
                                 <span
                                     class="absolute bottom-0 left-0 w-full transition-all duration-300 ease-out translate-x-full translate-y-full h-full -z-10 bg-secondary-400 group-hover:translate-x-0 group-hover:translate-y-0"></span>
                                 <h2 class="text-xl font-bold text-zinc-900 mr-24 group-hover:text-white">@title</h2>
-                                <img src="@image" class="absolute -top-10 right-10 rounded-full border-3 border-solid border-white" alt="@title" width="77"
-                                    height="77">
+                                <img src="@image"
+                                    class="absolute -top-10 lg:right-6 xl:right-10 rounded-full border-3 border-solid border-white"
+                                    alt="@title" width="77" height="77">
                             </div>
                         </a>
                     </face>
@@ -601,7 +649,7 @@
                                     class="absolute bottom-0 left-0 w-full transition-all duration-300 ease-out translate-x-full translate-y-full h-full -z-10 bg-secondary-400 group-hover:translate-x-0 group-hover:translate-y-0"></span>
                                 <h2 class="text-xl font-bold text-zinc-900 mr-24 group-hover:text-white">@title</h2>
                                 <img src="@image"
-                                    class="absolute -top-10 right-10 rounded-full border-3 border-solid border-white"
+                                    class="absolute -top-10 lg:right-6 xl:right-10 rounded-full border-3 border-solid border-white"
                                     alt="@title" width="77" height="77">
                             </div>
                         </a>
