@@ -111,7 +111,7 @@
                                         class=" text-right h-14 flex items-center rounded-lg w-40 bg-white px-2">
                                         <select onchange="setFlightType(this)"
                                             id="Flight-FlighttypeClass" name="FlighttypeClass"
-                                            class="w-full h-12 bg-transparent outline-none FlighttypeClass flighttype-class ul-drop-items">
+                                            class="w-full h-12 bg-transparent outline-none FlighttypeClass flighttype-class ul-drop-items cursor-pointer">
                                             <option id="oneway"
                                                 onclick="document.getElementById('flight-form').action='/Tem3_Oneway_Search.bc';"
                                                 class="p-2 rounded-t cursor-pointer hover:bg-primary hover:text-white font-danaregular"
@@ -128,7 +128,7 @@
                                         <nav
                                             class="text-right h-14 flex items-center rounded-lg w-40 bg-white px-2">
                                             <select id="selectflightclass" onchange="setFlightClass(this)"
-                                                class="w-full h-12 bg-transparent outline-none">
+                                                class="w-full h-12 bg-transparent outline-none cursor-pointer">
                                                 <option
                                                     class="p-2 rounded-t cursor-pointer hover:bg-primary hover:text-white font-danaregular"
                                                     data-cy="Economy" value="Economy">اکونومی</option>
@@ -1422,7 +1422,7 @@
                                             <div class="self-start p-2 bg-primary-100 ronded-lg w-16 h-16 flex items-center justify-center rounded-lg">
                                                 <img src="[##cms.cms.cdn##]/images/person.svg" alt="icon" class="" width="30" height="31">
                                             </div>
-                                            <div class=" passenger_section cursor-pointe bg-transparent z-[1] w-full h-full absolute top-0 right-0 left-0 bottom-0 pr-10 flex items-center "
+                                            <div class=" passenger_section cursor-pointer bg-transparent z-[1] w-full h-full absolute top-0 right-0 left-0 bottom-0 pr-10 flex items-center "
                                                 onclick="show_passengers(this)">
                                                 <span
                                                     class="pt-6 pr-10 count-passengers text-zinc-400"><span
@@ -1602,7 +1602,7 @@
                                         <nav id="flightclass-type-items"
                                             class="text-right h-14 flex items-center rounded-lg w-40 bg-white px-2">
                                             <select name="FlightClass"
-                                                class="w-full h-12 bg-transparent FlightClass flight-class ul-drop-items outline-none">
+                                                class="w-full h-12 bg-transparent FlightClass flight-class ul-drop-items outline-none cursor-pointer">
                                                 <option
                                                     class="p-2 rounded-t cursor-pointer hover:bg-primary hover:text-white font-danaregular"
                                                     data-cy="Economy" data-val="Economy" value="Economy">

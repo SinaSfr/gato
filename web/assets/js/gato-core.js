@@ -748,7 +748,7 @@ function reinitializeSwiper() {
 
   if (document.querySelector(".swiper-luxury-tours")) {
     var swiperLuxuryTours = new Swiper(".swiper-luxury-tours", {
-      slidesPerView: "auto",
+      slidesPerView: 3,
       speed: 400,
       centeredSlides: false,
       spaceBetween: 8,
@@ -770,7 +770,7 @@ function reinitializeSwiper() {
 
   if (document.querySelector(".swiper-end-tours")) {
     var swiperEndTours = new Swiper(".swiper-end-tours", {
-      slidesPerView: "auto",
+      slidesPerView: 3,
       speed: 400,
       centeredSlides: false,
       spaceBetween: 8,
@@ -792,7 +792,7 @@ function reinitializeSwiper() {
   }
   if (document.querySelector(".swiper-exhibition-tours")) {
     var swiperExhibitionTours = new Swiper(".swiper-exhibition-tours", {
-      slidesPerView: "auto",
+      slidesPerView: 3,
       speed: 400,
       centeredSlides: false,
       spaceBetween: 8,

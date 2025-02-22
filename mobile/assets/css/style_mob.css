@@ -1,5 +1,5 @@
 @charset "utf-8";
-@import url(./keyvanparvaz.common.css);
+@import url(./customized.ui.min.css);
 @font-face {
   font-family: "IRANSansWeb";
   src: url("../fonts/IRANSansWeb(FaNum).ttf") format("truetype"),
@@ -13,13 +13,11 @@
   font-weight: lighter;
   src: url("../fonts/IRANSansWeb_Medium.eot");
   src: url("../fonts/IRANSansWeb_Medium.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/IRANSansWeb_Medium.woff") format("woff"),
     url("../fonts/IRANSansWeb_Medium.ttf") format("truetype");
 }
 @font-face {
   font-family: "fontawesome";
   src: url("../fonts/fontAwesome.eot") format("embedded-opentype"),
-    url("../fonts/fontAwesome.woff") format("woff"),
     url("../fonts/fontAwesome.ttf") format("truetype"),
     url("../fonts/fontAwesome.svg") format("svg"),
     url("../fonts/fontAwesome-brands.eot") format("embedded-opentype");
@@ -45,7 +43,6 @@
   font-display: block;
   src: url("../fonts/fontAwesome-brands.eot");
   src: url("../fonts/fontAwesome-brands.eot") format("embedded-opentype"),
-    url("../fonts/fontAwesome-brands.woff") format("woff"),
     url("../fonts/fontAwesome-brands.ttf") format("truetype"),
     url("../fonts/fontAwesome-brands.svg") format("svg");
 }
@@ -60,7 +57,6 @@
   font-display: block;
   src: url("../fonts/fontAwesome-regular.eot");
   src: url("../fonts/fontAwesome-regular.eot") format("embedded-opentype"),
-    url("../fonts/fontAwesome-regular.woff") format("woff"),
     url("../fonts/fontAwesome-regular.ttf") format("truetype"),
     url("../fonts/fontAwesome-regular.svg") format("svg");
 }
@@ -75,7 +71,6 @@
   font-display: block;
   src: url("../fonts/fontAwesome-solid.eot");
   src: url("../fonts/fontAwesome-solid.eot") format("embedded-opentype"),
-    url("../fonts/fontAwesome-solid.woff") format("woff"),
     url("../fonts/fontAwesome-solid.ttf") format("truetype"),
     url("../fonts/fontAwesome-solid.svg") format("svg");
 }
@@ -88,17 +83,16 @@
   font-family: "fontIcon";
   src: url("../fonts/fontIcon.eot?n1z373");
   src: url("../fonts/fontIcon.eot?#iefixn1z373") format("embedded-opentype"),
-    url("../fonts/fontIcon.woff?n1z373") format("woff"),
     url("../fonts/fontIcon.ttf?n1z373") format("truetype"),
     url("../fonts/fontIcon.svg?n1z373#lg") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 .font-color_1 {
-  color: #748faa;
+  color: var(--primary);
 }
 .background-color_1 {
-  background: #748faa !important;
+  background: var(--primary) !important;
 }
 .sort-box .sort-items li.active,
 .reserve-button:hover,
@@ -118,7 +112,7 @@
 .Link-Register:hover,
 .Link-ResendMail:hover,
 .Link-Login:hover {
-  color: #748faa !important;
+  color: var(--primary) !important;
 }
 .createChildDropdown select,
 .section-details button:hover,
@@ -129,84 +123,84 @@
 .ui-datepicker-buttonpane .ui-state-default:focus,
 .ui-datepicker-buttonpane .ui-datepicker-current:hover,
 .ui-datepicker-buttonpane .ui-datepicker-current:focus {
-  background: #748faa !important;
+  background: var(--primary) !important;
 }
 .radioButton:checked + label span::after {
-  color: #748faa;
-  border: 2px solid#748faa;
+  color: var(--primary);
+  border: 2px solid var(--primary);
 }
 .active_tab_tour {
   color: #fff !important;
-  background: #748faa;
+  background: var(--primary);
 }
 .ui-state-active,
 .ui-widget-content .ui-state-active,
 .ui-widget-header .ui-state-active {
   border: 1px solid#748faa;
-  background: #748faa !important;
+  background: var(--primary) !important;
 }
 .reserve-button {
-  border: 1px solid#748faa;
+  border: 1px solid var(--primary);
 }
 .title-result {
-  border-bottom: 1px solid#748faa;
+  border-bottom: 1px solid var(--primary);
 }
 .login_info .label {
-  color: #748faa;
+  color: var(--primary);
 }
 .confirm {
-  background: linear-gradient(-90deg, #748faa 0%, #a7e5da 100%);
+  background: linear-gradient(-90deg, var(--primary) 0%, #a7e5da 100%);
 }
 .confirm:hover {
   background: linear-gradient(-90deg, #a7e5da 0%, #748faa 100%);
 }
 .details-item-title {
-  border-bottom: 2px solid #748faa;
+  border-bottom: 2px solid var(--primary);
 }
 .section-details button {
-  border: 2px solid #748faa;
+  border: 2px solid var(--primary);
 }
 .item-search:before {
-  border: 1px dashed #748faa;
+  border: 1px dashed var(--primary);
 }
 .progress-bar {
-  background-image: -webkit-linear-gradient(top, #748faa 0, #748faa 100%);
-  background-image: -o-linear-gradient(top, #748faa 0, #748faa 100%);
+  background-image: -webkit-linear-gradient(top, var(--primary) 0, var(--primary) 100%);
+  background-image: -o-linear-gradient(top, var(--primary) 0, var(--primary) 100%);
   background-image: -webkit-gradient(
     linear,
     left top,
     left bottom,
-    from(#748faa),
-    to(#748faa)
+    from(var(--primary)),
+    to(var(--primary))
   );
-  background-image: linear-gradient(to bottom, #748faa 0, #748faa 100%);
+  background-image: linear-gradient(to bottom, var(--primary) 0, var(--primary) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff337ab7', endColorstr='#ff286090', GradientType=0);
   background-repeat: repeat-x;
 }
 .link-2:hover:after {
-  border-color: #748faa;
+  border-color: var(--primary);
 }
 .section-input_2 span.checkbox::before {
-  border: 2px solid #748faa;
+  border: 2px solid var(--primary);
 }
 .top-menu {
-  background: linear-gradient(-135deg, #748faa, #748faa);
+  background: linear-gradient(-135deg, var(--primary), var(--primary));
 }
 .section-input_2 span.checkbox::before {
-  border: 2px solid #748faa;
+  border: 2px solid var(--primary);
 }
 .loader {
-  border-top: 5px solid #748faa;
+  border-top: 5px solid var(--primary);
 }
 .ChangeFlight-header {
-  background: linear-gradient(-135deg, #748faa, #a7e5da);
+  background: linear-gradient(-135deg, var(--primary), var(--secondary));
 }
 /*-----------------------------*/
 .font-color_2 {
-  color: #3f2f12;
+  color: var(--secondary);
 }
 .background-color_2 {
-  background: #3f2f12 !important;
+  background: var(--secondary) !important;
 }
 .second-part-header .col1-second-part-header a:after,
 .second-part-header .col1-second-part-header a:before,
@@ -227,7 +221,7 @@
 .ResendSMSSubmit,
 #sendSms input[type="submit"],
 #ConfirmRegister input[type="submit"] {
-  background: #3f2f12 !important;
+  background: var(--secondary) !important;
 }
 .CountPassenger.room::before,
 .highlight,
@@ -245,22 +239,22 @@
   display: none;
 }
 .radioButton:checked + label span::after {
-  color: #3f2f12;
-  border: 3px solid #3f2f12;
+  color: var(--secondary);
+  border: 3px solid var(--secondary);
 }
 .add-room {
-  background: linear-gradient(-90deg, #3f2f12 0%, #3f2f12 100%);
+  background: linear-gradient(-90deg, var(--secondary) 0%, var(--secondary) 100%);
 }
 .row1-footer .fa,
 .row1-footer .far {
-  border: 1px solid #3f2f12;
+  border: 1px solid var(--secondary);
 }
 .details-button,
 .Others-Button {
-  border: 1px solid #3f2f12;
+  border: 1px solid var(--secondary);
 }
 .right-border-d {
-  border-left: 2px dashed #3f2f12;
+  border-left: 2px dashed var(--secondary);
 }
 /*-----------------------------*/
 .total-cost {
@@ -285,41 +279,41 @@
   color: #34495e;
 }
 .font-color_3 {
-  color: #30d5a0;
+  color: var(--secondary);
 }
 .background-color_3 {
-  background: #30d5a0;
+  background: var(--secondary);
 }
 .font-color_4 {
   color: #fff;
 }
 /*-----------------------------*/
 .Basis_Calendar .selected_date {
-  background: #3f2f12 !important;
+  background: var(--secondary) !important;
 }
 .Basis_Calendar .month_day_list table td:hover {
-  background: #3f2f12;
+  background: var(--secondary);
 }
 .Basis_Calendar .month_detail {
-  background: #3f2f12;
+  background: var(--secondary);
 }
 .Basis_Calendar .basis_s_day {
-  color: #748faa;
+  color: var(--primary);
 }
 .Basis_Calendar .day_of_date {
-  color: #748faa;
+  color: var(--primary);
 }
 .Basis_Calendar .month_of_date {
-  color: #748faa;
+  color: var(--primary);
 }
 .Basis_Calendar .date_info_selected {
-  border-bottom: 2px solid rgba(255, 117, 85, 0.49);
+  border-bottom: 2px solid var(--secondary);
 }
 .Basis_Calendar .month_detail {
-  border-bottom: 2px solid rgba(255, 117, 85, 0.49);
+  border-bottom: 2px solid var(--secondary);
 }
 .Basis_Calendar .selected_day {
-  background: rgba(255, 117, 85, 0.2);
+  background: var(--secondary);
 }
 .warning {
   color: red;
@@ -335,10 +329,10 @@
   filter: none;
 }
 .fa.fa-redo-alt {
-  color: #748faa;
+  color: var(--primary);
 }
 .second-part-header {
-  background: #7c7e81;
+  background: var(--primary);
 }
 
 .wating-search > img {

@@ -14,13 +14,11 @@
   font-weight: lighter;
   src: url("../fonts/IRANSansWeb_Medium.eot");
   src: url("../fonts/IRANSansWeb_Medium.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/IRANSansWeb_Medium.woff") format("woff"),
     url("../fonts/IRANSansWeb_Medium.ttf") format("truetype");
 }
 @font-face {
   font-family: "fontawesome";
   src: url("../fonts/fontAwesome.eot") format("embedded-opentype"),
-    url("../fonts/fontAwesome.woff") format("woff"),
     url("../fonts/fontAwesome.ttf") format("truetype"),
     url("../fonts/fontAwesome.svg") format("svg"),
     url("../fonts/fontAwesome-brands.eot") format("embedded-opentype");
@@ -37,7 +35,6 @@
   font-display: block;
   src: url("../fonts/fontAwesome-brands.eot");
   src: url("../fonts/fontAwesome-brands.eot") format("embedded-opentype"),
-    url("../fonts/fontAwesome-brands.woff") format("woff"),
     url("../fonts/fontAwesome-brands.ttf") format("truetype"),
     url("../fonts/fontAwesome-brands.svg") format("svg");
 }
@@ -48,7 +45,6 @@
   font-display: block;
   src: url("../fonts/fontAwesome-regular.eot");
   src: url("../fonts/fontAwesome-regular.eot") format("embedded-opentype"),
-    url("../fonts/fontAwesome-regular.woff") format("woff"),
     url("../fonts/fontAwesome-regular.ttf") format("truetype"),
     url("../fonts/fontAwesome-regular.svg") format("svg");
 }
@@ -59,7 +55,6 @@
   font-display: block;
   src: url("../fonts/fontAwesome-solid.eot");
   src: url("../fonts/fontAwesome-solid.eot") format("embedded-opentype"),
-    url("../fonts/fontAwesome-solid.woff") format("woff"),
     url("../fonts/fontAwesome-solid.ttf") format("truetype"),
     url("../fonts/fontAwesome-solid.svg") format("svg");
 }
@@ -67,7 +62,6 @@
   font-family: "fontIcon";
   src: url("../fonts/fontIcon.eot?n1z373");
   src: url("../fonts/fontIcon.eot?#iefixn1z373") format("embedded-opentype"),
-    url("../fonts/fontIcon.woff?n1z373") format("woff"),
     url("../fonts/fontIcon.ttf?n1z373") format("truetype"),
     url("../fonts/fontIcon.svg?n1z373#lg") format("svg");
   font-weight: normal;
@@ -201,7 +195,7 @@ video {
 /*<!--------------------------init CSS------------------------------->*/
 /*<!--------------------------------START CSS LIST TEMPLATE 3-------------------------------*/
 .btn_1 {
-  background-color: #748faa;
+  background-color: var(--primary);
   color: #fff;
 }
 .btn_1:hover {
@@ -212,59 +206,59 @@ video {
   border-color: #000;
 }
 #Login_box .shine-hover {
-  background-color: #3f2f12;
-  border: 1px solid #3f2f12;
+  background-color: var(--secondary);
+  border: 1px solid var(--secondary);
   color: #fff;
 }
 #Login_box .shine-hover:hover {
-  background-color: #3f2f12;
+  background-color: var(--secondary);
 }
 .login_info i {
-  color: #3f2f12 !important;
+  color: var(--secondary) !important;
 }
 .radioButton:checked + label span::after {
-  color: #3f2f12;
-  border: 2px solid #3f2f12;
+  color: var(--secondary);
+  border: 2px solid var(--secondary);
 }
 .airport_filter,
 .airport_filter_des {
-  border-bottom: 1px dashed #3f2f12;
+  border-bottom: 1px dashed var(--secondary);
 }
 .details-btn:hover {
-  background-color: #3f2f12;
+  background-color: var(--secondary);
   color: #fff;
 }
 .btn-item button {
-  background-color: #3f2f12;
-  border: 1px solid #3f2f12;
+  background-color: var(--secondary);
+  border: 1px solid var(--secondary);
 }
 .details-btn {
-  border: 1px solid #3f2f12;
+  border: 1px solid var(--secondary);
 }
 .flight-duration-stop:before {
-  background-color: #3f2f12;
-  border: 1px solid #3f2f12;
+  background-color: var(--secondary);
+  border: 1px solid var(--secondary);
 }
 .details-row-middle_1 {
-  border-left: 2px dashed #3f2f12;
+  border-left: 2px dashed var(--secondary);
 }
 .details-circle::before,
 .details-circle::after {
-  border: 2px solid#3f2f12;
+  border: 2px solid var(--secondary);
 }
 .section-input_list input[type="checkbox"]:checked + label span.checkbox::after,
 .section-input_list input[type="radio"]:checked + label span.checkbox::after {
-  color: #3f2f12;
+  color: var(--secondary);
 }
 .section-input_list
   input[type="checkbox"]:checked
   + label
   span.checkbox::before,
 .section-input_list input[type="radio"]:checked + label span.checkbox::before {
-  border-color: #3f2f12;
+  border-color: var(--secondary);
 }
 fieldset hr {
-  background-color: #748faa;
+  background-color: var(--primary);
 }
 .rangevalFirst,
 .rangevalSecond,
@@ -272,21 +266,21 @@ fieldset hr {
 .rangevalSecond_2,
 .rangevalSecond_2 span,
 .rangevalFirst_2 span {
-  color: #748faa;
+  color: var(--primary);
 }
 .filter-container:not(:last-child) {
-  border-bottom: 1px dashed #3f2f12;
+  border-bottom: 1px dashed var(--secondary);
 }
 .sort-items li.active,
 .sort-items li:hover {
-  color: #3f2f12;
+  color: var(--secondary);
 }
 .confirm {
-  border: 1px solid #3f2f12;
+  border: 1px solid var(--secondary);
 }
 .confirm:hover {
   background-color: #fff;
-  color: #3f2f12;
+  color: var(--secondary);
 }
 .minus-btn {
   background-color: rgb(153, 0, 0);
@@ -299,82 +293,82 @@ fieldset hr {
 }
 .after-btn:hover,
 .before-btn:hover {
-  background-color: #3f2f12;
+  background-color: var(--secondary);
   color: #fff;
-  border: 1px solid #3f2f12;
+  border: 1px solid var(--secondary);
 }
 .flight-summary-info .dash i {
-  color: #3f2f12;
+  color: var(--secondary);
 }
 .close-research {
-  border: 1px solid #3f2f12;
-  color: #3f2f12;
+  border: 1px solid var(--secondary);
+  color: var(--secondary);
 }
 .flight_type .active,
 .flight_type li:hover {
-  color: #3f2f12;
+  color: var(--secondary);
 }
 .btn-item button:hover {
   background-color: #fff !important;
-  color: #748faa !important;
+  color: var(--primary) !important;
   box-shadow: 0 10px 13px -10px #0c2d33;
 }
 .searched-item button:hover {
-  background-color: #748faa;
+  background-color: var(--primary);
   box-shadow: 0 10px 13px -10px #0c2d33;
 }
 .exchange-icon:hover {
-  background-color: #748faa;
+  background-color: var(--primary);
   color: #fff;
 }
 .exchange-icon {
-  border: 1px solid #748faa;
-  color: #748faa;
+  border: 1px solid var(--primary);
+  color: var(--primary);
 }
 .searched-flight {
-  border-bottom: 1px dashed #3f2f12;
+  border-bottom: 1px dashed var(--secondary);
 }
 .progress-bar {
-  background-color: #3f2f12 !important;
+  background-color: var(--secondary) !important;
 }
 .angle-content .three {
-  color: #748faa;
+  color: var(--primary);
 }
 .loading-container:hover .loading {
-  border-color: transparent #748faa transparent #748faa;
+  border-color: transparent var(--primary) transparent var(--primary);
 }
 .loading {
-  border-color: transparent #3f2f12 transparent #3f2f12;
+  border-color: transparent var(--secondary) transparent var(--secondary);
 }
 .section-container .dash {
-  color: #748faa;
+  color: var(--primary);
 }
 .close-content .fa-times::before {
-  color: #748faa !important;
+  color: var(--primary) !important;
 }
 .Basis_Calendar .month_day_list table td:hover,
 .Basis_Calendar .selected_date {
-  background-color: #748faa;
+  background-color: var(--primary);
 }
 .Basis_Calendar .month_change i:hover {
-  color: #3f2f12;
+  color: var(--secondary);
 }
 .Basis_Calendar .current_day {
-  background-color: #3f2f12 !important;
+  background-color: var(--secondary) !important;
 }
 .Basis_Calendar .selected_day {
-  background-color: #3f2f12;
+  background-color: var(--secondary);
 }
 .ui-datepicker-today .ui-state-highlight,
 .ui-datepicker table thead th,
 .ui-datepicker .ui-datepicker-buttonpane button,
 .ui-datepicker-buttonpane .ui-datepicker-current:focus {
-  background-color: #3f2f12;
+  background-color: var(--secondary);
 }
 .ui-datepicker th,
 .ui-datepicker .ui-datepicker-prev span,
 .ui-datepicker .ui-datepicker-next span {
-  color: #3f2f12;
+  color: var(--secondary);
 }
 .ui-datepicker-buttonpane .ui-state-default:hover,
 .ui-datepicker-buttonpane .ui-state-default:focus,
@@ -382,30 +376,30 @@ fieldset hr {
 .ui-state-active,
 .ui-widget-content .ui-state-active,
 .ui-widget-header .ui-state-active {
-  border: 1px solid#748faa;
-  background-color: #748faa !important;
+  border: 1px solidvar(--primary);
+  background-color: var(--primary) !important;
 }
 .name-tour {
-  color: #3f2f12;
+  color: var(--secondary);
 }
 .item-tour:hover {
-  background-color: #3f2f12;
+  background-color: var(--secondary);
   color: #fff;
 }
 .tour-info-tlt {
-  background-color: #748faa;
+  background-color: var(--primary);
 }
 .tour-completion-info i {
-  color: #748faa;
+  color: var(--primary);
 }
 .side-tour i {
   color: #faa944;
 }
 .row-other-inf {
-  border-right: 3px solid #748faa;
+  border-right: 3px solid var(--primary);
 }
 .tlt-table {
-  background-color: #748faa;
+  background-color: var(--primary);
 }
 .loading-img img {
   width: 82px;
@@ -417,101 +411,101 @@ fieldset hr {
 /*<!--------------------------------END CSS LIST TEMPLATE 3-------------------------------*/
 /*<!--------------------------------START CSS VIEW TEMPLATE 3-------------------------------*/
 .flight-duration-stop::before {
-  background-color: #3f2f12;
-  border: 1px solid #3f2f12;
+  background-color: var(--secondary);
+  border: 1px solid var(--secondary);
 }
 .next-btn {
-  background-color: #3f2f12;
+  background-color: var(--secondary);
 }
 .next-btn:hover {
-  background-color: #387066;
+  background-color: var(--secondary);
 }
 .prev-passengers {
-  border-bottom: 2px solid #3f2f12;
-  color: #3f2f12;
+  border-bottom: 2px solid var(--secondary);
+  color: var(--secondary);
 }
 .prev-passengers svg {
-  fill: #3f2f12;
+  fill: var(--secondary);
 }
 .prev-passengers:hover {
-  border-color: #387066 !important;
-  color: #387066 !important;
+  border-color: var(--secondary) !important;
+  color: var(--secondary) !important;
 }
 .prev-passengers:hover svg {
-  fill: #387066;
+  fill: var(--secondary);
 }
 .passengers-prev-title svg {
-  fill: #3f2f12;
+  fill: var(--secondary);
 }
 .passenger-title {
-  color: #3f2f12;
+  color: var(--secondary);
 }
 .details-item-title {
-  color: #3f2f12;
+  color: var(--secondary);
 }
 .nav-details li:hover,
 .nav-details li.active {
-  color: #3f2f12;
+  color: var(--secondary);
 }
 .nav-details li::before {
-  border-top: 3px solid #3f2f12;
+  border-top: 3px solid var(--secondary);
 }
 .brief-container .head-items .title {
-  background-color: #3f2f12;
+  background-color: var(--secondary);
   color: #fff;
 }
 .buyer-type ul li.active,
 .buyer-type ul li:hover {
-  background-color: #3f2f12;
+  background-color: var(--secondary);
   color: #fff;
 }
 .buyer-type ul li {
-  border: 1px solid #3f2f12;
-  color: #748faa;
+  border: 1px solid var(--secondary);
+  color: var(--primary);
 }
 .login-btn {
-  background-color: #3f2f12;
+  background-color: var(--secondary);
 }
 .login-link {
-  border: 1px solid #3f2f12;
-  color: #748faa;
+  border: 1px solid var(--secondary);
+  color: var(--primary);
 }
 .login-link:hover {
-  background-color: #748faa;
+  background-color: var(--primary);
   color: #fff !important;
 }
 .login-btn:hover {
-  background-color: #387066;
+  background-color: var(--secondary);
 }
 .login-btn:hover {
   box-shadow: 0 10px 13px -10px #0c2d33;
 }
 .login-title i {
-  color: #3f2f12;
+  color: var(--secondary);
 }
 .bottom-content .action-loading {
-  background-color: #3f2f12;
+  background-color: var(--secondary);
 }
 .select-passnger {
-  background-color: #3f2f12;
+  background-color: var(--secondary);
 }
 .inside-title {
-  border-right: 3px solid #3f2f12;
+  border-right: 3px solid var(--secondary);
 }
 .duration-details {
-  border-bottom: 2px dashed #748faa;
+  border-bottom: 2px dashed var(--primary);
 }
 .duration-details::after,
 .duration-details::before {
-  background-color: #748faa;
+  background-color: var(--primary);
 }
 /*<!--------------------------------END CSS VIEW TEMPLATE 3-------------------------------*/
 /*<!--------------------------MAIN COLORS------------------------------->*/
 .background-color_1 {
-  background-color: #748faa;
+  background-color: var(--primary);
 }
 .background-color_2 {
-  background-color: #3f2f12;
+  background-color: var(--secondary);
 }
 .background-color_3 {
   background-color: #252563;
@@ -523,10 +517,10 @@ fieldset hr {
   background-color: #f3f4f5;
 }
 .color_1 {
-  color: #748faa;
+  color: var(--primary);
 }
 .color_2 {
-  color: #3f2f12;
+  color: var(--secondary);
 }
 .color_3 {
   color: #252563;

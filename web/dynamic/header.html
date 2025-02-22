@@ -27,7 +27,7 @@
 </basis>
 
 
-<header class="border-b-8 border-solid border-primary-800">
+<header class="border-b-8 border-solid border-primary-800 direction-rtl">
     <section class="bg-secondary-900 h-16 lg:h-[72px] flex items-center">
         <div class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:w-[1280px]">
             <div class=" lg:flex lg:items-center lg:justify-between">
@@ -35,7 +35,7 @@
                 <form method="get" action="/search-content.bc" class="relative items-center hidden lg:flex">
                     <input
                         class="bg-zinc-100 placeholder-zinc-600 pr-3 py-3 rounded-lg outline-none text-zinc-600 h-14 w-64"
-                        placeholder="جستجو کنید" type="text" autocomplete="off" required name="search-content-name" />
+                        placeholder="جستجو کنید" type="text" autocomplete="on" required name="search-content-name" />
                     <input type="hidden" name="t" value="1">
                     <button
                         class="absolute left-1 bg-primary-800 rounded-lg w-12 h-12 flex items-center justify-center transition-all duration-300 hover:bg-secondary-600"
@@ -215,10 +215,16 @@
                                 </ul>
                             </div>
                         </layout>
+                        <face filter="link is null">
+                            <li
+                                class="w-full py-1 text-start transition-all duration-300 text-secondary-800 hover:text-white hover:bg-primary-800 rounded-md">
+                                <a href="/article.bc?id=@id">@title</a>
+                            </li>
+                        </face>
                         <face>
                             <li
                                 class="w-full py-1 text-start transition-all duration-300 text-secondary-800 hover:text-white hover:bg-primary-800 rounded-md">
-                                <span>@title</span>
+                                <a href="@link">@title</a>
                             </li>
                         </face>
                     </basis>
@@ -771,7 +777,7 @@
             </div>
             <form method="get" action="/search-content.bc" class="relative mx-auto w-[90%] mt-3">
                 <input class="bg-zinc-100 placeholder-zinc-600 pr-3 py-3 rounded-lg w-full outline-none text-zinc-600"
-                    placeholder="جستجو کنید" type="text" autocomplete="off" required name="search-content-name" />
+                    placeholder="جستجو کنید" type="text" autocomplete="on" required name="search-content-name" />
                 <input type="hidden" name="t" value="1">
                 <button
                     class="absolute top-0 left-1 bg-primary-800 rounded-lg w-12 h-12 flex items-center justify-center"
