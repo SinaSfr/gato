@@ -1022,6 +1022,11 @@ body {
   background-color: rgb(244 244 245 / var(--tw-bg-opacity, 1));
 }
 
+.\!bg-zinc-100 {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(244 244 245 / var(--tw-bg-opacity, 1)) /* #f4f4f5 */ !important;
+}
+
 .object-cover {
   -o-object-fit: cover;
   object-fit: cover;
@@ -1858,4 +1863,31 @@ body {
   width: 1px;
   height: 24px;
   background-color: #00B3BD;
+}
+
+.Login_Information{
+  margin-left: 0;
+} 
+
+.email-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); 
+  opacity: 0;
+  pointer-events: none; 
+  transition: opacity 0.3s ease;
+  z-index: 999;
+}
+
+.email-popup.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.email-popup-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
 }

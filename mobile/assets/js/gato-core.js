@@ -72,18 +72,15 @@ document.addEventListener("DOMContentLoaded", function () {
   if (document.querySelector(".email-icon")) {
     const emailIcon = document.querySelectorAll(".email-icon");
     const emailPopup = document.querySelector(".email-popup");
-    const emailOverlay = document.querySelector(".email-popup-overlay"); 
     const closeIcon = document.querySelector(".close-icon");
 
     // تغییرات مربوط به پاپ‌آپ برای موبایل و دسکتاپ
     emailIcon.forEach((icon) => {
       icon.addEventListener("click", function () {
-
         if (window.innerWidth < 1024) {
           emailPopup.style.opacity = "1";
           emailPopup.style.transform = "translateX(0)";
           emailPopup.style.pointerEvents = "auto";
-          emailOverlay.classList.add("active"); 
         } else {
           emailPopup.style.position = "fixed";
           emailPopup.style.top = "50%";
@@ -92,27 +89,22 @@ document.addEventListener("DOMContentLoaded", function () {
           emailPopup.style.transform = "translate(-50%, -50%)";
           emailPopup.style.opacity = "1";
           emailPopup.style.pointerEvents = "auto";
-          emailOverlay.classList.add("active"); 
         }
       });
     });
 
     closeIcon.addEventListener("click", function () {
-
       if (window.innerWidth < 1024) {
         emailPopup.style.opacity = "0";
         emailPopup.style.transform = "translateX(100%)";
         emailPopup.style.pointerEvents = "none";
-        emailOverlay.classList.remove("active"); 
       } else {
         emailPopup.style.opacity = "0";
         emailPopup.style.pointerEvents = "none";
-        emailOverlay.classList.remove("active"); 
       }
     });
   }
 });
-
 
 document.addEventListener("DOMContentLoaded", function () {
   const fetchContentTours = document.querySelectorAll(".fetch-content-tour");
