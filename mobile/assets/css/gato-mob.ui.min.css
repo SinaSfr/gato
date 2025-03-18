@@ -800,6 +800,21 @@ body {
 .bg-defaultBg {
   background-image: var(--default-bg);
 }
+.bg-insurancemodule {
+  background-image: var(--insurancemodule-bg);
+}
+.bg-flighthotelmodule {
+  background-image: var(--flighthotelmodule-bg);
+}
+.bg-flightmodule {
+  background-image: var(--flightmodule-bg);
+}
+.bg-hotelmodule {
+  background-image: var(--hotelmodule-bg);
+}
+.bg-tourmodule {
+  background-image: var(--tourmodule-bg);
+}
 
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
@@ -923,6 +938,10 @@ body {
   padding-bottom: 1.5rem;
 }
 
+.pb-16 {
+  padding-bottom: 4rem /* 64px */;
+}
+
 .pl-0 {
   padding-left: 0px;
 }
@@ -977,6 +996,10 @@ body {
 
 .pt-36 {
   padding-top: 9rem;
+}
+
+.pt-44 {
+  padding-top: 11rem /* 176px */;
 }
 
 .pt-4 {

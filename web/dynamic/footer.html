@@ -100,9 +100,9 @@
                                         data-bc-schema-info-part="1" data-bc-schema-info-part-0-type="text">
                                         <basis core="dbsource" source="trust_login" name="captcha" run="atclient"
                                             triggers="captcha.refreshFooter">
-                                            <member name="code" type="scalar" request="captcha"></member>
+                                            <member name="code-footer" type="scalar" request="captcha"></member>
                                         </basis>
-                                        <basis datamembername="captcha.code" core="print" run="atclient">
+                                        <basis datamembername="captcha.code-footer" core="print" run="atclient">
                                             <face>
                                                 <script type="text/template"><div class="mt-2 d-inline-block"><div class="flex gap-8 justify-between">
                             
@@ -155,11 +155,11 @@
                             </a>
                         </div>
                         <div class="flex items-center justify-between mt-1 lg:justify-normal lg:gap-1 lg:mt-0">
-                            <a href="" decoding="async" 
-                                class="flex items-center justify-center bg-white p-1 w-14 h-14 rounded overflow-hidden transition-all duration-300 hover:scale-90">
-                                <img src="[##cms.cms.cdn##]/images/enamad.png" alt="enamad" width="56" height="56"
-                                    loading="lazy" rel="noopener">
-                            </a>
+                            <a referrerpolicy="origin" target="_blank" decoding="async" class="flex items-center justify-center bg-white p-1 w-14 h-14 rounded overflow-hidden transition-all duration-300 hover:scale-90"
+                                href="https://trustseal.enamad.ir/?id=589254&Code=8kLhu8ML5HIq1wVrlAEDkjX28yrNlQn7"><img
+                                    referrerpolicy="origin" width="100%" height="56"
+                                    src="https://trustseal.enamad.ir/logo.aspx?id=589254&Code=8kLhu8ML5HIq1wVrlAEDkjX28yrNlQn7"
+                                    alt="enamad" style="cursor:pointer" code="8kLhu8ML5HIq1wVrlAEDkjX28yrNlQn7"></a>
                             <a href="https://www.iata.org/"
                                 class="flex items-center justify-center bg-white p-1 w-14 h-14 rounded overflow-hidden transition-all duration-300 hover:scale-90">
                                 <img src="[##cms.cms.cdn##]/images/plane-samaneh.png" alt="plane-samaneh" width="56" height="56"

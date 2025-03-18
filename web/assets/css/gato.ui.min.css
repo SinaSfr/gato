@@ -807,6 +807,21 @@ body {
 .bg-defaultBg {
   background-image: var(--default-bg);
 }
+.bg-insurancemodule {
+  background-image: var(--insurancemodule-bg);
+}
+.bg-flighthotelmodule {
+  background-image: var(--flighthotelmodule-bg);
+}
+.bg-flightmodule {
+  background-image: var(--flightmodule-bg);
+}
+.bg-hotelmodule {
+  background-image: var(--hotelmodule-bg);
+}
+.bg-tourmodule {
+  background-image: var(--tourmodule-bg);
+}
 
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));

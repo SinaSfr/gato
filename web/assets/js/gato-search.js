@@ -113,7 +113,7 @@ $(document).ready(function () {
     });
     sessionStorage.setItem("pageName", "insurance");
     LoadInsurane();
-    LoadSelection();
+    // LoadSelection();
   });
 
   // $("#Train").click(function () {
@@ -139,12 +139,12 @@ $(document).ready(function () {
 
 function LoadHotel() {
   // window.changeParentBackground("hotelmodule-bg");
-  // $("#banner-sb").addClass('bg-hotelmodule');
-  // $("#banner-sb").removeClass('bg-flighthotelmodule');
-  // $("#banner-sb").removeClass('bg-flightmodule');
-  // $("#banner-sb").removeClass('bg-tourmodule');
-  // $("#banner-sb").removeClass('bg-insurancemodule');
-  // $("#banner-sb").removeClass('bg-trainmodule');
+  $("#banner-sb").addClass('bg-hotelmodule');
+  $("#banner-sb").removeClass('bg-flighthotelmodule');
+  $("#banner-sb").removeClass('bg-flightmodule');
+  $("#banner-sb").removeClass('bg-tourmodule');
+  $("#banner-sb").removeClass('bg-insurancemodule');
+  $("#banner-sb").removeClass('bg-trainmodule');
 
   $(".nav-module").each(function () {
     var checknav = $(this).attr("data-nav");
@@ -169,12 +169,12 @@ function LoadHotel() {
 }
 function LoadFlight() {
   // window.changeParentBackground("flightmodule-bg");
-  // $("#banner-sb").addClass('bg-flightmodule');
-  // $("#banner-sb").removeClass('bg-flighthotelmodule');
-  // $("#banner-sb").removeClass('bg-hotelmodule');
-  // $("#banner-sb").removeClass('bg-tourmodule');
-  // $("#banner-sb").removeClass('bg-insurancemodule');
-  // $("#banner-sb").removeClass('bg-trainmodule');
+  $("#banner-sb").addClass('bg-flightmodule');
+  $("#banner-sb").removeClass('bg-flighthotelmodule');
+  $("#banner-sb").removeClass('bg-hotelmodule');
+  $("#banner-sb").removeClass('bg-tourmodule');
+  $("#banner-sb").removeClass('bg-insurancemodule');
+  $("#banner-sb").removeClass('bg-trainmodule');
 
   $(".nav-module").each(function () {
     var checknav = $(this).attr("data-nav");
@@ -200,12 +200,12 @@ function LoadFlight() {
 
 function LoadFlightHotel() {
   // window.changeParentBackground("flighthotelmodule-bg");
-  // $("#banner-sb").addClass('bg-flighthotelmodule');
-  // $("#banner-sb").removeClass('bg-flightmodule');
-  // $("#banner-sb").removeClass('bg-hotelmodule');
-  // $("#banner-sb").removeClass('bg-tourmodule');
-  // $("#banner-sb").removeClass('bg-insurancemodule');
-  // $("#banner-sb").removeClass('bg-trainmodule');
+  $("#banner-sb").addClass('bg-flighthotelmodule');
+  $("#banner-sb").removeClass('bg-flightmodule');
+  $("#banner-sb").removeClass('bg-hotelmodule');
+  $("#banner-sb").removeClass('bg-tourmodule');
+  $("#banner-sb").removeClass('bg-insurancemodule');
+  $("#banner-sb").removeClass('bg-trainmodule');
 
   $(".nav-module").each(function () {
     var checknav = $(this).attr("data-nav");
@@ -230,12 +230,12 @@ function LoadFlightHotel() {
 
 function LoadTour() {
   // window.changeParentBackground("tourmodule-bg");
-  // $("#banner-sb").addClass('bg-tourmodule');
-  // $("#banner-sb").removeClass('bg-flighthotelmodule');
-  // $("#banner-sb").removeClass('bg-flightmodule');
-  // $("#banner-sb").removeClass('bg-hotelmodule');
-  // $("#banner-sb").removeClass('bg-insurancemodule');
-  // $("#banner-sb").removeClass('bg-trainmodule');
+  $("#banner-sb").addClass('bg-tourmodule');
+  $("#banner-sb").removeClass('bg-flighthotelmodule');
+  $("#banner-sb").removeClass('bg-flightmodule');
+  $("#banner-sb").removeClass('bg-hotelmodule');
+  $("#banner-sb").removeClass('bg-insurancemodule');
+  $("#banner-sb").removeClass('bg-trainmodule');
   $(".nav-module").each(function () {
     var checknav = $(this).attr("data-nav");
     if (checknav == "tour") {
@@ -260,12 +260,12 @@ function LoadTour() {
 
 function LoadInsurane() {
   // window.changeParentBackground("insurancemodule-bg");
-  // $("#banner-sb").addClass('bg-insurancemodule');
-  // $("#banner-sb").removeClass('bg-flighthotelmodule');
-  // $("#banner-sb").removeClass('bg-flightmodule');
-  // $("#banner-sb").removeClass('bg-hotelmodule');
-  // $("#banner-sb").removeClass('bg-tourmodule');
-  // $("#banner-sb").removeClass('bg-trainmodule');
+  $("#banner-sb").addClass('bg-insurancemodule');
+  $("#banner-sb").removeClass('bg-flighthotelmodule');
+  $("#banner-sb").removeClass('bg-flightmodule');
+  $("#banner-sb").removeClass('bg-hotelmodule');
+  $("#banner-sb").removeClass('bg-tourmodule');
+  $("#banner-sb").removeClass('bg-trainmodule');
 
   $(".nav-module").each(function () {
     var checknav = $(this).attr("data-nav");
@@ -289,12 +289,12 @@ function LoadInsurane() {
 }
 function LoadTrain() {
   // window.changeParentBackground("trainmodule-bg");
-  // $("#banner-sb").addClass('bg-trainmodule');
-  // $("#banner-sb").removeClass('bg-flighthotelmodule');
-  // $("#banner-sb").removeClass('bg-flightmodule');
-  // $("#banner-sb").removeClass('bg-hotelmodule');
-  // $("#banner-sb").removeClass('bg-tourmodule');
-  // $("#banner-sb").removeClass('bg-insurancemodule');
+  $("#banner-sb").addClass('bg-trainmodule');
+  $("#banner-sb").removeClass('bg-flighthotelmodule');
+  $("#banner-sb").removeClass('bg-flightmodule');
+  $("#banner-sb").removeClass('bg-hotelmodule');
+  $("#banner-sb").removeClass('bg-tourmodule');
+  $("#banner-sb").removeClass('bg-insurancemodule');
 
   $(".nav-module").each(function () {
     var checknav = $(this).attr("data-nav");

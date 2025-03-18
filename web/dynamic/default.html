@@ -1,5 +1,5 @@
 <basis core="dbsource" source="basiscore" lid="1" mid="20" name="db" catid="213324">
-    <member name="visa-list" type="list" link="article.bc" propertyid="" perpage="5" size="311x116" order="ord" />
+    <member name="visa-list" type="list" link="visa.bc" propertyid="" perpage="5" size="311x116" order="ord" />
 </basis>
 
 <basis core="dbsource" source="basiscore" lid="1" mid="1" name="db" usedforid="2374014">
@@ -33,10 +33,12 @@
     <member name="cat" type="tree" request="cat" parentid="213316" order="ord">
     </member>
 </basis>
+
 <basis core="dbsource" source="basiscore" lid="1" mid="20" name="end-tour">
     <member name="cat" type="tree" request="cat" parentid="213321" order="ord">
     </member>
 </basis>
+
 <basis core="dbsource" source="basiscore" lid="1" mid="20" name="exhibition-tour">
     <member name="cat" type="tree" request="cat" parentid="213297" order="ord">
     </member>
@@ -85,6 +87,7 @@
     <link rel="stylesheet" href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css">
     <link href="https://cdn.basiscore.net/basisfly.com/css/reservation_multiLang_css_calendar.css" type="text/css"
         rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.basiscore.net/basisfly.com/css/reservation_tem_datepicker.css">
     <basis core="call" file="style.inc" />
 
 </head>
@@ -92,7 +95,7 @@
 <body onload="loadContentHomePage()">
     <basis core="call" file="header.inc" />
     <main>
-        <section class="bg-center bg-cover bg-defaultBg py-56 min-h-[790px]">
+        <section id="banner-sb" class="bg-center bg-cover bg-flightmodule py-56 min-h-[790px]">
             <!-- searchbox -->
             <section id="searchbox" class="mt-[32rem] min-h-[272px] max-xl:w-[97%] xl:max-w-7xl mx-auto">
                 <div class="relative z-10 flex justify-center w-full mt-24 mb-24 text-center loading">
@@ -523,7 +526,7 @@
                     <basis core="tree" datamembername="travel.cat" idcol="catid" parentidcol="parentid"
                         nullvalue="213383">
                         <layout>
-                            <div class="swiper-wrapper flex justify-center">
+                            <div class="swiper-wrapper">
                                 <!-- Slides -->
                                 @child
                             </div>
@@ -615,7 +618,7 @@
                         </div>
                     </layout>
                     <face filter="link is null">
-                        <a href="/article.bc?id=@id"
+                        <a href="/visa.bc?id=@id"
                             class="swiper-slide rounded-lg overflow-hidden border border-solid border-secondary-50 group">
                             <div class="relative ">
                                 <div
@@ -669,6 +672,9 @@
         type="text/javascript"></script>
     <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
     <basis core="call" file="footer.inc" />
+    <script src="https://cdn.basiscore.net/basisfly.com/js/reservation_date_pickerUi.js"></script>
+    <script src="https://cdn.basiscore.net/basisfly.com/js/reservation_date_picker.js"></script>
+    <script src="https://cdn.basiscore.net/basisfly.com/js/reservation_main_date_picker.js"></script>
 
 </body>
 
