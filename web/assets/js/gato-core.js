@@ -37,11 +37,24 @@ document.addEventListener("DOMContentLoaded", function () {
         submenu.style.maxHeight = null;
         submenu.style.opacity = "0";
       } else {
-        submenu.style.maxHeight = "400px";
+        submenu.style.maxHeight = submenu.scrollHeight * 20 + "px";
         submenu.style.opacity = "1";
       }
     });
   });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const header = document.querySelector("header");
+    const sticky = header.offsetTop; 
+
+    window.onscroll = function () {
+        if (window.pageYOffset > sticky) {
+            header.classList.add("fixed"); 
+        } else {
+            header.classList.remove("fixed");
+        }
+    };
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -67,7 +80,116 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+document.addEventListener("DOMContentLoaded", function (event) {
+    loadCategories();
 
+    if (innerWidth < 1024) {
+        document
+            .querySelectorAll(".image-category-magamenu , .sub-item-megamenu")
+            .forEach((element) => {
+                element.remove();
+            });
+    } else {
+        document
+            .querySelectorAll(".sub-item-hamburgermenu")
+            .forEach((element) => {
+                element.remove();
+            });
+
+        // id desktop view
+        document.querySelectorAll(".megamenu-container").forEach((ele) => {
+            console.log("load Content megamenu !!!!!!!!!!!!!!");
+            // ele.querySelector(".magamenu-category").click();
+            const elem = ele.querySelector(".magamenu-category");
+            const catid = ele
+                .querySelector(".magamenu-category")
+                .getAttribute("data-catid");
+            const typecat = ele
+                .querySelector(".magamenu-category")
+                .getAttribute("data-typecat");
+            loadcat(catid, typecat, elem);
+        });
+    }
+});
+
+if (window.innerWidth < 1024) {
+    document.querySelectorAll(".has-megamenu").forEach((element) => {
+        const parentLi = element.closest("li");
+
+        // جلوگیری از اجرای رویداد کلیک parentLi هنگام کلیک روی megamenu-container
+        const megaMenuContainer = parentLi.querySelector(
+            ".megamenu-container"
+        );
+        if (megaMenuContainer) {
+            megaMenuContainer.addEventListener("click", function (event) {
+                event.stopPropagation(); // از انتشار رویداد به parent جلوگیری می‌کند
+            });
+        }
+
+        parentLi.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            document.querySelectorAll(".megamenu-container").forEach((menu) => {
+                if (menu !== megaMenuContainer) {
+                    menu.classList.add("hidden");
+                }
+            });
+
+            megaMenuContainer.classList.toggle("hidden");
+        });
+        // parentLi.querySelector(".sub-item-hamburgermenu").classList.add("hidden");
+        loadCategories();
+    });
+}
+
+function loadCategories() {
+    const elements = document.querySelectorAll(".magamenu-category");
+    elements.forEach((element) => {
+        const catid = element.getAttribute("data-catid");
+        const typecat = element.getAttribute("data-typecat");
+
+        element.addEventListener("click", function () {
+            loadcat(catid, typecat, this);
+        });
+    });
+}
+
+async function loadcat(catid, typecat, element) {
+    let catname = element.querySelector(".has-submenu > span").innerText;
+    try {
+        const params = { catid: catid, typecat: typecat, catname: catname };
+        const queryString = new URLSearchParams(params).toString();
+        const fullUrl = `${"/header-load-items.bc"}?${queryString}`;
+        const response = await fetch(fullUrl);
+
+        if (!response.ok) {
+            throw new Error(
+                "متاسفانه مشکلی به وجود آمده است لطفا بعدا مجددا تلاش فرمایید."
+            );
+        }
+
+        const content = await response.text();
+        if (window.innerWidth >= 1024) {
+            element
+                .closest(".megamenu-container")
+                .querySelector(".load-category-items").innerHTML = content;
+        } else if (window.innerWidth < 1024) {
+            const subItem = element.querySelector(".sub-item-hamburgermenu");
+            const isHidden = subItem.classList.contains("hidden");
+            document
+                .querySelectorAll(".sub-item-hamburgermenu")
+                .forEach((ele) => {
+                    ele.classList.add("hidden");
+                });
+            if (isHidden) {
+                subItem.classList.remove("hidden");
+                subItem.innerHTML = content;
+            } else {
+                subItem.classList.add("hidden");
+            }
+        }
+    } catch (error) { }
+}
 document.addEventListener("DOMContentLoaded", function () {
   if (document.querySelector(".email-icon")) {
     const emailIcon = document.querySelectorAll(".email-icon");
