@@ -58,6 +58,10 @@ body {
   top: -1.25rem;
 }
 
+.top-\[-104px\] {
+    top: -104px;
+}
+
 .bottom-0 {
   bottom: 0px;
 }
@@ -187,6 +191,10 @@ body {
 
 .mb-2 {
   margin-bottom: 0.5rem;
+}
+
+.mb-12 {
+    margin-bottom: 3rem /* 48px */;
 }
 
 .mb-20 {
@@ -402,6 +410,10 @@ body {
 
 .w-auto {
   width: auto;
+}
+
+.w-fit {
+    width: fit-content;
 }
 
 .w-1\/2 {
@@ -1545,6 +1557,10 @@ body {
   100% {
     clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0);
   }
+}
+
+.searchHistory-content{
+  display: none;
 }
 
 .direction-ltr {

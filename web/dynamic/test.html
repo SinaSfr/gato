@@ -1,0 +1,261 @@
+<basis core="dbsource" source="basiscore" mid="20" name="norooz-tour" lid="1">
+    <member name="cat" type="tree" request="cat" parentid="" preview="" order="ord" />
+</basis>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <basis core="call" file="style.inc" />
+</head>
+<style>
+    .menu-item.menu-item-has-children span::after {
+        content: "" !important
+    }
+
+    .off-canvas-menu .canvas-menu span span.icon-arrow {
+        width: 100% !important;
+        text-align: left !important;
+        cursor: pointer;
+    }
+
+    .st-menu {
+        overflow-y: auto !important;
+    }
+    #magaMenu-resize {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    z-index: 99;
+    top: 110px;
+}
+#magaMenu{
+    display: none;
+}
+
+#magaMenu {
+    width: 100%;
+    height: auto;
+    background: #fff;
+    direction: rtl;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, .49);
+    border-radius: 10px;
+}
+.Continents {
+    width: 20%;
+    float: right;
+    font-family: 'IRANSansWeb';
+}
+.Continents-li {
+    text-decoration: none;
+    border-bottom: 2px solid rgb(238, 238, 238);
+}
+.Continents-li-a {
+    text-decoration: none;
+    color: #989898;
+    cursor: pointer;
+    transition: all .4s ease;
+    padding: 0 15px;
+    box-sizing: border-box;
+    width: 100%;
+    display: inline-block;
+    font-size: 12px;
+}
+.Continents-li-a.actived {
+    color: #0077c5;
+}
+.countries {
+    width: 80%;
+    float: right;
+    font-family: 'IRANSansWeb';
+    border-right: 1px solid rgb(238, 238, 238);
+    padding: 10px 0;
+}
+.countries .parts {
+    width: 100%;
+    float: right;
+}
+li.firstCountry {
+    padding: 7px;
+    box-sizing: border-box;
+    width: 33.3%;
+    float: right;
+    padding-top: 3px;
+}
+li.firstCountry .title {
+    color: rgb(7, 74, 129);
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    border-bottom: 2px solid rgb(238, 238, 238);
+    display: block;
+}
+li.firstCountry .title span {
+    border-bottom: 2px solid #0077c5;
+}
+</style>
+
+<body>
+    <div id="header-resize" class="st-effect-3">
+        <div class="inner-resize">
+            <div id="menu-resize">
+                <div class="menu-wrapper menu-container">
+                    <div class="st-body relative">
+                        <div class="header header-default header-version-3">
+                            <div class="iw-header">
+                                <nav class="iw-menu-main primary-nav">
+                                    <div id="mega-menu-wrap-primary-nav" class="mega-menu-wrap iw-main-menu">
+                                        <ul class="iw-nav-menu navbar-nav">
+                                            <li class="menu-item menu-item-has-children"><span id="flip">تورهای
+                                                    آمیتیس</span></li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                                <div class="iw-search-cart"> <span class="off-canvas-open"> <i class="fa fa-bars"></i>
+                                    </span> </div>
+                            </div>
+                        </div>
+                        <div id="magaMenu-resize">
+                            <div id="magaMenu">
+                                <div class="Continents">
+                                    <basis core="tree" datamembername="norooz-tour.cat" idcol="catid" parentidcol="parentid"
+                                        nullvalue="213296">
+                                        <layout>
+                                            <ul>
+                                                @child
+                                                <!-- <li class="Continents-li Tourism-destinations"><a class="Continents-li-a" href="مقاصد_گردشگری">مقاصد گردشگری</a> </li> -->
+                                            </ul>
+                                        </layout>
+                                        <face filter="link is null  and catID not in (151068)" level="end">
+                                            <li class="Continents-li"><span class="Continents-li-a"
+                                                    onClick="loadMenu('@catid')" id="byDeafult">@title</span></li>
+                                        </face>
+                                        <face filter="catID not in (151068)" level="end">
+                                            <li class="Continents-li"><span class="Continents-li-a"
+                                                    onClick="loadMenu('@catid')">@title</span></li>
+                                        </face>
+                                        <face filter="link is null  and catID not in (151068)">
+                                            <li class="Continents-li"><span class="Continents-li-a"
+                                                    onClick="loadMenu('@catid')">@title</span> </li>
+                                        </face>
+                                        <face filter="catID not in (151068)">
+                                            <li class="Continents-li"><span class="Continents-li-a"
+                                                    onClick="loadMenu('@catid')">@title</span> </li>
+                                        </face>
+                                    </basis>
+                                </div>
+                                <div class="countries" style="position:relative;"> </div>
+                                <div class="clr"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clr"></div>
+            </div>
+            <div class="clr"></div>
+        </div>
+        <div class="clr"></div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const firstContinent = document.querySelector(".Continents-li span");
+            if (firstContinent) {
+                firstContinent.classList.add("actived");
+            }
+
+            const secondContinent = document.querySelector(".Continents-li:nth-child(2) span");
+            if (secondContinent) {
+                secondContinent.style.color = "#ee2948";
+            }
+
+            const countriesEl = document.querySelector(".countries");
+            if (countriesEl) {
+                fetch("/header-menu-load-items.bc?catid=213296")
+                    .then((res) => res.text())
+                    .then((html) => {
+                        countriesEl.innerHTML = html;
+                    });
+            }
+
+            window.addEventListener("scroll", function () {
+                const menuLogo = document.getElementById("menu-logo-resize");
+                if (!menuLogo) return;
+                if (window.scrollY > 8) {
+                    menuLogo.classList.add("menuLogo-Scrool");
+                } else {
+                    menuLogo.classList.remove("menuLogo-Scrool");
+                }
+            });
+
+            const flipBtn = document.getElementById("flip");
+            const magaMenu = document.getElementById("magaMenu");
+
+            if (flipBtn && magaMenu) {
+                flipBtn.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    if (magaMenu.style.display === "none" || magaMenu.style.display === "") {
+                        magaMenu.style.display = "block";
+                    } else {
+                        magaMenu.style.display = "none";
+                    }
+                });
+            }
+
+            document.addEventListener("click", function (event) {
+                if (
+                    !event.target.closest("#magaMenu") &&
+                    !event.target.closest(".menu-item")
+                ) {
+                    if (magaMenu) magaMenu.style.display = "none";
+                }
+            });
+        });
+
+        function hover(element) {
+            element.src = "images/aparat-hover.png";
+        }
+
+        function unhover(element) {
+            element.src = "images/aparat.png";
+        }
+
+        function loadMenu(a) {
+            const countriesEl = document.querySelector(".countries");
+            if (!countriesEl) return;
+
+            countriesEl.innerHTML = `
+    <div id="ballsWaveG">
+      <div id="ballsWaveG_1" class="ballsWaveG"></div>
+      <div id="ballsWaveG_2" class="ballsWaveG"></div>
+      <div id="ballsWaveG_3" class="ballsWaveG"></div>
+      <div id="ballsWaveG_4" class="ballsWaveG"></div>
+      <div id="ballsWaveG_5" class="ballsWaveG"></div>
+      <div id="ballsWaveG_6" class="ballsWaveG"></div>
+      <div id="ballsWaveG_7" class="ballsWaveG"></div>
+      <div id="ballsWaveG_8" class="ballsWaveG"></div>
+    </div>
+  `;
+
+            fetch("/header-menu-load-items.bc?catid=" + a)
+                .then((res) => res.text())
+                .then((html) => {
+                    countriesEl.innerHTML = html;
+                });
+
+            document.querySelectorAll(".Continents-li").forEach(function (li) {
+                li.addEventListener("click", function () {
+                    document
+                        .querySelectorAll(".Continents-li span")
+                        .forEach((s) => s.classList.remove("actived"));
+                    this.querySelector("span").classList.add("actived");
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -1,7 +1,7 @@
 <div class="max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto bg-specialcolor-3 py-6 px-2 rounded-lg">
     <div class="search-box search-box-container">
         <nav class="mb-5 search-nav">
-            <ul class="flex items-center justify-center w-full gap-2 text-right dir-rtl ">
+            <ul class="relative z-10 flex items-center justify-center w-fit mx-auto gap-2 text-right dir-rtl mb-12">
                 <li id="Flight" data-id="item-Flight" onclick="check_searchHistory('flight')"
                     class="text-base font-danaregular rounded-lg flex items-center justify-center w-[117px] h-[54px] bg-white cursor-pointer active-module">
                     <span class="flex items-center">
@@ -106,9 +106,9 @@
                         <div id="item-Flight">
                             <div class="flight-engine">
                                 <div class="relative">
-                                    <div class="flex justify-between gap-2">
+                                    <div class="absolute w-full top-[-104px] flex justify-between gap-2">
                                         <nav id="flight-type-items"
-                                        class=" text-right h-14 flex items-center rounded-lg w-40 bg-white px-2">
+                                        class="text-right h-14 flex items-center rounded-lg w-32 bg-white px-2">
                                         <select onchange="setFlightType(this)"
                                             id="Flight-FlighttypeClass" name="FlighttypeClass"
                                             class="w-full h-12 bg-transparent outline-none FlighttypeClass flighttype-class ul-drop-items cursor-pointer">
@@ -126,7 +126,7 @@
                                         </select>
                                     </nav>
                                         <nav
-                                            class="text-right h-14 flex items-center rounded-lg w-40 bg-white px-2">
+                                            class="text-right h-14 flex items-center rounded-lg w-32 bg-white px-2">
                                             <select id="selectflightclass" onchange="setFlightClass(this)"
                                                 class="w-full h-12 bg-transparent outline-none cursor-pointer">
                                                 <option
@@ -1598,9 +1598,9 @@
                                     class="relative flex flex-col justify-between form-search ">
                                     <input type="hidden" name="persiancurrent" class="persiancurrent"
                                         value />
-                                    <div class="flex justify-end">
+                                    <div class="absolute left-0 top-[-104px] flex justify-end">
                                         <nav id="flightclass-type-items"
-                                            class="text-right h-14 flex items-center rounded-lg w-40 bg-white px-2">
+                                            class="text-right h-14 flex items-center rounded-lg w-32 bg-white px-2">
                                             <select name="FlightClass"
                                                 class="w-full h-12 bg-transparent FlightClass flight-class ul-drop-items outline-none cursor-pointer">
                                                 <option

@@ -45,16 +45,153 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    const header = document.querySelector("header");
-    const sticky = header.offsetTop; 
+  const megaMenus = document.querySelectorAll(".mega-menu-li");
 
-    window.onscroll = function () {
-        if (window.pageYOffset > sticky) {
-            header.classList.add("fixed"); 
+  const ACTIVE_CLASSES = ["ring-2", "ring-primary-600", "bg-primary-200"];
+  const ACTIVE_SCALE_CLASSES = ["scale-x-100", "scale-y-100"];
+  const LINK_ACTIVE_CLASS = "text-primary-700";
+
+  function getLinkHref(dataLink, dataMid, dataId) {
+    // اگر dataLink خالی بود، بر اساس dataMid لینک پیش‌فرض بساز
+    if (!dataLink) {
+      if (dataMid === "20") {
+        return `/tour-list.bc?catid=${dataId}`;
+      } else if (dataMid === "1") {
+        return `/article-list.bc?catid=${dataId}`;
+      } else {
+        return "#";
+      }
+    }
+    return dataLink;
+  }
+
+  megaMenus.forEach((menu) => {
+    const menuItems = menu.querySelectorAll(".menu-item");
+    const contents = menu.querySelectorAll(".tab-content");
+    const fetchContentHeader = menu.querySelector(".fetch-content-header");
+    const menuLinkHeaders = menu.querySelectorAll(".menu-link-header");
+
+    menuItems.forEach((btn, index) => {
+      const tab = btn.dataset.tab;
+      if (contents[index]) {
+        contents[index].setAttribute("data-tab-content", tab);
+      }
+    });
+
+    function resetTabs() {
+      menuItems.forEach((btn) => {
+        btn.classList.remove(...ACTIVE_CLASSES);
+        btn.querySelectorAll(".active-indicator").forEach((span) => {
+          span.classList.remove(...ACTIVE_SCALE_CLASSES);
+          if (span.classList.contains("w-full")) {
+            span.classList.add("scale-x-0");
+          } else {
+            span.classList.add("scale-y-0");
+          }
+        });
+      });
+
+      if (menuLinkHeaders) {
+        menuLinkHeaders.forEach((link) => {
+          link.classList.remove(LINK_ACTIVE_CLASS);
+          link.href = "#";
+          link.textContent = "";
+        });
+      }
+    }
+
+    function activateTab(btn) {
+      const target = btn.dataset.tab;
+      const content = menu.querySelector(`[data-tab-content="${target}"]`);
+      btn.classList.add(...ACTIVE_CLASSES);
+      btn.querySelectorAll(".active-indicator").forEach((span) => {
+        if (span.classList.contains("w-full")) {
+          span.classList.remove("scale-x-0");
+          span.classList.add("scale-x-100");
         } else {
-            header.classList.remove("fixed");
+          span.classList.remove("scale-y-0");
+          span.classList.add("scale-y-100");
         }
-    };
+      });
+      if (content) {
+        content.classList.remove("hidden");
+      }
+    }
+
+    async function loadContent(dataId, dataMid) {
+      if (!fetchContentHeader || !dataId) return;
+
+      fetchContentHeader.innerHTML =
+        '<div class="flex justify-center mt-20"><span class="fetch-loader"></span></div>';
+      try {
+        const response = await fetch(
+          `/header-menu-load-items.bc?catid=${dataId}&mid=${dataMid}`
+        );
+        if (!response.ok)
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        const data = await response.text();
+        fetchContentHeader.innerHTML = data;
+      } catch (error) {
+        fetchContentHeader.innerHTML =
+          "<p>خطا در بارگذاری محتوا: " + error.message + "</p>";
+      }
+    }
+
+    menuItems.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const dataId = btn.dataset.id;
+        const dataMid = btn.dataset.mid;
+        const dataLink = btn.dataset.link;
+        const dataTab = btn.dataset.tab;
+
+        resetTabs();
+        activateTab(btn);
+        loadContent(dataId, dataMid);
+
+        if (menuLinkHeaders) {
+          menuLinkHeaders.forEach((link) => {
+            link.href = getLinkHref(dataLink, dataMid, dataId);
+            link.textContent = dataTab || "";
+            link.classList.add(LINK_ACTIVE_CLASS);
+          });
+        }
+      });
+    });
+
+    const firstBtn = menu.querySelector(".menu-item");
+    if (firstBtn) {
+      resetTabs();
+      activateTab(firstBtn);
+      const dataId = firstBtn.dataset.id;
+      const dataMid = firstBtn.dataset.mid;
+      const dataLink = firstBtn.dataset.link;
+      const dataTab = firstBtn.dataset.tab;
+
+      loadContent(dataId, dataMid);
+
+      if (menuLinkHeaders) {
+        menuLinkHeaders.forEach((link) => {
+          link.href = getLinkHref(dataLink, dataMid, dataId);
+          link.textContent = dataTab || "";
+          link.classList.add(LINK_ACTIVE_CLASS);
+        });
+      }
+    }
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const header = document.querySelector("header");
+  const sticky = header.offsetTop;
+
+  window.onscroll = function () {
+    if (window.pageYOffset > sticky) {
+      header.classList.add("fixed");
+    } else {
+      header.classList.remove("fixed");
+    }
+  };
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -80,132 +217,125 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-document.addEventListener("DOMContentLoaded", function (event) {
-    loadCategories();
+// document.addEventListener("DOMContentLoaded", function (event) {
+//   loadCategories();
 
-    if (innerWidth < 1024) {
-        document
-            .querySelectorAll(".image-category-magamenu , .sub-item-megamenu")
-            .forEach((element) => {
-                element.remove();
-            });
-    } else {
-        document
-            .querySelectorAll(".sub-item-hamburgermenu")
-            .forEach((element) => {
-                element.remove();
-            });
+//   if (innerWidth < 1024) {
+//     document
+//       .querySelectorAll(".image-category-magamenu , .sub-item-megamenu")
+//       .forEach((element) => {
+//         element.remove();
+//       });
+//   } else {
+//     document.querySelectorAll(".sub-item-hamburgermenu").forEach((element) => {
+//       element.remove();
+//     });
 
-        // id desktop view
-        document.querySelectorAll(".megamenu-container").forEach((ele) => {
-            console.log("load Content megamenu !!!!!!!!!!!!!!");
-            // ele.querySelector(".magamenu-category").click();
-            const elem = ele.querySelector(".magamenu-category");
-            const catid = ele
-                .querySelector(".magamenu-category")
-                .getAttribute("data-catid");
-            const typecat = ele
-                .querySelector(".magamenu-category")
-                .getAttribute("data-typecat");
-            loadcat(catid, typecat, elem);
-        });
-    }
-});
+//     // id desktop view
+//     document.querySelectorAll(".megamenu-container").forEach((ele) => {
+//       console.log("load Content megamenu !!!!!!!!!!!!!!");
+//       // ele.querySelector(".magamenu-category").click();
+//       const elem = ele.querySelector(".magamenu-category");
+//       const catid = ele
+//         .querySelector(".magamenu-category")
+//         .getAttribute("data-catid");
+//       const typecat = ele
+//         .querySelector(".magamenu-category")
+//         .getAttribute("data-typecat");
+//       loadcat(catid, typecat, elem);
+//     });
+//   }
+// });
 
-if (window.innerWidth < 1024) {
-    document.querySelectorAll(".has-megamenu").forEach((element) => {
-        const parentLi = element.closest("li");
+// if (window.innerWidth < 1024) {
+//   document.querySelectorAll(".has-megamenu").forEach((element) => {
+//     const parentLi = element.closest("li");
 
-        // جلوگیری از اجرای رویداد کلیک parentLi هنگام کلیک روی megamenu-container
-        const megaMenuContainer = parentLi.querySelector(
-            ".megamenu-container"
-        );
-        if (megaMenuContainer) {
-            megaMenuContainer.addEventListener("click", function (event) {
-                event.stopPropagation(); // از انتشار رویداد به parent جلوگیری می‌کند
-            });
-        }
+//     // جلوگیری از اجرای رویداد کلیک parentLi هنگام کلیک روی megamenu-container
+//     const megaMenuContainer = parentLi.querySelector(".megamenu-container");
+//     if (megaMenuContainer) {
+//       megaMenuContainer.addEventListener("click", function (event) {
+//         event.stopPropagation(); // از انتشار رویداد به parent جلوگیری می‌کند
+//       });
+//     }
 
-        parentLi.addEventListener("click", function (event) {
-            event.preventDefault();
+//     parentLi.addEventListener("click", function (event) {
+//       event.preventDefault();
 
-            document.querySelectorAll(".megamenu-container").forEach((menu) => {
-                if (menu !== megaMenuContainer) {
-                    menu.classList.add("hidden");
-                }
-            });
+//       document.querySelectorAll(".megamenu-container").forEach((menu) => {
+//         if (menu !== megaMenuContainer) {
+//           menu.classList.add("hidden");
+//         }
+//       });
 
-            megaMenuContainer.classList.toggle("hidden");
-        });
-        // parentLi.querySelector(".sub-item-hamburgermenu").classList.add("hidden");
-        loadCategories();
-    });
-}
+//       megaMenuContainer.classList.toggle("hidden");
+//     });
+//     // parentLi.querySelector(".sub-item-hamburgermenu").classList.add("hidden");
+//     loadCategories();
+//   });
+// }
 
-function loadCategories() {
-    const elements = document.querySelectorAll(".magamenu-category");
-    elements.forEach((element) => {
-        const catid = element.getAttribute("data-catid");
-        const typecat = element.getAttribute("data-typecat");
+// function loadCategories() {
+//   const elements = document.querySelectorAll(".magamenu-category");
+//   elements.forEach((element) => {
+//     const catid = element.getAttribute("data-catid");
+//     const typecat = element.getAttribute("data-typecat");
 
-        element.addEventListener("click", function () {
-            loadcat(catid, typecat, this);
-        });
-    });
-}
+//     element.addEventListener("click", function () {
+//       loadcat(catid, typecat, this);
+//     });
+//   });
+// }
 
-async function loadcat(catid, typecat, element) {
-    let catname = element.querySelector(".has-submenu > span").innerText;
-    try {
-        const params = { catid: catid, typecat: typecat, catname: catname };
-        const queryString = new URLSearchParams(params).toString();
-        const fullUrl = `${"/header-load-items.bc"}?${queryString}`;
-        const response = await fetch(fullUrl);
+// async function loadcat(catid, typecat, element) {
+//   let catname = element.querySelector(".has-submenu > span").innerText;
+//   try {
+//     const params = { catid: catid, typecat: typecat, catname: catname };
+//     const queryString = new URLSearchParams(params).toString();
+//     const fullUrl = `${"/header-load-items.bc"}?${queryString}`;
+//     const response = await fetch(fullUrl);
 
-        if (!response.ok) {
-            throw new Error(
-                "متاسفانه مشکلی به وجود آمده است لطفا بعدا مجددا تلاش فرمایید."
-            );
-        }
+//     if (!response.ok) {
+//       throw new Error(
+//         "متاسفانه مشکلی به وجود آمده است لطفا بعدا مجددا تلاش فرمایید."
+//       );
+//     }
 
-        const content = await response.text();
-        if (window.innerWidth >= 1024) {
-            element
-                .closest(".megamenu-container")
-                .querySelector(".load-category-items").innerHTML = content;
-        } else if (window.innerWidth < 1024) {
-            const subItem = element.querySelector(".sub-item-hamburgermenu");
-            const isHidden = subItem.classList.contains("hidden");
-            document
-                .querySelectorAll(".sub-item-hamburgermenu")
-                .forEach((ele) => {
-                    ele.classList.add("hidden");
-                });
-            if (isHidden) {
-                subItem.classList.remove("hidden");
-                subItem.innerHTML = content;
-            } else {
-                subItem.classList.add("hidden");
-            }
-        }
-    } catch (error) { }
-}
+//     const content = await response.text();
+//     if (window.innerWidth >= 1024) {
+//       element
+//         .closest(".megamenu-container")
+//         .querySelector(".load-category-items").innerHTML = content;
+//     } else if (window.innerWidth < 1024) {
+//       const subItem = element.querySelector(".sub-item-hamburgermenu");
+//       const isHidden = subItem.classList.contains("hidden");
+//       document.querySelectorAll(".sub-item-hamburgermenu").forEach((ele) => {
+//         ele.classList.add("hidden");
+//       });
+//       if (isHidden) {
+//         subItem.classList.remove("hidden");
+//         subItem.innerHTML = content;
+//       } else {
+//         subItem.classList.add("hidden");
+//       }
+//     }
+//   } catch (error) {}
+// }
 document.addEventListener("DOMContentLoaded", function () {
   if (document.querySelector(".email-icon")) {
     const emailIcon = document.querySelectorAll(".email-icon");
     const emailPopup = document.querySelector(".email-popup");
-    const emailOverlay = document.querySelector(".email-popup-overlay"); 
+    const emailOverlay = document.querySelector(".email-popup-overlay");
     const closeIcon = document.querySelector(".close-icon");
 
     // تغییرات مربوط به پاپ‌آپ برای موبایل و دسکتاپ
     emailIcon.forEach((icon) => {
       icon.addEventListener("click", function () {
-
         if (window.innerWidth < 1024) {
           emailPopup.style.opacity = "1";
           emailPopup.style.transform = "translateX(0)";
           emailPopup.style.pointerEvents = "auto";
-          emailOverlay.classList.add("active"); 
+          emailOverlay.classList.add("active");
         } else {
           emailPopup.style.position = "fixed";
           emailPopup.style.top = "50%";
@@ -214,27 +344,25 @@ document.addEventListener("DOMContentLoaded", function () {
           emailPopup.style.transform = "translate(-50%, -50%)";
           emailPopup.style.opacity = "1";
           emailPopup.style.pointerEvents = "auto";
-          emailOverlay.classList.add("active"); 
+          emailOverlay.classList.add("active");
         }
       });
     });
 
     closeIcon.addEventListener("click", function () {
-
       if (window.innerWidth < 1024) {
         emailPopup.style.opacity = "0";
         emailPopup.style.transform = "translateX(100%)";
         emailPopup.style.pointerEvents = "none";
-        emailOverlay.classList.remove("active"); 
+        emailOverlay.classList.remove("active");
       } else {
         emailPopup.style.opacity = "0";
         emailPopup.style.pointerEvents = "none";
-        emailOverlay.classList.remove("active"); 
+        emailOverlay.classList.remove("active");
       }
     });
   }
 });
-
 
 document.addEventListener("DOMContentLoaded", function () {
   const fetchContentTours = document.querySelectorAll(".fetch-content-tour");

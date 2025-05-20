@@ -1,0 +1,46 @@
+<basis core="dbsource" source="basiscore" lid="1" mid="20" name="exhibition-tour-load">
+    <member name="cat" type="tree" request="cat" parentid="[##cms.query.catid##]" order="ord"></member>
+</basis>
+<basis core="group" name="g1" if="'[##exhibition-tour-load.RowNumber##]'<>'1'">
+        <basis core="tree" datamembername="exhibition-tour-load" idcol="catid" parentidcol="parentid"
+        nullvalue="[##cms.query.catid##]">
+        <layout>
+            <div class="parts">
+                <ul>
+                    @child
+                    <div class="clr"></div>
+                </ul>
+            </div>
+        </layout>
+        <face level="1" filter="link is null">
+            <li class="firstCountry">
+                <div class="title"><span><a href="/tour-list.bc?catid=@catid">@title</a></span></div>
+                <ul>
+                    @child
+                </ul>
+                <div class="clr"></div>
+            </li>
+        </face>
+        <face level="1">
+            <li class="firstCountry">
+                <div class="title"><span><a href="@link">@title</a></span></div>
+                <ul>
+                    @child
+                </ul>
+                <div class="clr"></div>
+            </li>
+        </face>
+        <face filter="link is null" level="2">
+            <li><span class="fa-arrow-circle-o-left"></span><a href="/tour-list.bc?catid=@catid">@title</a></li>
+        </face>
+        <face level="2">
+            <li><span class="fa-arrow-circle-o-left"></span><a href="/@link">@title</a></li>
+        </face>
+    </basis>
+</basis>
+<basis core="group" name="g2" if="'[##exhibition-tour-load.RowNumber##]'='1'">
+    <div class="no-result">
+        <!-- <span>توری وجود ندارد!</span> -->
+        <a href="[##exhibition-tour-load.link##]">برای مشاهده تورها کلیک کنید</a>
+    </div>
+</basis>
