@@ -1097,6 +1097,10 @@ body {
   max-height: 100vh;
 }
 
+.max-h-\[460px\] {
+    max-height: 460px;
+}
+
 .w-0 {
   width: 0px;
 }
@@ -1252,6 +1256,10 @@ body {
 
 .overflow-scroll {
   overflow: scroll;
+}
+
+.overflow-y-auto {
+    overflow-y: auto;
 }
 
 .rounded {
@@ -2286,6 +2294,24 @@ body {
 
 .group\/tourcategory:hover .group-hover\/tourcategory\:visible {
   visibility: visible;
+}
+
+.my-scroll-box::-webkit-scrollbar {
+  width: 4px;
+}
+
+.my-scroll-box::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.my-scroll-box::-webkit-scrollbar-thumb {
+  background: var(--primary-600);
+  border-radius: 3px;
+}
+
+.my-scroll-box::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-300);
 }
 
 .header-form [data-bc-schema-direction="rtl"] [data-bc-title-container] {
